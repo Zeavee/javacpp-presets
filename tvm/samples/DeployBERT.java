@@ -1,14 +1,14 @@
 import java.io.File;
 import java.util.Random;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
-import org.bytedeco.cpython.*;
-import org.bytedeco.numpy.*;
-import org.bytedeco.tvm.*;
-import org.bytedeco.tvm.Module;
-import static org.bytedeco.cpython.global.python.*;
-import static org.bytedeco.numpy.global.numpy.*;
-import static org.bytedeco.tvm.global.tvm_runtime.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import com.oracle.svm.shadowed.org.bytedeco.numpy.*;
+import com.oracle.svm.shadowed.org.bytedeco.tvm.*;
+import com.oracle.svm.shadowed.org.bytedeco.tvm.Module;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
+import static com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tvm.global.tvm_runtime.*;
 
 /**
  * Example showing how to import, optimize, and deploy a BERT model based on:
@@ -19,11 +19,11 @@ public class DeployBERT {
 
     public static void OptimizeBERT() throws Exception {
         // Extract to JavaCPP's cache the Clang compiler as required by TVM on Windows
-        String clang = Loader.load(org.bytedeco.llvm.program.clang.class).replace('\\', '/');
+        String clang = Loader.load(com.oracle.svm.shadowed.org.bytedeco.llvm.program.clang.class).replace('\\', '/');
         String clangPath = clang.substring(0, clang.lastIndexOf('/'));
 
         // Extract to JavaCPP's cache CPython and obtain the path to the executable file
-        String python = Loader.load(org.bytedeco.cpython.python.class);
+        String python = Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.python.class);
 
         // Install in JavaCPP's cache GluonNLP and MXNet to download and import BERT model
         new ProcessBuilder(python, "-m", "pip", "install", "gluonnlp", "mxnet", "pytest").inheritIO().start().waitFor();
@@ -37,7 +37,7 @@ public class DeployBERT {
         Py_SetProgramName(program);
 
         // Add TVM and its dependencies to Python path using C API to embed script in Java
-        Py_Initialize(org.bytedeco.tvm.presets.tvm.cachePackages());
+        Py_Initialize(com.oracle.svm.shadowed.org.bytedeco.tvm.presets.tvm.cachePackages());
         PySys_SetArgv(1, new PointerPointer(1).put(program));
         if (_import_array() < 0) {
             System.err.println("numpy.core.multiarray failed to import");
@@ -236,7 +236,7 @@ public class DeployBERT {
 
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
         new File("lib").mkdir();
         OptimizeBERT();

@@ -1,7 +1,7 @@
-package org.bytedeco.nvcodec.samples.encoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder;
 
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.nvcodec.global.nvencodeapi.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
 
 public class NvEncoderInputFrame {
     private Pointer inputPointer;

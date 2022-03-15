@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpython.helper;
+package com.oracle.svm.shadowed.org.bytedeco.cpython.helper;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpython.*;
-import static org.bytedeco.cpython.global.python.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
 
-public class python extends org.bytedeco.cpython.presets.python {
+public class python extends com.oracle.svm.shadowed.org.bytedeco.cpython.presets.python {
 
     public static String Py_GetPathString() {
         Py_FrozenFlag(1); // prevent Python from printing useless warnings
-        Pointer s = org.bytedeco.cpython.global.python.Py_GetPath();
+        Pointer s = com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.Py_GetPath();
         if (!Pointer.isNull(s)) {
             BytePointer p = Py_EncodeLocale(s, null);
             String string = p.getString();
@@ -61,7 +61,7 @@ public class python extends org.bytedeco.cpython.presets.python {
             separator = File.pathSeparator;
         }
         Pointer p = Py_DecodeLocale(string, null);
-        org.bytedeco.cpython.global.python.Py_SetPath(p);
+        com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.Py_SetPath(p);
         PyMem_RawFree(p);
     }
 
@@ -100,7 +100,7 @@ public class python extends org.bytedeco.cpython.presets.python {
             separator = File.pathSeparator;
         }
         Pointer p = Py_DecodeLocale(string, null);
-        org.bytedeco.cpython.global.python.PySys_SetPath(p);
+        com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.PySys_SetPath(p);
         PyMem_RawFree(p);
     }
 

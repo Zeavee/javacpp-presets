@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.arrow.presets;
+package com.oracle.svm.shadowed.org.bytedeco.arrow.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -66,11 +66,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = "parquet@.500"
         ),
     },
-    target = "org.bytedeco.parquet",
-    global = "org.bytedeco.arrow.global.parquet"
+    target = "com.oracle.svm.shadowed.org.bytedeco.parquet",
+    global = "com.oracle.svm.shadowed.org.bytedeco.arrow.global.parquet"
 )
 public class parquet implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "parquet"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "parquet"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("PARQUET_EXPORT", "PARQUET_TEMPLATE_EXPORT", "PARQUET_NORETURN", "PARQUET_DISALLOW_COPY_AND_ASSIGN",
@@ -83,8 +83,8 @@ public class parquet implements InfoMapper {
 
                .put(new Info("Compression::type").valueTypes("Compression.type", "@Cast(\"arrow::Compression::type\") int").pointerTypes("IntPointer", "IntBuffer", "int[]"))
                .put(new Info("parquet::Encoding::type").valueTypes("Encoding.type", "@Cast(\"parquet::Encoding::type\") int").pointerTypes("IntPointer", "IntBuffer", "int[]").enumerate())
-               .put(new Info("parquet::SortOrder").pointerTypes("org.bytedeco.parquet.SortOrder"))
-               .put(new Info("parquet::Type").pointerTypes("org.bytedeco.parquet.Type"))
+               .put(new Info("parquet::SortOrder").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.parquet.SortOrder"))
+               .put(new Info("parquet::Type").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.parquet.Type"))
                .put(new Info("std::list<int>").pointerTypes("IntList").define())
                .put(new Info("std::shared_ptr<parquet::ColumnDecryptionProperties>").annotations("@SharedPtr").pointerTypes("ColumnDecryptionProperties"))
                .put(new Info("std::shared_ptr<const parquet::LogicalType>").annotations("@Cast(\"const parquet::LogicalType*\") @SharedPtr").pointerTypes("LogicalType"))

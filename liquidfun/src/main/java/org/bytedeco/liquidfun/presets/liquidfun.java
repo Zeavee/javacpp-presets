@@ -19,22 +19,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.liquidfun.presets;
+package com.oracle.svm.shadowed.org.bytedeco.liquidfun.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Felix Andrews
  */
 
-@Properties(inherit = javacpp.class, target = "org.bytedeco.liquidfun", global = "org.bytedeco.liquidfun.global.liquidfun", value = {
+@Properties(inherit = javacpp.class, target = "com.oracle.svm.shadowed.org.bytedeco.liquidfun", global = "com.oracle.svm.shadowed.org.bytedeco.liquidfun.global.liquidfun", value = {
     @Platform(value = {"linux-x86", "macosx", "windows-x86"},
               define = "LIQUIDFUN_EXTERNAL_LANGUAGE_API 1",
               include = {"<Box2D/Common/b2Settings.h>",
@@ -78,7 +78,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
               link = "liquidfun@.2.3.0")
 })
 public class liquidfun implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "liquidfun"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "liquidfun"); }
 
     public void map(InfoMap infoMap) {
         infoMap

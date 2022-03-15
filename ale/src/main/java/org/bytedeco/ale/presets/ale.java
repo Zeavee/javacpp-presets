@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ale.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ale.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -48,9 +48,9 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "windows",        preload = {"libwinpthread-1", "libgcc_s_dw2-1", "libgcc_s_seh-1", "libgomp-1", "libstdc++-6", "SDL2", "zlib1", "libale"}),
         @Platform(value = "windows-x86",    preloadpath = "C:/msys64/mingw32/bin/"),
         @Platform(value = "windows-x86_64", preloadpath = "C:/msys64/mingw64/bin/")},
-    target = "org.bytedeco.ale", global = "org.bytedeco.ale.global.ale")
+    target = "com.oracle.svm.shadowed.org.bytedeco.ale", global = "com.oracle.svm.shadowed.org.bytedeco.ale.global.ale")
 public class ale implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "ale"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "ale"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("DEBUGGER_SUPPORT", "CHEATCODE_SUPPORT").define(false))

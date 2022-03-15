@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.qt.presets;
+package com.oracle.svm.shadowed.org.bytedeco.qt.presets;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 abstract class QtInfoMapper implements InfoMapper, LoadEnabled {
 

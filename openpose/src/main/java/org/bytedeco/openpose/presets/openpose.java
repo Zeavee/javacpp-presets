@@ -20,25 +20,25 @@
  * limitations under the License.
  */
 
-package org.bytedeco.openpose.presets;
+package com.oracle.svm.shadowed.org.bytedeco.openpose.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.caffe.presets.*;
-import org.bytedeco.opencv.presets.*;
-import org.bytedeco.openblas.presets.*;
-import org.bytedeco.hdf5.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.caffe.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.hdf5.presets.*;
 
 
 @Properties(
@@ -124,13 +124,13 @@ import org.bytedeco.hdf5.presets.*;
             extension = "-gpu"
         )
     },
-    target = "org.bytedeco.openpose",
-    global = "org.bytedeco.openpose.global.openpose"
+    target = "com.oracle.svm.shadowed.org.bytedeco.openpose",
+    global = "com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose"
 )
 public class openpose implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap
-        .put(new Info().javaText("import org.bytedeco.javacpp.annotation.Index;"))
+        .put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Index;"))
         // get rid of this
         .put(new Info("OP_API").cppTypes().annotations())
         // undef things that have somehow been def'd

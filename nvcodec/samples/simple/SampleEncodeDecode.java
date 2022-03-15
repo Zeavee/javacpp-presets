@@ -1,10 +1,10 @@
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.nvcodec.nvcuvid.CUVIDDECODECAPS;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid.CUVIDDECODECAPS;
 
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.nvcodec.global.nvcuvid.*;
-import static org.bytedeco.nvcodec.global.nvencodeapi.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
 
 public class SampleEncodeDecode {
     public static void checkEncodeApiCall(String functionName, int result) {

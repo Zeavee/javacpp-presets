@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = opencv_core.class,
@@ -35,7 +35,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "ios", preload = "libopencv_intensity_transform"),
         @Platform(value = "windows", link = "opencv_intensity_transform455")
     },
-    global = "org.bytedeco.opencv.global.opencv_intensity_transform"
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_intensity_transform"
 )
 public class opencv_intensity_transform implements InfoMapper {
     @Override public void map(InfoMap infoMap) {

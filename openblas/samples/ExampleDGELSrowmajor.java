@@ -58,7 +58,7 @@
 /* Calling DGELS using row-major order */
 
 /* Includes */
-import static org.bytedeco.openblas.global.openblas.*;
+import static com.oracle.svm.shadowed.org.bytedeco.openblas.global.openblas.*;
 
 public class ExampleDGELSrowmajor {
     /* Auxiliary routine: printing a matrix */

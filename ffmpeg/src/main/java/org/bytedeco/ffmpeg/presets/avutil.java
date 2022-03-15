@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ffmpeg.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ffmpeg.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.MemberGetter;
-import org.bytedeco.javacpp.annotation.Name;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.MemberGetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Name;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -41,8 +41,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  */
 @Properties(
     inherit = javacpp.class,
-    target = "org.bytedeco.ffmpeg.avutil",
-    global = "org.bytedeco.ffmpeg.global.avutil",
+    target = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avutil",
+    global = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avutil",
     value = {
         @Platform(define = {"__STDC_CONSTANT_MACROS", "__STDC_FORMAT_MACROS"},
             cinclude = {"<libavutil/avutil.h>", "<libavutil/error.h>", "<libavutil/mem.h>", "<libavutil/time.h>",
@@ -70,7 +70,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     }
 )
 public class avutil implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "ffmpeg"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "ffmpeg"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("AV_NOPTS_VALUE").cppTypes("int64_t").translate(false))

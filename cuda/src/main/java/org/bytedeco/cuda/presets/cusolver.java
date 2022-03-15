@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cuda.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cuda.presets;
 
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -37,7 +37,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(include = {"<cusolver_common.h>", "<cusolverDn.h>", "<cusolverMg.h>", "<cusolverRf.h>", "cusolverSp.h"},
         link = {"cusolver@.11", "cusolverMg@.11"}),
     @Platform(value = "windows-x86_64", preload = {"cusolver64_11", "cusolverMg64_11"})},
-        target = "org.bytedeco.cuda.cusolver", global = "org.bytedeco.cuda.global.cusolver")
+        target = "com.oracle.svm.shadowed.org.bytedeco.cuda.cusolver", global = "com.oracle.svm.shadowed.org.bytedeco.cuda.global.cusolver")
 @NoException
 public class cusolver implements InfoMapper {
     public void map(InfoMap infoMap) {

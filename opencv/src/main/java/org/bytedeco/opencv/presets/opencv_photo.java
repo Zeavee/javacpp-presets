@@ -20,12 +20,12 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -40,8 +40,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "ios", preload = "libopencv_photo"),
         @Platform(value = "windows", link = "opencv_photo455",
             preload = {"opencv_cuda455", "opencv_cudaarithm455", "opencv_cudafilters455", "opencv_cudaimgproc455"})},
-    target = "org.bytedeco.opencv.opencv_photo",
-    global = "org.bytedeco.opencv.global.opencv_photo"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_photo",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_photo"
 )
 public class opencv_photo implements InfoMapper {
     public void map(InfoMap infoMap) {

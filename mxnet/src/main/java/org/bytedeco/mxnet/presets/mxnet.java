@@ -20,27 +20,27 @@
  * limitations under the License.
  */
 
-package org.bytedeco.mxnet.presets;
+package com.oracle.svm.shadowed.org.bytedeco.mxnet.presets;
 
 import java.util.Arrays;
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.openblas.presets.*;
-import org.bytedeco.opencv.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.presets.*;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit = {openblas.class, opencv_imgcodecs.class, opencv_highgui.class}, target = "org.bytedeco.mxnet", global = "org.bytedeco.mxnet.global.mxnet", value = {
+@Properties(inherit = {openblas.class, opencv_imgcodecs.class, opencv_highgui.class}, target = "com.oracle.svm.shadowed.org.bytedeco.mxnet", global = "com.oracle.svm.shadowed.org.bytedeco.mxnet.global.mxnet", value = {
     @Platform(value = {"linux", "macosx", "windows"}, compiler = {"cpp11", "fastfpu"},
         define = {"DMLC_USE_CXX11 1", "MSHADOW_USE_CBLAS 1", "MSHADOW_IN_CXX11 1", "MSHADOW_USE_CUDA 0", "MSHADOW_USE_F16C 0", "MXNET_USE_TVM_OP 0"},
         include = {"mxnet/c_api.h", "mxnet/c_predict_api.h", "nnvm/c_api.h", /*"dmlc/base.h", "dmlc/io.h", "dmlc/logging.h", "dmlc/type_traits.h",
@@ -55,7 +55,7 @@ import org.bytedeco.opencv.presets.*;
         linkpath = {"/usr/local/cuda/lib/", "/usr/local/cuda/lib64/", "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/lib/x64/"},
         preloadpath = {"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin/"}, extension = "-gpu") })
 public class mxnet implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "mxnet"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "mxnet"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -70,8 +70,8 @@ public class mxnet implements LoadEnabled, InfoMapper {
                 preloads.addAll(0, l);
             }
             // make sure to look for MXNet's version of MKL-DNN first
-            resources.add("/org/bytedeco/mxnet/");
-            resources.add("/org/bytedeco/mkldnn/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/mxnet/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/mkldnn/");
         }
         if (!Loader.isLoadLibraries() || extension == null || !extension.equals("-gpu")) {
             return;
@@ -105,7 +105,7 @@ public class mxnet implements LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
         }
     }
 

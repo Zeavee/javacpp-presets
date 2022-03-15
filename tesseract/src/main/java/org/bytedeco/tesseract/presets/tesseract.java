@@ -20,25 +20,25 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tesseract.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tesseract.presets;
 
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.annotation.MemberGetter;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.MemberGetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.leptonica.presets.lept;
+import com.oracle.svm.shadowed.org.bytedeco.leptonica.presets.lept;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(target = "org.bytedeco.tesseract", global = "org.bytedeco.tesseract.global.tesseract", inherit = lept.class, value = {
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.tesseract", global = "com.oracle.svm.shadowed.org.bytedeco.tesseract.global.tesseract", inherit = lept.class, value = {
     @Platform(define = "TESS_CAPI_INCLUDE_BASEAPI", include = {"tesseract/export.h", "tesseract/osdetect.h", "tesseract/unichar.h",
         "tesseract/version.h", "tesseract/publictypes.h", "tesseract/pageiterator.h", "tesseract/ocrclass.h", "tesseract/ltrresultiterator.h",
         "tesseract/renderer.h", "tesseract/resultiterator.h", "tesseract/baseapi.h", "tesseract/capi.h", "locale.h"},
@@ -46,7 +46,7 @@ import org.bytedeco.leptonica.presets.lept;
     @Platform(value = "android", link = "tesseract"),
     @Platform(value = "windows", link = "libtesseract", preload = "libtesseract-5") })
 public class tesseract implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "tesseract"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tesseract"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("locale.h").skip())

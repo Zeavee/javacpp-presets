@@ -4,24 +4,24 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>tesseract</artifactId>
   <version>5.1.0-${project.parent.version}</version>
   <name>JavaCPP Presets for Tesseract</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>leptonica</artifactId>
       <version>1.82.0-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -35,16 +35,16 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>leptonica</artifactId>
             <version>1.82.0-${project.parent.version}</version>
           </dependency>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>leptonica</artifactId>
             <version>1.82.0-${project.parent.version}</version>
             <classifier>${javacpp.platform}</classifier>
@@ -69,30 +69,30 @@
           </preloadPaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/leptonica/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/leptonica/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/leptonica/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/leptonica/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/</linkResource>
           </linkResources>
         </configuration>
         <executions>
           <execution>
             <id>javacpp-parser</id>
             <configuration>
-              <classOrPackageName>org.bytedeco.tesseract.presets.tesseract</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.tesseract.presets.tesseract</classOrPackageName>
             </configuration>
           </execution>
           <execution>
             <id>javacpp-compiler</id>
             <configuration>
-              <classOrPackageName>org.bytedeco.tesseract.**</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.tesseract.**</classOrPackageName>
             </configuration>
           </execution>
         </executions>
@@ -125,7 +125,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}-mingw</properties>

@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorflow;
+package com.oracle.svm.shadowed.org.bytedeco.tensorflow;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
-@Properties(inherit = org.bytedeco.tensorflow.presets.tensorflow.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.tensorflow.presets.tensorflow.class)
 public abstract class AbstractTF_Graph extends Pointer {
     protected static class DeleteDeallocator extends TF_Graph implements Pointer.Deallocator {
         DeleteDeallocator(TF_Graph s) { super(s); }

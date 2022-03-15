@@ -19,25 +19,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.tvm.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tvm.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.ByVal;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByVal;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.dnnl.presets.*;
-import org.bytedeco.llvm.presets.*;
-import org.bytedeco.mkl.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.dnnl.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.mkl.presets.*;
 
 /**
  *
@@ -98,11 +98,11 @@ import org.bytedeco.mkl.presets.*;
             extension = "-gpu"
         ),
     },
-    target = "org.bytedeco.tvm",
-    global = "org.bytedeco.tvm.global.tvm_runtime"
+    target = "com.oracle.svm.shadowed.org.bytedeco.tvm",
+    global = "com.oracle.svm.shadowed.org.bytedeco.tvm.global.tvm_runtime"
 )
 public class tvm_runtime implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "tvm"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tvm"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -134,7 +134,7 @@ public class tvm_runtime implements LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
         }
     }
 

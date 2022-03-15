@@ -1,7 +1,7 @@
 JavaCPP Presets for Qt
 ======================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/qt/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/qt) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/qt.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/qt/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/qt) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/qt.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![qt](https://github.com/bytedeco/javacpp-presets/workflows/qt/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Aqt)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -40,7 +40,7 @@ Please see the samples directory for more Qt examples ported to Java from C++.
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.qt</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.qt</groupId>
     <artifactId>gettingstarted</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -48,7 +48,7 @@ Please see the samples directory for more Qt examples ported to Java from C++.
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>qt-platform</artifactId>
             <version>5.15.2-1.5.7</version>
         </dependency>
@@ -62,20 +62,20 @@ Please see the samples directory for more Qt examples ported to Java from C++.
 ### The `GettingStarted.java` source file
 ```java
 import java.io.File;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.qt.Qt5Core.*;
-import org.bytedeco.qt.Qt5Gui.*;
-import org.bytedeco.qt.Qt5Widgets.*;
-import static org.bytedeco.qt.global.Qt5Core.*;
-import static org.bytedeco.qt.global.Qt5Gui.*;
-import static org.bytedeco.qt.global.Qt5Widgets.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Core.*;
+import com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Gui.*;
+import com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Widgets.*;
+import static com.oracle.svm.shadowed.org.bytedeco.qt.global.Qt5Core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.qt.global.Qt5Gui.*;
+import static com.oracle.svm.shadowed.org.bytedeco.qt.global.Qt5Widgets.*;
 
 public class GettingStarted {
     private static IntPointer argc;
     private static PointerPointer argv;
 
     public static void main(String[] args) {
-        String path = Loader.load(org.bytedeco.qt.global.Qt5Core.class);
+        String path = Loader.load(com.oracle.svm.shadowed.org.bytedeco.qt.global.Qt5Core.class);
         argc = new IntPointer(new int[]{3});
         argv = new PointerPointer("gettingstarted", "-platformpluginpath", new File(path).getParent(), null);
 

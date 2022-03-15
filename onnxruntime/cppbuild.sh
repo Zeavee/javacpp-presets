@@ -120,7 +120,7 @@ sedinplace 's/floatArr = malloc/floatArr = (float*)malloc/g' java/src/main/nativ
 sedinplace 's/Throw(javaException)/Throw((jthrowable)javaException)/g' java/src/main/native/OrtJniUtil.cpp
 sedinplace '/jint JNI_OnLoad/,/}/d' java/src/main/native/OrtJniUtil.cpp
 sedinplace '/static synchronized void init() throws IOException {/a\
-loaded = org.bytedeco.javacpp.Loader.load(org.bytedeco.onnxruntime.presets.onnxruntime.class) != null;\
+loaded = com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader.load(com.oracle.svm.shadowed.org.bytedeco.onnxruntime.presets.onnxruntime.class) != null;\
 ortApiHandle = initialiseAPIBase(ORT_API_VERSION_1);\
 ' java/src/main/java/ai/onnxruntime/OnnxRuntime.java
 sedinplace 's/return metadataJava/return (jstring)metadataJava/g' java/src/main/native/ai_onnxruntime_OrtSession.cpp

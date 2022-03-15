@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = opencv_video.class,
@@ -42,14 +42,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             extension = "-gpu"
         )
     },
-    target = "org.bytedeco.opencv.opencv_cudabgsegm",
-    global = "org.bytedeco.opencv.global.opencv_cudabgsegm"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_cudabgsegm",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_cudabgsegm"
 )
 public class opencv_cudabgsegm implements InfoMapper {
 
     @Override
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info("cv::BackgroundSubtractorMOG2").pointerTypes("org.bytedeco.opencv.opencv_video.BackgroundSubtractorMOG2"))
-               .put(new Info("cv::cuda::BackgroundSubtractorMOG2").pointerTypes("org.bytedeco.opencv.opencv_cudabgsegm.BackgroundSubtractorMOG2"));
+        infoMap.put(new Info("cv::BackgroundSubtractorMOG2").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_video.BackgroundSubtractorMOG2"))
+               .put(new Info("cv::cuda::BackgroundSubtractorMOG2").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_cudabgsegm.BackgroundSubtractorMOG2"));
     }
 }

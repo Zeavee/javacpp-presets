@@ -12,9 +12,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-import org.bytedeco.javacpp.*;
-import org.bytedeco.tensorflowlite.*;
-import static org.bytedeco.tensorflowlite.global.tensorflowlite.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorflowlite.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflowlite.global.tensorflowlite.*;
 
 // This is an example that is minimal to read a model
 // from disk and perform inference. There is no data being loaded

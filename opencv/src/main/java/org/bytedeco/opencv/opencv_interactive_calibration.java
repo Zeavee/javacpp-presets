@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv;
+package com.oracle.svm.shadowed.org.bytedeco.opencv;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
 /**
  * With this class, we can extract easily the {@code opencv_interactive-calibration} program ready for execution:
  * <pre>{@code
- *     String opencv_interactive_calibration = Loader.load(org.bytedeco.opencv.opencv_interactive_calibration.class);
+ *     String opencv_interactive_calibration = Loader.load(com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_interactive_calibration.class);
  *     ProcessBuilder pb = new ProcessBuilder(opencv_interactive_calibration, ...);
  *     pb.inheritIO().start().waitFor();
  * }</pre>
@@ -37,7 +37,7 @@ import org.bytedeco.javacpp.annotation.Properties;
  * @author Samuel Audet
  */
 @Properties(
-    inherit = org.bytedeco.opencv.presets.opencv_core.class,
+    inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class,
     value = @Platform(executable = "opencv_interactive-calibration")
 )
 public class opencv_interactive_calibration {

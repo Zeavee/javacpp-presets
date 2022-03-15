@@ -190,7 +190,7 @@ if [[ "${NOOPENBLAS:-no}" == "yes" ]]; then
     del_keyword_line $ex_file $ex_word
     add_line_after_keyword $ex_file "<phase>package</phase>" "<configuration>" "<classifier>\${javacpp.platform}\${javacpp.platform.extension}-noopenblas<\/classifier>"
     add_line_after_keyword $ex_file "<groupId>org.moditect</groupId>" "<artifactId>moditect-maven-plugin</artifactId>" "<executions><execution><id>add-module-infos<\/id><configuration><modules><module><file>\${project.build.directory}\/\${project.artifactId}-\${javacpp.platform}\${javacpp.platform.extension}-noopenblas.jar<\/file><\/module><\/modules><\/configuration><\/execution><\/executions>"
-    ex_file=src/main/java/org/bytedeco/opencv/presets/opencv_core.java
+    ex_file=src/main/java/com/oracle/svm/shadowed/org/bytedeco/opencv/presets/opencv_core.java
     sedinplace 's/\"openblas_config.h\", \"cblas.h\",\ //' $ex_file
     for run in {1..2}; do del_keyword_line $ex_file $ex_word; done
     ex_file=src/main/java9/module-info.java

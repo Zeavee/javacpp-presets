@@ -1,14 +1,14 @@
 // © Copyright 2021, PyTorch.
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.pytorch.*;
-import static org.bytedeco.pytorch.global.torch.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.pytorch.*;
+import static com.oracle.svm.shadowed.org.bytedeco.pytorch.global.torch.*;
 
 // Ported from C++ code at https://pytorch.org/tutorials/advanced/cpp_export.html
 public class ExampleApp {
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
         if (args.length != 1) {
             System.err.println("usage: java ExampleApp <path-to-exported-script-module>");

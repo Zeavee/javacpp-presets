@@ -1,17 +1,17 @@
-import org.bytedeco.hyperscan.global.hyperscan;
-import org.bytedeco.hyperscan.hs_compile_error_t;
-import org.bytedeco.hyperscan.hs_database_t;
-import org.bytedeco.hyperscan.hs_scratch_t;
-import org.bytedeco.hyperscan.match_event_handler;
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.PointerPointer;
-import org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.hs_compile_error_t;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.hs_database_t;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.hs_scratch_t;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.match_event_handler;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
 
-import static org.bytedeco.hyperscan.global.hyperscan.HS_FLAG_SINGLEMATCH;
-import static org.bytedeco.hyperscan.global.hyperscan.HS_MODE_BLOCK;
+import static com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan.HS_FLAG_SINGLEMATCH;
+import static com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan.HS_MODE_BLOCK;
 
 public class HyperscanTest {
 

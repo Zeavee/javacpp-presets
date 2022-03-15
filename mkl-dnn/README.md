@@ -1,7 +1,7 @@
 JavaCPP Presets for MKL-DNN
 ===========================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/mkl-dnn/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/mkl-dnn) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/mkl-dnn.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/mkl-dnn/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/mkl-dnn) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/mkl-dnn.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![mkl-dnn](https://github.com/bytedeco/javacpp-presets/workflows/mkl-dnn/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Amkl-dnn)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -20,7 +20,7 @@ Java API documentation is available here:
 
  * http://bytedeco.org/javacpp-presets/mkl-dnn/apidocs/
 
-&lowast; Although MKL-DNN comes bundled with a stripped-down version of MKL known as "MKLML", it is sometimes desirable to link instead with the full version of [Intel MKL](https://software.intel.com/mkl). For that, MKL first needs to be installed in its default location, or available in the system PATH or in the "java.library.path", then we can set the "org.bytedeco.mklml.load" system property to `mkl_rt`. We should also set the "org.bytedeco.javacpp.pathsfirst" system property to `true` to ensure that all libraries are actually loaded from the system, unless the `-redist` artifacts listed below are in the class path.
+&lowast; Although MKL-DNN comes bundled with a stripped-down version of MKL known as "MKLML", it is sometimes desirable to link instead with the full version of [Intel MKL](https://software.intel.com/mkl). For that, MKL first needs to be installed in its default location, or available in the system PATH or in the "java.library.path", then we can set the "com.oracle.svm.shadowed.org.bytedeco.mklml.load" system property to `mkl_rt`. We should also set the "com.oracle.svm.shadowed.org.bytedeco.javacpp.pathsfirst" system property to `true` to ensure that all libraries are actually loaded from the system, unless the `-redist` artifacts listed below are in the class path.
 
 
 Sample Usage
@@ -38,7 +38,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.mkl-dnn</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.mkl-dnn</groupId>
     <artifactId>mkl-dnn</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -46,14 +46,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-dnn-platform</artifactId>
             <version>0.21.5-1.5.7</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled full version of MKL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform-redist</artifactId>
             <version>2022.0-1.5.7</version>
         </dependency>
@@ -83,10 +83,10 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 * limitations under the License.
 *******************************************************************************/
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.mkldnn.*;
-import static org.bytedeco.mkldnn.global.mkldnn.*;
+import com.oracle.svm.shadowed.org.bytedeco.mkldnn.*;
+import static com.oracle.svm.shadowed.org.bytedeco.mkldnn.global.mkldnn.*;
 
 public class SimpleNetInt8 {
 

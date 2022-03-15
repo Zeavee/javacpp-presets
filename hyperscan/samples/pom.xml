@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.hyperscan</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.hyperscan</groupId>
     <artifactId>HyperscanTest</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,7 +10,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>hyperscan-platform</artifactId>
             <version>5.4.0-1.5.7</version>
         </dependency>

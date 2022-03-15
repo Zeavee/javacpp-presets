@@ -1,7 +1,7 @@
 JavaCPP Presets
 ===============
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/javacpp-presets/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/javacpp-presets) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/javacpp-presets.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/javacpp-presets/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/javacpp-presets) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/javacpp-presets.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms (Android, iOS, Linux, Mac OS X, Windows):</sup>
 [![opencv](https://github.com/bytedeco/javacpp-presets/workflows/opencv/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Aopencv)
 [![ffmpeg](https://github.com/bytedeco/javacpp-presets/workflows/ffmpeg/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Affmpeg)
@@ -64,7 +64,7 @@ JavaCPP Presets
 
 Introduction
 ------------
-The JavaCPP Presets modules contain Java configuration and interface classes for widely used C/C++ libraries. The configuration files in the `org.bytedeco.<moduleName>.presets` packages are used by the `Parser` to create from C/C++ header files the Java interface files targeting the `org.bytedeco.<moduleName>` packages, which in turn are used by the `Generator` and the native C++ compiler to produce the required JNI libraries. Moreover, helper classes make their functionality easier to use on the Java platform, including Android.
+The JavaCPP Presets modules contain Java configuration and interface classes for widely used C/C++ libraries. The configuration files in the `com.oracle.svm.shadowed.org.bytedeco.<moduleName>.presets` packages are used by the `Parser` to create from C/C++ header files the Java interface files targeting the `com.oracle.svm.shadowed.org.bytedeco.<moduleName>` packages, which in turn are used by the `Generator` and the native C++ compiler to produce the required JNI libraries. Moreover, helper classes make their functionality easier to use on the Java platform, including Android.
 
 For orientation purposes, the documentation of this repository can be thought of as being split into 2 levels:
 
@@ -87,7 +87,7 @@ We can also have everything downloaded and installed automatically with:
  * Maven (inside the `pom.xml` file)
 ```xml
   <dependency>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>${moduleName}-platform</artifactId>
     <version>${moduleVersion}-1.5.7</version>
   </dependency>
@@ -96,20 +96,20 @@ We can also have everything downloaded and installed automatically with:
  * Gradle (inside the `build.gradle` file)
 ```groovy
   dependencies {
-    implementation group: 'org.bytedeco', name: moduleName + '-platform', version: moduleVersion + '-1.5.7'
+    implementation group: 'com.oracle.svm.shadowed.org.bytedeco', name: moduleName + '-platform', version: moduleVersion + '-1.5.7'
   }
 ```
 
  * Leiningen (inside the `project.clj` file)
 ```clojure
   :dependencies [
-    [~(symbol (str "org.bytedeco/" moduleName "-platform")) ~(str moduleVersion "-1.5.7")]
+    [~(symbol (str "com.oracle.svm.shadowed.org.bytedeco/" moduleName "-platform")) ~(str moduleVersion "-1.5.7")]
   ]
 ```
 
  * sbt (inside the `build.sbt` file)
 ```scala
-  libraryDependencies += "org.bytedeco" % moduleName + "-platform" % moduleVersion + "-1.5.7"
+  libraryDependencies += "com.oracle.svm.shadowed.org.bytedeco" % moduleName + "-platform" % moduleVersion + "-1.5.7"
 ```
 
 where the `moduleName` and `moduleVersion` variables correspond to the desired module. This downloads binaries for all platforms, but to get binaries for only one platform we can set the `javacpp.platform` system property (via the `-D` command line option) to something like `android-arm`, `linux-x86_64`, `macosx-x86_64`, `windows-x86_64`, etc. We can also specify more than one platform, see the examples at [Reducing the Number of Dependencies](https://github.com/bytedeco/javacpp-presets/wiki/Reducing-the-Number-of-Dependencies). Another option available to Gradle users is [Gradle JavaCPP](https://github.com/bytedeco/gradle-javacpp), and similarly for Scala users there is [SBT-JavaCPP](https://github.com/bytedeco/sbt-javacpp).
@@ -150,7 +150,7 @@ IntelliJ IDEA (Android 7.0 or newer):
  3. Navigate to File > Project Structure > app > Dependencies, click `+`, and select "2 File dependency".
  4. Select all the JAR files from the `libs` subdirectory.
 
-After that, we can access almost transparently the corresponding C/C++ APIs through the interface classes found in the `org.bytedeco.<moduleName>` packages. Indeed, the `Parser` translates the code comments from the C/C++ header files into the Java interface files, (almost) ready to be consumed by Javadoc. However, since their translation still leaves to be desired, one may wish to refer to the original documentation pages. For instance, the ones for OpenCV and FFmpeg can be found online at:
+After that, we can access almost transparently the corresponding C/C++ APIs through the interface classes found in the `com.oracle.svm.shadowed.org.bytedeco.<moduleName>` packages. Indeed, the `Parser` translates the code comments from the C/C++ header files into the Java interface files, (almost) ready to be consumed by Javadoc. However, since their translation still leaves to be desired, one may wish to refer to the original documentation pages. For instance, the ones for OpenCV and FFmpeg can be found online at:
 
  * [OpenCV documentation](http://docs.opencv.org/master/)
  * [FFmpeg documentation](http://ffmpeg.org/doxygen/trunk/)

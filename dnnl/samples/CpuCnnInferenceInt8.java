@@ -24,10 +24,10 @@
 ///
 /// > Example code: @ref cpu_cnn_inference_int8.cpp
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.dnnl.*;
-import static org.bytedeco.dnnl.global.dnnl.*;
+import com.oracle.svm.shadowed.org.bytedeco.dnnl.*;
+import static com.oracle.svm.shadowed.org.bytedeco.dnnl.global.dnnl.*;
 
 public class CpuCnnInferenceInt8 {
 

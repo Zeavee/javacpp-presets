@@ -12,8 +12,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 
-import org.bytedeco.opencv.global.opencv_imgproc;
-import org.bytedeco.opencv.opencv_core.Mat;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.Mat;
 
 
 public class OpenCVFX {

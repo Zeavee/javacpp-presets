@@ -20,22 +20,22 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorrt.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tensorrt.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.cuda.presets.cudart;
-import org.bytedeco.cuda.presets.cublas;
-import org.bytedeco.cuda.presets.cudnn;
-import org.bytedeco.cuda.presets.nvrtc;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.presets.cudart;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.presets.cublas;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.presets.cudnn;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.presets.nvrtc;
 
 /**
  *
@@ -72,11 +72,11 @@ import org.bytedeco.cuda.presets.nvrtc;
             linkpath = "C:/Program Files/NVIDIA GPU Computing Toolkit/TensorRT/lib/"
         )
     },
-    target = "org.bytedeco.tensorrt.nvinfer",
-    global = "org.bytedeco.tensorrt.global.nvinfer"
+    target = "com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvinfer",
+    global = "com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvinfer"
 )
 public class nvinfer implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "tensorrt"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tensorrt"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -107,7 +107,7 @@ public class nvinfer implements LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
         }
     }
 

@@ -1,11 +1,11 @@
-package org.bytedeco.nvcodec.samples.encoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder;
 
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.nvcodec.nvencodeapi.*;
-import org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
-import org.bytedeco.nvcodec.samples.util.NvCodecUtil;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.NvCodecUtil;
 
-import static org.bytedeco.nvcodec.global.nvencodeapi.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
 
 public class NvEncoderInitParam {
     public static class InitFunction extends FunctionPointer {

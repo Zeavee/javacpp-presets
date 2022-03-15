@@ -19,22 +19,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.depthai.presets;
+package com.oracle.svm.shadowed.org.bytedeco.depthai.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.annotation.ByVal;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByVal;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.opencv.presets.opencv_imgproc;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_imgproc;
 
 /**
  *
@@ -174,11 +174,11 @@ import org.bytedeco.opencv.presets.opencv_imgproc;
         ),
         @Platform(value = "macosx", preload = "usb-1.0@.0", preloadpath = "/usr/local/lib/")
     },
-    target = "org.bytedeco.depthai",
-    global = "org.bytedeco.depthai.global.depthai"
+    target = "com.oracle.svm.shadowed.org.bytedeco.depthai",
+    global = "com.oracle.svm.shadowed.org.bytedeco.depthai.global.depthai"
 )
 public class depthai implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "depthai"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "depthai"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info().enumerate())

@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.lz4</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.lz4</groupId>
     <artifactId>lz4-frame-compression-example</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,7 +10,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>lz4-platform</artifactId>
             <version>1.9.3-1.5.7</version>
         </dependency>

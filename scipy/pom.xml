@@ -4,24 +4,24 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>scipy</artifactId>
   <version>1.8.0-${project.parent.version}</version>
   <name>JavaCPP Presets for SciPy</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>numpy</artifactId>
       <version>1.22.3-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -35,28 +35,28 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>numpy</artifactId>
             <version>1.22.3-${project.parent.version}</version>
           </dependency>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>openblas</artifactId>
             <version>0.3.20-${project.parent.version}</version>
             <classifier>${javacpp.platform}</classifier>
           </dependency>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cpython</artifactId>
             <version>3.10.2-${project.parent.version}</version>
             <classifier>${javacpp.platform}</classifier>
           </dependency>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>numpy</artifactId>
             <version>1.22.3-${project.parent.version}</version>
             <classifier>${javacpp.platform}</classifier>
@@ -71,15 +71,15 @@
             <classPath>${project.build.outputDirectory}</classPath>
           </classPaths>
           <includePaths>
-            <includePath>${basedir}/../openblas/src/main/resources/org/bytedeco/openblas/include/</includePath>
-            <includePath>${basedir}/../openblas/target/classes/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/target/classes/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
             <includePath>${basedir}/../openblas/cppbuild/${javacpp.platform}/include/</includePath>
-            <includePath>${basedir}/../cpython/src/main/resources/org/bytedeco/cpython/include/</includePath>
-            <includePath>${basedir}/../cpython/target/classes/org/bytedeco/cpython/include/</includePath>
+            <includePath>${basedir}/../cpython/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/cpython/include/</includePath>
+            <includePath>${basedir}/../cpython/target/classes/com/oracle/svm/shadowed/org/bytedeco/cpython/include/</includePath>
             <includePath>${basedir}/../cpython/cppbuild/${javacpp.platform}/include/</includePath>
             <includePath>${basedir}/../cpython/cppbuild/${javacpp.platform}/include/python3.10/</includePath>
-            <includePath>${basedir}/../numpy/src/main/resources/org/bytedeco/numpy/include/</includePath>
-            <includePath>${basedir}/../numpy/target/classes/org/bytedeco/numpy/include/</includePath>
+            <includePath>${basedir}/../numpy/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/numpy/include/</includePath>
+            <includePath>${basedir}/../numpy/target/classes/com/oracle/svm/shadowed/org/bytedeco/numpy/include/</includePath>
             <includePath>${basedir}/../numpy/cppbuild/${javacpp.platform}/python/numpy/core/include/</includePath>
             <includePath>${basedir}/../numpy/cppbuild/${javacpp.platform}/python/numpy/core/include/numpy/</includePath>
           </includePaths>
@@ -97,45 +97,45 @@
           </preloadPaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/cpython/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/numpy/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/cpython/${os.name}-${os.arch}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${os.name}-${os.arch}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
-            <includeResource>/org/bytedeco/cpython/include/</includeResource>
-            <includeResource>/org/bytedeco/cpython/${javacpp.platform}/include/</includeResource>
-            <includeResource>/org/bytedeco/cpython/${javacpp.platform}/include/python3.10/</includeResource>
-            <includeResource>/org/bytedeco/numpy/include/</includeResource>
-            <includeResource>/org/bytedeco/numpy/${javacpp.platform}/python/numpy/core/include/</includeResource>
-            <includeResource>/org/bytedeco/numpy/${javacpp.platform}/python/numpy/core/include/numpy/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/include/python3.10/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/python/numpy/core/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/python/numpy/core/include/numpy/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
-            <linkResource>/org/bytedeco/cpython/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/cpython/${javacpp.platform}/lib/</linkResource>
-            <linkResource>/org/bytedeco/cpython/${javacpp.platform}/libs/</linkResource>
-            <linkResource>/org/bytedeco/numpy/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/numpy/${javacpp.platform}/python/numpy/core/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/libs/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/python/numpy/core/lib/</linkResource>
           </linkResources>
         </configuration>
         <executions>
           <execution>
             <id>javacpp-parser</id>
             <configuration>
-              <classOrPackageName>org.bytedeco.scipy.presets.scipy</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.scipy.presets.scipy</classOrPackageName>
             </configuration>
           </execution>
           <execution>
             <id>javacpp-compiler</id>
             <configuration>
-              <classOrPackageName>org.bytedeco.scipy.**</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.scipy.**</classOrPackageName>
             </configuration>
           </execution>
         </executions>
@@ -171,11 +171,11 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <dependencies>
               <dependency>
-                <groupId>org.bytedeco</groupId>
+                <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
                 <artifactId>cpython</artifactId>
                 <version>3.10.2-${project.parent.version}</version>
                 <classifier>${os.name}-${os.arch}</classifier>

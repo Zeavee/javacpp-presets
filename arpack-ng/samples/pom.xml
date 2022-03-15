@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.arpack</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.arpack</groupId>
     <artifactId>icbarpackc</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,7 +10,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>arpack-ng-platform</artifactId>
             <version>3.8.0-1.5.7</version>
         </dependency>

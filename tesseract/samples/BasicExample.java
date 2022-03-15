@@ -1,8 +1,8 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.leptonica.*;
-import org.bytedeco.tesseract.*;
-import static org.bytedeco.leptonica.global.lept.*;
-import static org.bytedeco.tesseract.global.tesseract.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.leptonica.*;
+import com.oracle.svm.shadowed.org.bytedeco.tesseract.*;
+import static com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tesseract.global.tesseract.*;
 
 public class BasicExample {
     public static void main(String[] args) {

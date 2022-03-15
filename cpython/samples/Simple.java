@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpython.*;
-import static org.bytedeco.cpython.global.python.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
 
 public class Simple {
     public static void main(String[] args) throws Exception {

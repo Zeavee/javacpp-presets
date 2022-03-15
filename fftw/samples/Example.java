@@ -1,8 +1,8 @@
 /* Start reading here */
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 import static java.lang.Math.*;
-import static org.bytedeco.fftw.global.fftw3.*;
+import static com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3.*;
 
 public class Example {
 
@@ -45,7 +45,7 @@ public class Example {
     /* Resume reading here */
 
     public static void main(String args[]) {
-        Loader.load(org.bytedeco.fftw.global.fftw3.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3.class);
 
         DoublePointer signal = new DoublePointer(2 * NUM_POINTS);
         DoublePointer result = new DoublePointer(2 * NUM_POINTS);

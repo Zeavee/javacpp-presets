@@ -4,28 +4,28 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>pytorch</artifactId>
   <version>1.10.2-${project.parent.version}</version>
   <name>JavaCPP Presets for PyTorch</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>openblas</artifactId>
       <version>0.3.20-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>numpy</artifactId>
       <version>1.22.3-${project.parent.version}</version>
       <optional>true</optional>
@@ -41,11 +41,11 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>numpy-platform</artifactId>
             <version>1.22.3-${project.parent.version}</version>
           </dependency>
@@ -58,18 +58,18 @@
             <classPath>${project.build.outputDirectory}</classPath>
           </classPaths>
           <includePaths>
-            <includePath>${basedir}/../openblas/src/main/resources/org/bytedeco/openblas/include/</includePath>
-            <includePath>${basedir}/../openblas/target/classes/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/target/classes/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
             <includePath>${basedir}/../openblas/cppbuild/${javacpp.platform}/include/</includePath>
-            <includePath>${basedir}/../cpython/src/main/resources/org/bytedeco/cpython/include/</includePath>
-            <includePath>${basedir}/../cpython/target/classes/org/bytedeco/cpython/include/</includePath>
+            <includePath>${basedir}/../cpython/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/cpython/include/</includePath>
+            <includePath>${basedir}/../cpython/target/classes/com/oracle/svm/shadowed/org/bytedeco/cpython/include/</includePath>
             <includePath>${basedir}/../cpython/cppbuild/${javacpp.platform}/include/</includePath>
-            <includePath>${basedir}/../numpy/src/main/resources/org/bytedeco/numpy/include/</includePath>
-            <includePath>${basedir}/../numpy/target/classes/org/bytedeco/numpy/include/</includePath>
+            <includePath>${basedir}/../numpy/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/numpy/include/</includePath>
+            <includePath>${basedir}/../numpy/target/classes/com/oracle/svm/shadowed/org/bytedeco/numpy/include/</includePath>
             <includePath>${basedir}/../numpy/cppbuild/${javacpp.platform}/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/torch/csrc/api/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
           <linkPaths>
             <linkPath>${basedir}/../openblas/cppbuild/${javacpp.platform}/lib/</linkPath>
@@ -84,30 +84,30 @@
           </preloadPaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/cpython/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/mkldnn/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/numpy/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
-            <includeResource>/org/bytedeco/cpython/include/</includeResource>
-            <includeResource>/org/bytedeco/cpython/${javacpp.platform}/include/</includeResource>
-            <includeResource>/org/bytedeco/numpy/include/</includeResource>
-            <includeResource>/org/bytedeco/numpy/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
-            <linkResource>/org/bytedeco/cpython/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/cpython/${javacpp.platform}/lib/</linkResource>
-            <linkResource>/org/bytedeco/cpython/${javacpp.platform}/libs/</linkResource>
-            <linkResource>/org/bytedeco/numpy/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/numpy/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/libs/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/numpy/${javacpp.platform}/lib/</linkResource>
           </linkResources>
         </configuration>
       </plugin>

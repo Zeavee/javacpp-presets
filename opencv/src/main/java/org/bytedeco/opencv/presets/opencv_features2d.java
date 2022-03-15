@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -38,8 +38,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(include = "<opencv2/features2d.hpp>", link = "opencv_features2d@.405"),
         @Platform(value = "ios", preload = "libopencv_features2d"),
         @Platform(value = "windows", link = "opencv_features2d455")},
-    target = "org.bytedeco.opencv.opencv_features2d",
-    global = "org.bytedeco.opencv.global.opencv_features2d"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_features2d",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_features2d"
 )
 public class opencv_features2d implements InfoMapper {
     public void map(InfoMap infoMap) {

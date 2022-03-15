@@ -1,12 +1,12 @@
 import java.io.File;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
-import org.bytedeco.cpython.*;
-import org.bytedeco.numpy.*;
-import org.bytedeco.tensorflow.*;
-import static org.bytedeco.cpython.global.python.*;
-import static org.bytedeco.numpy.global.numpy.*;
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import com.oracle.svm.shadowed.org.bytedeco.numpy.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
+import static com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
 /**
  * Based on the Keras code found at https://www.tensorflow.org/tutorials
@@ -16,9 +16,9 @@ import static org.bytedeco.tensorflow.global.tensorflow.*;
 public class KerasMNIST {
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
-        Py_Initialize(org.bytedeco.tensorflow.global.tensorflow.cachePackages());
+        Py_Initialize(com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.cachePackages());
         if (_import_array() < 0) {
             System.err.println("numpy.core.multiarray failed to import");
             PyErr_Print();

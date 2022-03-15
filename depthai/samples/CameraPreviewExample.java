@@ -1,12 +1,12 @@
 // Inludes common necessary includes for development using depthai library
-import org.bytedeco.javacpp.*;
-import org.bytedeco.depthai.*;
-import org.bytedeco.depthai.Device;
-import org.bytedeco.opencv.opencv_core.*;
-import org.bytedeco.opencv.opencv_highgui.*;
-import static org.bytedeco.depthai.global.depthai.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_highgui.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.depthai.*;
+import com.oracle.svm.shadowed.org.bytedeco.depthai.Device;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_highgui.*;
+import static com.oracle.svm.shadowed.org.bytedeco.depthai.global.depthai.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_highgui.*;
 
 public class CameraPreviewExample {
     static Pipeline createCameraPipeline() {

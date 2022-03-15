@@ -19,29 +19,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.pytorch.presets;
+package com.oracle.svm.shadowed.org.bytedeco.pytorch.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.annotation.ByRef;
-import org.bytedeco.javacpp.annotation.ByVal;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Const;
-import org.bytedeco.javacpp.annotation.MemberGetter;
-import org.bytedeco.javacpp.annotation.Namespace;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.annotation.StdMove;
-import org.bytedeco.javacpp.annotation.StdString;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByRef;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByVal;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Const;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.MemberGetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Namespace;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.StdMove;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.StdString;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.openblas.presets.openblas;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.openblas;
 
 /**
  *
@@ -440,11 +440,11 @@ import org.bytedeco.openblas.presets.openblas;
             extension = "-gpu"
         ),
     },
-    target = "org.bytedeco.pytorch",
-    global = "org.bytedeco.pytorch.global.torch"
+    target = "com.oracle.svm.shadowed.org.bytedeco.pytorch",
+    global = "com.oracle.svm.shadowed.org.bytedeco.pytorch.global.torch"
 )
 public class torch implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "pytorch"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "pytorch"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -491,8 +491,8 @@ public class torch implements LoadEnabled, InfoMapper {
         preloads.add("nvToolsExt@.1");
         preloads.add("nvToolsExt64_1");
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
-            resources.add("/org/bytedeco/tensorrt/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/tensorrt/");
         }
     }
 
@@ -542,9 +542,9 @@ public class torch implements LoadEnabled, InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.putFirst(new Info("openblas_config.h", "cblas.h", "lapacke_config.h", "lapacke_mangling.h", "lapack.h", "lapacke.h", "lapacke_utils.h").skip())
                .put(new Info().enumerate())
-               .put(new Info().javaText("import org.bytedeco.pytorch.Allocator;"))
-               .put(new Info().javaText("import org.bytedeco.pytorch.Function;"))
-               .put(new Info().javaText("import org.bytedeco.pytorch.Module;"))
+               .put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.pytorch.Allocator;"))
+               .put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.pytorch.Function;"))
+               .put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.pytorch.Module;"))
 
                .put(new Info("basic/containers").cppTypes("c10::optional", "c10::Dict", "torch::optional", "torch::OrderedDict", "c10::variant"))
                .put(new Info("std::nullptr_t").cast().pointerTypes("PointerPointer"))

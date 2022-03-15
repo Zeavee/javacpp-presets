@@ -20,19 +20,19 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ffmpeg;
+package com.oracle.svm.shadowed.org.bytedeco.ffmpeg;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import org.bytedeco.ffmpeg.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.presets.*;
 
 /**
  * With this class, we can extract easily the {@code ffmpeg} program ready for execution.
  * For example, we can transcode a video to H.264 all from Java in a portable fashion this way:
  * <pre>{@code
- *     String ffmpeg = Loader.load(org.bytedeco.ffmpeg.ffmpeg.class);
+ *     String ffmpeg = Loader.load(com.oracle.svm.shadowed.org.bytedeco.ffmpeg.ffmpeg.class);
  *     ProcessBuilder pb = new ProcessBuilder(ffmpeg, "-i", "/path/to/input.mp4", "-vcodec", "h264", "/path/to/output.mp4");
  *     pb.inheritIO().start().waitFor();
  * }</pre>

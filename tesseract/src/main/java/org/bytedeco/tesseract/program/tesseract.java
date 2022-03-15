@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tesseract.program;
+package com.oracle.svm.shadowed.org.bytedeco.tesseract.program;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
 /**
  * With this class, we can extract easily the {@code tesseract} program ready for execution:
  * <pre>{@code
- *     String tesseract = Loader.load(org.bytedeco.tesseract.program.tesseract.class);
+ *     String tesseract = Loader.load(com.oracle.svm.shadowed.org.bytedeco.tesseract.program.tesseract.class);
  *     ProcessBuilder pb = new ProcessBuilder(tesseract, ...);
  *     pb.inheritIO().start().waitFor();
  * }</pre>
@@ -37,7 +37,7 @@ import org.bytedeco.javacpp.annotation.Properties;
  * @author Samuel Audet
  */
 @Properties(
-    inherit = org.bytedeco.tesseract.presets.tesseract.class,
+    inherit = com.oracle.svm.shadowed.org.bytedeco.tesseract.presets.tesseract.class,
     value = @Platform(executable = "tesseract")
 )
 public class tesseract {

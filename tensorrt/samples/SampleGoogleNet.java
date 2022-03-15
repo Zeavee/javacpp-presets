@@ -1,13 +1,13 @@
 import java.io.*;
 import java.util.*;
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.cuda.cudart.*;
-import org.bytedeco.tensorrt.nvinfer.*;
-import org.bytedeco.tensorrt.nvparsers.*;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.tensorrt.global.nvinfer.*;
-import static org.bytedeco.tensorrt.global.nvparsers.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvinfer.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvparsers.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvinfer.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvparsers.*;
 
 public class SampleGoogleNet {
     static void CHECK(int status)

@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libffi.*;
-import static org.bytedeco.libffi.global.ffi.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libffi.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libffi.global.ffi.*;
 
 public class SimpleExample {
      static Pointer puts = Loader.addressof("puts");

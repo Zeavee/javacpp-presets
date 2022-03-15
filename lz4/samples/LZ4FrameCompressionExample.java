@@ -1,7 +1,7 @@
 import java.nio.ByteBuffer;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.lz4.*;
-import org.bytedeco.lz4.global.lz4;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.lz4.*;
+import com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4;
 
 public final class LZ4FrameCompressionExample {
 

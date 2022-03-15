@@ -20,23 +20,23 @@
  * limitations under the License.
  */
 
-package org.bytedeco.libfreenect.presets;
+package com.oracle.svm.shadowed.org.bytedeco.libfreenect.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit = javacpp.class, target = "org.bytedeco.libfreenect", global = "org.bytedeco.libfreenect.global.freenect", value = {
+@Properties(inherit = javacpp.class, target = "com.oracle.svm.shadowed.org.bytedeco.libfreenect", global = "com.oracle.svm.shadowed.org.bytedeco.libfreenect.global.freenect", value = {
     @Platform(not = "android", include = {"<libfreenect/libfreenect.h>", "<libfreenect/libfreenect_registration.h>",
                                         /*"<libfreenect/libfreenect_audio.h>",*/ "<libfreenect/libfreenect_sync.h>"},
         link = {"freenect@0.5", "freenect_sync@0.5"}),
@@ -46,7 +46,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value = "windows-x86_64", preload = "libusb0") })
 @NoException
 public class freenect implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "libfreenect"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "libfreenect"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("FREENECTAPI", "FREENECTAPI_SYNC").cppTypes().annotations());

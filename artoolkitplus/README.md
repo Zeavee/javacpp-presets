@@ -1,7 +1,7 @@
 JavaCPP Presets for ARToolKitPlus
 =================================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/artoolkitplus/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/artoolkitplus) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/artoolkitplus.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/artoolkitplus/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/artoolkitplus) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/artoolkitplus.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![artoolkitplus](https://github.com/bytedeco/javacpp-presets/workflows/artoolkitplus/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Aartoolkitplus)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -37,7 +37,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.artoolkitplus</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.artoolkitplus</groupId>
     <artifactId>multimain</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -45,7 +45,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>artoolkitplus-platform</artifactId>
             <version>2.3.1-1.5.7</version>
         </dependency>
@@ -84,9 +84,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 // loads test images and shows use to use the ARToolKitPlus API.
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.artoolkitplus.*;
-import static org.bytedeco.artoolkitplus.global.ARToolKitPlus.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.*;
+import static com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.global.ARToolKitPlus.*;
 
 public class MultiMain {
     public static void main(String[] args) throws IOException {

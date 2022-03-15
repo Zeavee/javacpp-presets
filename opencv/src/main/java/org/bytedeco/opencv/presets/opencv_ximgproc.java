@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -44,8 +44,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             "opencv2/ximgproc/color_match.hpp"}, link = "opencv_ximgproc@.405"),
         @Platform(value = "ios", preload = "libopencv_ximgproc"),
         @Platform(value = "windows", link = "opencv_ximgproc455")},
-    target = "org.bytedeco.opencv.opencv_ximgproc",
-    global = "org.bytedeco.opencv.global.opencv_ximgproc"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_ximgproc",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_ximgproc"
 )
 public class opencv_ximgproc implements InfoMapper {
     public void map(InfoMap infoMap) {

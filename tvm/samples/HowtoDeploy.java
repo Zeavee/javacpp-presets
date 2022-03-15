@@ -21,22 +21,22 @@
  * \brief Example code on load and run TVM module.s
  * \file cpp_deploy.cc
  */
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpython.*;
-import org.bytedeco.numpy.*;
-import org.bytedeco.tvm.*;
-import org.bytedeco.tvm.Module;
-import static org.bytedeco.cpython.global.python.*;
-import static org.bytedeco.numpy.global.numpy.*;
-import static org.bytedeco.tvm.global.tvm_runtime.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import com.oracle.svm.shadowed.org.bytedeco.numpy.*;
+import com.oracle.svm.shadowed.org.bytedeco.tvm.*;
+import com.oracle.svm.shadowed.org.bytedeco.tvm.Module;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
+import static com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tvm.global.tvm_runtime.*;
 
 public class HowtoDeploy {
 
     static void PrepareTestLibs() throws Exception {
-        String clang = Loader.load(org.bytedeco.llvm.program.clang.class).replace('\\', '/');
+        String clang = Loader.load(com.oracle.svm.shadowed.org.bytedeco.llvm.program.clang.class).replace('\\', '/');
         String clangPath = clang.substring(0, clang.lastIndexOf('/'));
 
-        Py_Initialize(org.bytedeco.tvm.presets.tvm.cachePackages());
+        Py_Initialize(com.oracle.svm.shadowed.org.bytedeco.tvm.presets.tvm.cachePackages());
         if (_import_array() < 0) {
             System.err.println("numpy.core.multiarray failed to import");
             PyErr_Print();
@@ -211,7 +211,7 @@ public class HowtoDeploy {
 
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
         PrepareTestLibs();
         DeploySingleOp();

@@ -1,13 +1,13 @@
-package org.bytedeco.opencv.opencv_ml;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_ml;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Name;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.opencv.opencv_core.Algorithm;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Name;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.Algorithm;
 
-import static org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_ml.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_ml.class)
 @Name("cv::ml::StatModel") public abstract class AbstractStatModel extends Algorithm {
     static { Loader.load(); }
     public AbstractStatModel(Pointer p) { super(p); }

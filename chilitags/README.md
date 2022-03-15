@@ -1,7 +1,7 @@
 JavaCPP Presets for Chilitags
 =============================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/chilitags/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/chilitags) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/chilitags.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/chilitags/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/chilitags) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/chilitags.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![chilitags](https://github.com/bytedeco/javacpp-presets/workflows/chilitags/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Achilitags)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -36,7 +36,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.chilitags</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.chilitags</groupId>
     <artifactId>detectlive</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -44,7 +44,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>chilitags-platform</artifactId>
             <version>master-1.5.7</version>
         </dependency>
@@ -79,24 +79,24 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 // This file serves as an illustration of how to use Chilitags
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
 // The Chilitags header
-import org.bytedeco.chilitags.*;
-import static org.bytedeco.chilitags.global.chilitags.*;
+import com.oracle.svm.shadowed.org.bytedeco.chilitags.*;
+import static com.oracle.svm.shadowed.org.bytedeco.chilitags.global.chilitags.*;
 
-import org.bytedeco.opencv.opencv_imgproc.*;
-import static org.bytedeco.opencv.global.opencv_imgproc.*; // getTickCount...
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc.*; // getTickCount...
 
-import org.bytedeco.opencv.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_core.*; // CV_AA
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*; // CV_AA
 
 // OpenCV goodness for I/O
-import org.bytedeco.opencv.opencv_highgui.*;
-import org.bytedeco.opencv.opencv_videoio.*;
-import static org.bytedeco.opencv.global.opencv_highgui.*;
-import static org.bytedeco.opencv.global.opencv_videoio.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_highgui.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_videoio.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_highgui.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_videoio.*;
 
 public class DetectLive {
     public static void main(String[] args) {

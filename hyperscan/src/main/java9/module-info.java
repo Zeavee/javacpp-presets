@@ -1,6 +1,6 @@
-module org.bytedeco.hyperscan {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.hyperscan;
-  exports org.bytedeco.hyperscan.global;
-  exports org.bytedeco.hyperscan.presets;
+module com.oracle.svm.shadowed.org.bytedeco.hyperscan {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.hyperscan;
+  exports com.oracle.svm.shadowed.org.bytedeco.hyperscan.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.hyperscan.presets;
 }

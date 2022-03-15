@@ -1,17 +1,17 @@
-package org.bytedeco.nvcodec.samples.util;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util;
 
 import org.jcodec.common.Codec;
-import org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
-import org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
-import org.bytedeco.nvcodec.nvencodeapi.GUID;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.GUID;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.bytedeco.cuda.global.cudart.CUDA_SUCCESS;
-import static org.bytedeco.nvcodec.global.nvcuvid.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.CUDA_SUCCESS;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
 import static org.jcodec.common.Codec.*;
 
 public class NvCodecUtil {

@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.librealsense2</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.librealsense2</groupId>
     <artifactId>rsdistance</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,7 +10,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>librealsense2-platform</artifactId>
             <version>2.50.0-1.5.7</version>
         </dependency>

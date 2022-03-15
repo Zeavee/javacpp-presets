@@ -1,7 +1,7 @@
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.opencl.*;
-import static org.bytedeco.opencl.global.OpenCL.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencl.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencl.global.OpenCL.*;
 
 public class VecAdd {
     static final int MEM_SIZE = 128;

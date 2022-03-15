@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
     <relativePath>../../../</relativePath>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>onnxruntime-platform-gpu</artifactId>
   <version>1.10.0-${project.parent.version}</version>
   <name>JavaCPP Presets Platform GPU for ONNX Runtime</name>
@@ -22,7 +22,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>dnnl-platform</artifactId>
       <version>2.5.3-${project.parent.version}</version>
     </dependency>
@@ -105,10 +105,10 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.moduleId}.platform.gpu {
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.x86_64.gpu;
-//                      requires static org.bytedeco.${javacpp.moduleId}.macosx.x86_64.gpu;
-                      requires static org.bytedeco.${javacpp.moduleId}.windows.x86_64.gpu;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.platform.gpu {
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.x86_64.gpu;
+//                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.macosx.x86_64.gpu;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86_64.gpu;
                     }
                   </moduleInfoSource>
                 </module>

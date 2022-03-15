@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.opencv</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.opencv</groupId>
     <artifactId>realsense2show</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,13 +10,13 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>librealsense2-platform</artifactId>
             <version>2.50.0-1.5.7</version>
         </dependency>
 
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>opencv-platform</artifactId>
             <version>4.5.5-1.5.7</version>
         </dependency>

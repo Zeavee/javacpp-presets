@@ -1,4 +1,4 @@
-package org.bytedeco.opencv.opencv_core;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
@@ -7,13 +7,13 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
-import static org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_core.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class)
 public abstract class AbstractArray extends Pointer implements Indexable {
     static { Loader.load(); }
     public AbstractArray(Pointer p) { super(p); }
@@ -102,7 +102,7 @@ public abstract class AbstractArray extends Pointer implements Indexable {
         return highValue;
     }
 
-    public CvSize cvSize() { return org.bytedeco.opencv.global.opencv_core.cvSize(arrayWidth(), arrayHeight()); }
+    public CvSize cvSize() { return com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvSize(arrayWidth(), arrayHeight()); }
 
     /** @see #createBuffer(int) */
     @Deprecated public ByteBuffer   getByteBuffer  (int index) { return arrayData().position(index).capacity(arraySize()).asByteBuffer(); }

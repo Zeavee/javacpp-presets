@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = {opencv_plot.class, opencv_video.class},
@@ -48,12 +48,12 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "ios", preload = "libopencv_tracking"),
         @Platform(value = "windows", link = "opencv_tracking455")
     },
-    target = "org.bytedeco.opencv.opencv_tracking",
-    global = "org.bytedeco.opencv.global.opencv_tracking"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_tracking",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_tracking"
 )
 public class opencv_tracking implements InfoMapper {
     @Override public void map(InfoMap infoMap) {
-        infoMap.put(new Info().javaText("import org.bytedeco.javacpp.annotation.Index;"))
+        infoMap.put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Index;"))
                .put(new Info("override").annotations()) // pure virtual functions are not mapped unless virtualized, so disable override annotation
 //               .put(new Info("cv::Ptr<cv::legacy::tracking::Tracker>", "cv::Ptr<cv::Tracker>").annotations("@Ptr").pointerTypes("LegacyTracker"))
 //               .put(new Info("cv::Ptr<cv::TrackerContribFeature>").annotations("@Ptr").pointerTypes("TrackerContribFeature"))

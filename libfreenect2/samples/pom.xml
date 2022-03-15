@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.libfreenect</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.libfreenect</groupId>
     <artifactId>freenect2Example</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,7 +10,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libfreenect2-platform</artifactId>
             <version>0.2.0-1.5.7</version>
         </dependency>

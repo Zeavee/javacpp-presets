@@ -1,4 +1,4 @@
-package org.bytedeco.nvcodec.samples.exceptions;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions;
 
 public class NvCodecException extends Exception {
     public NvCodecException(int result) {

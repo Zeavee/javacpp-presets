@@ -2,10 +2,10 @@
 // Licensed under the MIT License.
 //
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
-import org.bytedeco.onnxruntime.*;
-import static org.bytedeco.onnxruntime.global.onnxruntime.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.onnxruntime.*;
+import static com.oracle.svm.shadowed.org.bytedeco.onnxruntime.global.onnxruntime.*;
 
 public class CXXApiSample {
 

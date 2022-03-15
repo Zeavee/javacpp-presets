@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.nvcodec.presets;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.presets;
 
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 import java.util.List;
 
-import org.bytedeco.cuda.presets.cudart;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.presets.cudart;
 
 /**
  *
@@ -68,8 +68,8 @@ import org.bytedeco.cuda.presets.cudart;
             linkpath = "C:/Program Files/NVIDIA GPU Computing Toolkit/VideoCodecSDK/Lib/x64/"
         )
     },
-    target = "org.bytedeco.nvcodec.nvcuvid",
-    global = "org.bytedeco.nvcodec.global.nvcuvid"
+    target = "com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid",
+    global = "com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid"
 )
 public class nvcuvid implements LoadEnabled, InfoMapper {
     @Override
@@ -97,7 +97,7 @@ public class nvcuvid implements LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
         }
     }
 

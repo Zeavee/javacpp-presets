@@ -1,4 +1,4 @@
-package org.bytedeco.nvcodec.samples.util;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util;
 
 public class Rectangle {
     private int top;

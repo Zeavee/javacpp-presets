@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>arpack-ng</artifactId>
   <version>3.8.0-${project.parent.version}</version>
   <name>JavaCPP Presets for ARPACK-NG</name>
@@ -20,12 +20,12 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>openblas</artifactId>
       <version>0.3.20-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -39,16 +39,16 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>openblas</artifactId>
             <version>0.3.20-${project.parent.version}</version>
           </dependency>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>openblas</artifactId>
             <version>0.3.20-${project.parent.version}</version>
             <classifier>${javacpp.platform}</classifier>
@@ -63,8 +63,8 @@
             <classPath>${project.build.outputDirectory}</classPath>
           </classPaths>
           <includePaths>
-            <includePath>${basedir}/../openblas/src/main/resources/org/bytedeco/openblas/include/</includePath>
-            <includePath>${basedir}/../openblas/target/classes/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/target/classes/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
             <includePath>${basedir}/../openblas/cppbuild/${javacpp.platform}/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}/include/</includePath>
           </includePaths>
@@ -78,31 +78,31 @@
           </preloadPaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
           </linkResources>
         </configuration>
         <executions>
           <execution>
             <id>javacpp-parser</id>
             <configuration>
-              <classOrPackageName>org.bytedeco.arpackng.presets.arpack</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.arpackng.presets.arpack</classOrPackageName>
             </configuration>
           </execution>
           <execution>
             <id>javacpp-compiler</id>
             <configuration>
-              <classOrPackageName>org.bytedeco.arpackng.**</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.arpackng.**</classOrPackageName>
             </configuration>
           </execution>
           <execution>
@@ -150,7 +150,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}-mingw</properties>

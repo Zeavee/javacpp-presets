@@ -1,13 +1,13 @@
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.ffmpeg.avcodec.*;
-import org.bytedeco.ffmpeg.avformat.*;
-import org.bytedeco.ffmpeg.avutil.*;
-import org.bytedeco.ffmpeg.swscale.*;
-import static org.bytedeco.ffmpeg.global.avcodec.*;
-import static org.bytedeco.ffmpeg.global.avformat.*;
-import static org.bytedeco.ffmpeg.global.avutil.*;
-import static org.bytedeco.ffmpeg.global.swscale.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avcodec.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avformat.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avutil.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.swscale.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avcodec.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avformat.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avutil.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.swscale.*;
 
 public class ReadFewFrame {
     /**

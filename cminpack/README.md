@@ -1,7 +1,7 @@
 JavaCPP Presets for CMINPACK
 ============================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/cminpack/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/cminpack) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/cminpack.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/cminpack/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/cminpack) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/cminpack.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![cminpack](https://github.com/bytedeco/javacpp-presets/workflows/cminpack/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Acminpack)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -36,7 +36,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.cminpack</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.cminpack</groupId>
     <artifactId>tlmdif1c</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -44,7 +44,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cminpack-platform</artifactId>
             <version>1.3.8-1.5.7</version>
         </dependency>
@@ -59,16 +59,16 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```java
 /*     driver for lmdif1 example. */
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
 import static java.lang.Math.*;
-import static org.bytedeco.cminpack.global.cminpack.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cminpack.global.cminpack.*;
 
 public class Tlmdif1c {
   public static void main(String[] args)
   {
-    Loader.load(org.bytedeco.cminpack.global.cminpack.class);
+    Loader.load(com.oracle.svm.shadowed.org.bytedeco.cminpack.global.cminpack.class);
 
     int info, lwa, iwa[] = new int[3];
     double tol, fnorm, x[] = new double[3], fvec[] = new double[15], wa[] = new double[75];

@@ -1,15 +1,15 @@
-package org.bytedeco.nvcodec.samples.util;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util;
 
-import org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
-import org.bytedeco.nvcodec.samples.exceptions.CudaException;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.nvcodec.global.nvcuvid.*;
-import org.bytedeco.nvcodec.nvcuvid.CUVIDDECODECAPS;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.CudaException;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid.CUVIDDECODECAPS;
 
-import static org.bytedeco.nvcodec.global.nvcuvid.*;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
 import static java.lang.System.exit;
 
 public class AppDecUtils {

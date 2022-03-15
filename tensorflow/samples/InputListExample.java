@@ -1,8 +1,8 @@
 import java.nio.IntBuffer;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.tensorflow.*;
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
 /**
  * Showcase the usage of InputList and the concat operator.

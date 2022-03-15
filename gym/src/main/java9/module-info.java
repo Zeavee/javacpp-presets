@@ -1,4 +1,4 @@
-module org.bytedeco.gym {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.gym.presets;
+module com.oracle.svm.shadowed.org.bytedeco.gym {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.gym.presets;
 }

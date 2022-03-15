@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.tensorflow</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.tensorflow</groupId>
     <artifactId>exampletrainer</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,21 +10,21 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform</artifactId>
             <version>1.15.5-1.5.7</version>
         </dependency>
 
         <!-- Additional dependencies required to use CUDA, cuDNN, NCCL, and TensorRT -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform-gpu</artifactId>
             <version>1.15.5-1.5.7</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA, cuDNN, NCCL, and TensorRT -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>11.6-8.3-1.5.7</version>
         </dependency>
@@ -32,12 +32,12 @@
         <!-- Optional dependencies to load Python-enabled builds -->
 <!--
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform-python</artifactId>
             <version>1.15.5-1.5.7</version>
         </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform-python-gpu</artifactId>
             <version>1.15.5-1.5.7</version>
         </dependency>

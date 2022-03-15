@@ -19,21 +19,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.libfreenect2.presets;
+package com.oracle.svm.shadowed.org.bytedeco.libfreenect2.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Jeremy Laviole
  */
-@Properties(inherit = javacpp.class, target = "org.bytedeco.libfreenect2", global = "org.bytedeco.libfreenect2.global.freenect2", value = {
+@Properties(inherit = javacpp.class, target = "com.oracle.svm.shadowed.org.bytedeco.libfreenect2", global = "com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global.freenect2", value = {
     @Platform(value = {"linux-x86", "macosx-x86_64", "windows-x86_64"}, include = {"<libfreenect2/libfreenect2.hpp>",
                 "<libfreenect2/frame_listener.hpp>", "<libfreenect2/frame_listener_impl.h>", "<libfreenect2/logger.h>",
                 "<libfreenect2/packet_pipeline.h>", "<libfreenect2/registration.h>", "<libfreenect2/config.h>"},
@@ -41,7 +41,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value = "macosx-x86_64", preload = "usb-1.0@.0", preloadpath = "/usr/local/lib/"),
     @Platform(value = "windows-x86_64", preload = {"libusb-1.0", "glfw3", "turbojpeg", "freenect2-openni2"}) })
 public class freenect2 implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "libfreenect2"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "libfreenect2"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("LIBFREENECT2_WITH_CUDA_SUPPORT", "LIBFREENECT2_WITH_OPENCL_SUPPORT").define(false))

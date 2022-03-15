@@ -30,9 +30,9 @@
  *   Tests sudoku solver and generator.
  */
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.leptonica.*;
-import static org.bytedeco.leptonica.global.lept.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.leptonica.*;
+import static com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.*;
 
 public class SudokuTest {
     static final String startsol = "3 8 7 2 6 4 1 9 5 "
@@ -46,7 +46,7 @@ public class SudokuTest {
                                  + "6 5 8 4 2 3 9 7 1";
 
     public static void main(String[] args) {
-        Loader.load(org.bytedeco.leptonica.global.lept.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.class);
 
         IntPointer   unique = new IntPointer(1);
         IntPointer   array;

@@ -20,23 +20,23 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tvm.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tvm.presets;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.dnnl.presets.*;
-import org.bytedeco.llvm.presets.*;
-import org.bytedeco.mkl.presets.*;
-import org.bytedeco.scipy.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.dnnl.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.mkl.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.scipy.presets.*;
 
 /**
  *
@@ -60,20 +60,20 @@ import org.bytedeco.scipy.presets.*;
 )
 @NoException
 public class tvm {
-    static { Loader.checkVersion("org.bytedeco", "tvm"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tvm"); }
 
     private static File packageFile = null;
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/tvm/" + Loader.getPlatform() + extension + "/python/")}. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/tvm/" + Loader.getPlatform() + extension + "/python/")}. */
     public static synchronized File cachePackage() throws IOException {
         if (packageFile != null) {
             return packageFile;
         }
-        Loader.load(org.bytedeco.cpython.global.python.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.class);
         String path = Loader.load(tvm.class);
         if (path != null) {
             path = path.replace(File.separatorChar, '/');
-            int i = path.indexOf("/org/bytedeco/tvm/" + Loader.getPlatform());
+            int i = path.indexOf("/com/oracle/svm/shadowed/org/bytedeco/tvm/" + Loader.getPlatform());
             int j = path.lastIndexOf("/");
             File f = Loader.cacheResource(path.substring(i, j) + "/python/");
             Loader.load(tvm_runtime.class);
@@ -84,7 +84,7 @@ public class tvm {
 
     /** Returns {@code {scipy.cachePackages(), tvm.cachePackage()}}. */
     public static File[] cachePackages() throws IOException {
-        File[] path = org.bytedeco.scipy.presets.scipy.cachePackages();
+        File[] path = com.oracle.svm.shadowed.org.bytedeco.scipy.presets.scipy.cachePackages();
         path = Arrays.copyOf(path, path.length + 1);
         path[path.length - 1] = cachePackage();
         return path;

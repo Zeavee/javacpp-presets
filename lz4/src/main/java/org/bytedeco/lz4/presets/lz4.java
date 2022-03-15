@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.lz4.presets;
+package com.oracle.svm.shadowed.org.bytedeco.lz4.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
-import org.bytedeco.lz4.LZ4FFrameInfo;
-import org.bytedeco.lz4.LZ4FPreferences;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.lz4.LZ4FFrameInfo;
+import com.oracle.svm.shadowed.org.bytedeco.lz4.LZ4FPreferences;
 
 /**
  * {@link InfoMapper} for the C lz4 compression library.
@@ -42,13 +42,13 @@ import org.bytedeco.lz4.LZ4FPreferences;
         value = { //
                 @Platform(include = {"<lz4.h>", "<lz4hc.h>", "<lz4frame.h>"}, link = "lz4@.1") //
         }, //
-        target = "org.bytedeco.lz4", //
-        global = "org.bytedeco.lz4.global.lz4" //
+        target = "com.oracle.svm.shadowed.org.bytedeco.lz4", //
+        global = "com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4" //
 )
 public class lz4 implements InfoMapper {
 
     static {
-        Loader.checkVersion("org.bytedeco", "lz4");
+        Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "lz4");
     }
 
     public void map(InfoMap infoMap) {
@@ -105,14 +105,14 @@ public class lz4 implements InfoMapper {
 
     /** Init the {@link LZ4FFrameInfo} object with the default values. */
     public static LZ4FFrameInfo LZ4F_INIT_FRAMEINFO(LZ4FFrameInfo info) {
-        info.blockSizeID(org.bytedeco.lz4.global.lz4.LZ4F_default);
-        info.blockMode(org.bytedeco.lz4.global.lz4.LZ4F_blockLinked);
-        info.blockMode(org.bytedeco.lz4.global.lz4.LZ4F_blockLinked);
-        info.contentChecksumFlag(org.bytedeco.lz4.global.lz4.LZ4F_noContentChecksum);
-        info.frameType(org.bytedeco.lz4.global.lz4.LZ4F_frame);
+        info.blockSizeID(com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4.LZ4F_default);
+        info.blockMode(com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4.LZ4F_blockLinked);
+        info.blockMode(com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4.LZ4F_blockLinked);
+        info.contentChecksumFlag(com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4.LZ4F_noContentChecksum);
+        info.frameType(com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4.LZ4F_frame);
         info.contentSize(0);
         info.dictID(0);
-        info.blockChecksumFlag(org.bytedeco.lz4.global.lz4.LZ4F_noBlockChecksum);
+        info.blockChecksumFlag(com.oracle.svm.shadowed.org.bytedeco.lz4.global.lz4.LZ4F_noBlockChecksum);
         return info;
     }
 

@@ -20,19 +20,19 @@
  * limitations under the License.
  */
 
-package org.bytedeco.arrow.presets;
+package com.oracle.svm.shadowed.org.bytedeco.arrow.presets;
 
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.ByRef;
-import org.bytedeco.javacpp.annotation.ByVal;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByRef;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByVal;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -65,11 +65,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = "arrow_dataset@.500"
         ),
     },
-    target = "org.bytedeco.arrow_dataset",
-    global = "org.bytedeco.arrow.global.arrow_dataset"
+    target = "com.oracle.svm.shadowed.org.bytedeco.arrow_dataset",
+    global = "com.oracle.svm.shadowed.org.bytedeco.arrow.global.arrow_dataset"
 )
 public class arrow_dataset implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "arrow_dataset"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "arrow_dataset"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("ARROW_DS_EXPORT").cppTypes().annotations())
@@ -164,7 +164,7 @@ public class arrow_dataset implements InfoMapper {
                .put(new Info("arrow::Result<std::unique_ptr<parquet::arrow::FileReader> >(const arrow::Result<std::unique_ptr<parquet::arrow::FileReader> >&)",
                              "arrow::Result<std::unique_ptr<parquet::arrow::FileReader> >::operator =").skip())
 
-               .put(new Info("arrow::compute::Function").pointerTypes("org.bytedeco.arrow.Function"))
+               .put(new Info("arrow::compute::Function").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.arrow.Function"))
 //               .put(new Info("arrow::Result<arrow::dataset::Expression>").pointerTypes("ExpressionResult").define())
                .put(new Info("arrow::Result<arrow::dataset::RecordBatchGenerator>").pointerTypes("RecordBatchGeneratorResult").define())
                .put(new Info("arrow::Result<arrow::dataset::TaggedRecordBatchGenerator>").pointerTypes("TaggedRecordBatchGeneratorResult").define())

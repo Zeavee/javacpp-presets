@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * Wrapper for OpenCV module text, part of OpenCV_Contrib.
@@ -40,12 +40,12 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = "opencv_text@.405"),
         @Platform(value = "ios", preload = "libopencv_text"),
         @Platform(value = "windows", link = "opencv_text455")},
-    target = "org.bytedeco.opencv.opencv_text",
-    global = "org.bytedeco.opencv.global.opencv_text"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_text",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_text"
 )
 public class opencv_text implements InfoMapper {
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info().javaText("import org.bytedeco.javacpp.annotation.Index;"))
+        infoMap.put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Index;"))
                .put(new Info("std::deque<int>").pointerTypes("IntDeque").define())
                .put(new Info("std::vector<cv::text::ERStat>").pointerTypes("ERStatVector").define())
                .put(new Info("std::vector<std::vector<cv::text::ERStat> >").pointerTypes("ERStatVectorVector").define())

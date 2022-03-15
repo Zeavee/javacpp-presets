@@ -1,11 +1,11 @@
-package org.bytedeco.opencv.opencv_core;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import static org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_core.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class)
 public abstract class AbstractIplImage extends CvArr {
     protected BytePointer pointer; // a reference to prevent deallocation
 
@@ -27,7 +27,7 @@ public abstract class AbstractIplImage extends CvArr {
      * @return IplImage created. Do not call cvReleaseImage() on it.
      */
     public static IplImage create(int width, int height, int depth, int channels) {
-        return create(org.bytedeco.opencv.global.opencv_core.cvSize(width, height), depth, channels);
+        return create(com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvSize(width, height), depth, channels);
     }
     /**
      * Calls cvCreateImage(), and registers a deallocator. Also assigns {@link #origin()}.
@@ -68,7 +68,7 @@ public abstract class AbstractIplImage extends CvArr {
      * @return IplImage created. Do not call cvReleaseImageHeader() on it.
      */
     public static IplImage createHeader(int width, int height, int depth, int channels) {
-        return createHeader(org.bytedeco.opencv.global.opencv_core.cvSize(width, height), depth, channels);
+        return createHeader(com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvSize(width, height), depth, channels);
     }
     /**
      * Calls cvCreateImageHeader(), and registers a deallocator. Also assigns {@link #origin()}.

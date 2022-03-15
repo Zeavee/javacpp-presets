@@ -1,9 +1,9 @@
-package org.bytedeco.opencv.opencv_core;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_core.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class)
 public abstract class AbstractCvSize extends IntPointer {
     static { Loader.load(); }
     public AbstractCvSize(Pointer p) { super(p); }

@@ -5,8 +5,8 @@
  * The main advantage is that compiler checks (arguments) are performed at build time.
  */
 
-import org.bytedeco.javacpp.*;
-import static org.bytedeco.arpackng.global.arpack.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import static com.oracle.svm.shadowed.org.bytedeco.arpackng.global.arpack.*;
 
 /* test program to solve for the 9 largest eigenvalues of
  * A*x = lambda*x where A is the diagonal matrix

@@ -1,6 +1,6 @@
-module org.bytedeco.tritonserver {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.tritonserver.global;
-  exports org.bytedeco.tritonserver.presets;
-  exports org.bytedeco.tritonserver;
+module com.oracle.svm.shadowed.org.bytedeco.tritonserver {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.tritonserver.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.tritonserver.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.tritonserver;
 }

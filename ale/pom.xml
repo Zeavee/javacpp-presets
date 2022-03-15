@@ -4,19 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>ale</artifactId>
   <version>0.7.4-${project.parent.version}</version>
   <name>JavaCPP Presets for ALE</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -30,12 +30,12 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <configuration>
           <includePaths>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/ale/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
         </configuration>
       </plugin>
@@ -67,7 +67,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}-mingw</properties>

@@ -1,7 +1,7 @@
 JavaCPP Presets for libpostal
 =============================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/libpostal/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/libpostal) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/libpostal.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/libpostal/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/libpostal) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/libpostal.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![libpostal](https://github.com/bytedeco/javacpp-presets/workflows/libpostal/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Alibpostal)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -23,7 +23,7 @@ Same goes for the language classifier model. Data files are automatically downlo
 To check for and download any new data files, you can either run ```make```, or run:
 
 ```java
-String libpostal_data = Loader.load(org.bytedeco.libpostal.libpostal_data.class);
+String libpostal_data = Loader.load(com.oracle.svm.shadowed.org.bytedeco.libpostal.libpostal_data.class);
 ProcessBuilder pb = new ProcessBuilder("bash", libpostal_data, "download", "all", "/path/to/libpostal/data/");
 pb.inheritIO().start().waitFor();
 ```
@@ -52,7 +52,7 @@ To run this sample code, after creating the `pom.xml` and `Example.java` source 
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.libpostal</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.libpostal</groupId>
     <artifactId>example</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -60,7 +60,7 @@ To run this sample code, after creating the `pom.xml` and `Example.java` source 
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libpostal-platform</artifactId>
             <version>1.1-1.5.7</version>
         </dependency>
@@ -73,14 +73,14 @@ To run this sample code, after creating the `pom.xml` and `Example.java` source 
 
 ### The `Example.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libpostal.*;
-import static org.bytedeco.libpostal.global.postal.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libpostal.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libpostal.global.postal.*;
 
 public class Example {
     public static void main(String[] args) throws Exception {
         String dataDir = args.length >= 1 ? new String(args[0]) : "data/";
-        String libpostal_data = Loader.load(org.bytedeco.libpostal.libpostal_data.class);
+        String libpostal_data = Loader.load(com.oracle.svm.shadowed.org.bytedeco.libpostal.libpostal_data.class);
         ProcessBuilder pb = new ProcessBuilder("bash", libpostal_data, "download", "all", dataDir);
         pb.inheritIO().start().waitFor();
 

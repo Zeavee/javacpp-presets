@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.arpackng.presets;
+package com.oracle.svm.shadowed.org.bytedeco.arpackng.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.openblas.presets.openblas;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.openblas;
 
 /**
  *
@@ -42,10 +42,10 @@ import org.bytedeco.openblas.presets.openblas;
         include = {"arpack/arpackdef.h", "arpack/arpack.h", "arpack/arpack.hpp", "arpack/debug_c.hpp", "arpack/stat_c.hpp"},
         link = "arpack@.2",
         preload = "libarpack-2"),
-    global = "org.bytedeco.arpackng.global.arpack")
+    global = "com.oracle.svm.shadowed.org.bytedeco.arpackng.global.arpack")
 @NoException
 public class arpack implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "arpack-ng"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "arpack-ng"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("INTERFACE64").define(false))

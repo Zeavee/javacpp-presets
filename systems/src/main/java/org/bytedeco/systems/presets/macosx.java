@@ -20,18 +20,18 @@
  * limitations under the License.
  */
 
-package org.bytedeco.systems.presets;
+package com.oracle.svm.shadowed.org.bytedeco.systems.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.BuildEnabled;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
-import org.bytedeco.javacpp.tools.Logger;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.BuildEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Logger;
 
 /**
  *
@@ -49,10 +49,10 @@ import org.bytedeco.javacpp.tools.Logger;
                "sys/_types/_pid_t.h", "sys/_types/_time_t.h", "sys/_types/_size_t.h", "sys/shm.h"},
     includepath = {"/usr/include/", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/",
                    "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"})},
-    target = "org.bytedeco.systems.macosx", global = "org.bytedeco.systems.global.macosx")
+    target = "com.oracle.svm.shadowed.org.bytedeco.systems.macosx", global = "com.oracle.svm.shadowed.org.bytedeco.systems.global.macosx")
 @NoException
 public class macosx implements BuildEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "systems"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "systems"); }
 
     private Logger logger;
     private java.util.Properties properties;

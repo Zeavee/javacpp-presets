@@ -14,8 +14,8 @@
  */
 
 import java.util.Optional;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.modsecurity.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.modsecurity.*;
 
 public class ModSecuritySimpleIntervention {
     private static final String BASIC_RULE =

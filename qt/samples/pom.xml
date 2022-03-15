@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.qt</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.qt</groupId>
     <artifactId>gettingstarted</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -10,7 +10,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>qt-platform</artifactId>
             <version>5.15.2-1.5.7</version>
         </dependency>

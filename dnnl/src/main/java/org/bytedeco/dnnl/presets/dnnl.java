@@ -20,18 +20,18 @@
  * limitations under the License.
  */
 
-package org.bytedeco.dnnl.presets;
+package com.oracle.svm.shadowed.org.bytedeco.dnnl.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.opencl.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencl.presets.*;
 
 /**
  *
@@ -48,11 +48,11 @@ import org.bytedeco.opencl.presets.*;
             link = "dnnl@.2", preload = {"gomp@.1", "iomp5", "omp", "tbb@.2"}, resource = {"include", "lib"}
         ),
     },
-    target = "org.bytedeco.dnnl",
-    global = "org.bytedeco.dnnl.global.dnnl"
+    target = "com.oracle.svm.shadowed.org.bytedeco.dnnl",
+    global = "com.oracle.svm.shadowed.org.bytedeco.dnnl.global.dnnl"
 )
 public class dnnl implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "dnnl"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "dnnl"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info().enumerate())
@@ -88,7 +88,7 @@ public class dnnl implements InfoMapper {
 //               .put(new Info("dnnl_stream_attr_t").valueTypes("dnnl_stream_attr").pointerTypes("@ByPtrPtr dnnl_stream_attr", "@Cast(\"dnnl_stream_attr_t*\") PointerPointer"))
 //               .put(new Info("const_dnnl_stream_attr_t").valueTypes("@Const dnnl_stream_attr").pointerTypes("@Const @ByPtrPtr dnnl_stream_attr", "@Cast(\"const_dnnl_stream_attr_t*\") PointerPointer"))
 
-               .put(new Info("dnnl::primitive_desc").pointerTypes("org.bytedeco.dnnl.primitive_desc"))
+               .put(new Info("dnnl::primitive_desc").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.dnnl.primitive_desc"))
                .put(new Info("dnnl::memory::dims").annotations("@Cast({\"dnnl_dim_t*\", \"std::vector<dnnl_dim_t>&\"}) @StdVector(\"dnnl_dim_t\")").pointerTypes("LongPointer", "LongBuffer", "long[]"))
 //               .put(new Info("std::vector<const_dnnl_primitive_desc_t>").annotations("@StdVector @Cast(\"const_dnnl_primitive_desc_t*\")").pointerTypes("PointerPointer"))
 //               .put(new Info("dnnl::primitive::at").pointerTypes("primitive.at").define())

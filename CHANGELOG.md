@@ -80,7 +80,7 @@
  * Replace `requires` with `requires static` in JPMS `.platform` modules ([pull #900](https://github.com/bytedeco/javacpp-presets/pull/900))
  * Add presets for OpenPose 1.6.0 ([pull #898](https://github.com/bytedeco/javacpp-presets/pull/898))
  * Add comparison against MKL in `llvm/samples/polly/MatMulBenchmark.java`
- * Add `requires org.bytedeco.javacpp.${javacpp.platform.module}` to load `jnijavacpp` with JPMS ([pull #893](https://github.com/bytedeco/javacpp-presets/pull/893))
+ * Add `requires com.oracle.svm.shadowed.org.bytedeco.javacpp.${javacpp.platform.module}` to load `jnijavacpp` with JPMS ([pull #893](https://github.com/bytedeco/javacpp-presets/pull/893))
  * Bundle configuration files required by AOT compilation with GraalVM ([issue eclipse/deeplearning4j#7362](https://github.com/eclipse/deeplearning4j/issues/7362))
  * Add support for Windows to presets for Qt ([issue #862](https://github.com/bytedeco/javacpp-presets/issues/862))
  * Fix JPMS modules for CUDA, ARPACK-NG, GSL, SciPy, Gym, MXNet ([pull #880](https://github.com/bytedeco/javacpp-presets/pull/880) and [pull #881](https://github.com/bytedeco/javacpp-presets/pull/881)), OpenCV, CPython, LLVM, Tesseract, Qt ([pull #928](https://github.com/bytedeco/javacpp-presets/pull/928))
@@ -148,11 +148,11 @@
  * Include `setlocale()` in presets for Tesseract to work around issues with locale ([issue #694](https://github.com/bytedeco/javacpp-presets/issues/694))
  * Bundle the `python` program, executable via `Loader.load()` for convenience
  * Bundle Vector Mathematical Library (VML) in redist artifacts of the presets for MKL ([issue #705](https://github.com/bytedeco/javacpp-presets/issues/705))
- * Add `org.bytedeco.tensorflow.StringArray.put(BytePointer)` method to change character encoding ([issue bytedeco/javacpp#293](https://github.com/bytedeco/javacpp/issues/293))
+ * Add `com.oracle.svm.shadowed.org.bytedeco.tensorflow.StringArray.put(BytePointer)` method to change character encoding ([issue bytedeco/javacpp#293](https://github.com/bytedeco/javacpp/issues/293))
  * Bundle `ffmpeg` and `ffprobe` programs, executable via `Loader.load()` for convenience ([issue bytedeco/javacv#307](https://github.com/bytedeco/javacv/issues/307))
  * Add functions related to threading missing from presets for CPython
  * Lengthen `Mat` size and step getters to support `long` indexing ([pull #700](https://github.com/bytedeco/javacpp-presets/pull/700))
- * Rename `groupId` to "org.bytedeco" and use ModiTect to modularize all presets and comply with JPMS ([pull #681](https://github.com/bytedeco/javacpp-presets/pull/681))
+ * Rename `groupId` to "com.oracle.svm.shadowed.org.bytedeco" and use ModiTect to modularize all presets and comply with JPMS ([pull #681](https://github.com/bytedeco/javacpp-presets/pull/681))
  * Make `nvinfer1::Weights::values` settable in presets for TensorRT ([issue #698](https://github.com/bytedeco/javacpp-presets/issues/698))
  * Fix mapping of `HoughLines`, `HoughLinesP`, `HoughCircles`, and `Subdiv2D` from `opencv_imgproc` (issues [bytedeco/javacv#913](https://github.com/bytedeco/javacv/issues/913) and [bytedeco/javacv#1146](https://github.com/bytedeco/javacv/issues/1146))
  * Add basic mapping of stdio streams to presets for GSL since it relies on them for serialization
@@ -261,7 +261,7 @@
  * Append `@NoException` annotation to presets for libdc1394, libfreenect, MKL, OpenBLAS, FFTW, GSL, Leptonica, CUDA, and system APIs to reduce unneeded C++ overhead
  * Fix mapping of `fftwf_iodim` and `fftwf_iodim64` for FFTW ([issue #523](https://github.com/bytedeco/javacpp-presets/issues/523))
  * Add support for iOS and Accelerate to presets for OpenBLAS ([pull #515](https://github.com/bytedeco/javacpp-presets/pull/515))
- * Add "org.bytedeco.javacpp.openblas.load" system property to use libraries from Accelerate, etc ([pull #444](https://github.com/bytedeco/javacpp-presets/pull/444))
+ * Add "com.oracle.svm.shadowed.org.bytedeco.javacpp.openblas.load" system property to use libraries from Accelerate, etc ([pull #444](https://github.com/bytedeco/javacpp-presets/pull/444))
  * Upgrade presets for OpenCV 3.4.1, FFmpeg 3.4.2, Leptonica 1.75.3, cuDNN 7.1, MXNet 1.1.0, TensorFlow 1.7.0-rc1, and their dependencies
  * Include `facemark.hpp`, `facemarkLBF.hpp`, `facemarkAAM.hpp`, `face_alignment.hpp` from the `opencv_face` module
  * Add `AxpyLayer` to presets for Caffe ([pull #508](https://github.com/bytedeco/javacpp-presets/pull/508))
@@ -270,7 +270,7 @@
  * Fix some integer types in HDF5 being mistakenly mapped to smaller integer types
  * Remove the need for empty artifacts of unsupported platforms ([issue #434](https://github.com/bytedeco/javacpp-presets/issues/434))
  * Link `jnivideoInputLib.dll` statically to avoid missing dependencies ([issue bytedeco/javacv#864](https://github.com/bytedeco/javacv/issues/864))
- * Add "org.bytedeco.javacpp.openblas.nomkl" system property to let users disable MKL easily
+ * Add "com.oracle.svm.shadowed.org.bytedeco.javacpp.openblas.nomkl" system property to let users disable MKL easily
  * Add initial set of CUDA bindings for OpenCV ([pull #416](https://github.com/bytedeco/javacpp-presets/pull/416))
  * Add CUDA/OpenCL-enabled builds for OpenCV, Caffe, and TensorFlow via `-gpu` extension ([issue bytedeco/javacv#481](https://github.com/bytedeco/javacv/issues/481))
  * Enable NVIDIA CUDA, CUVID, and NVENC acceleration for FFmpeg ([pull #492](https://github.com/bytedeco/javacpp-presets/pull/492))
@@ -445,7 +445,7 @@
 
 ### April 28, 2014 version 0.8
  * Move from Google Code to GitHub as main source code repository
- * Rename the `com.googlecode.javacpp` package to `org.bytedeco.javacpp`
+ * Rename the `com.googlecode.javacpp` package to `com.oracle.svm.shadowed.org.bytedeco.javacpp`
  * Appended the version of the parent artifact to the ones of the child modules, in an effort to avoid conflicts
  * Updated `cppbuild.sh` scripts with support for the "android-x86" platform (issue javacv:411), thanks to Xavier Hallade
  * Added presets for PGR FlyCapture 1.7

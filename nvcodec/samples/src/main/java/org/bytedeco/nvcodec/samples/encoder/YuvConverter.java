@@ -1,9 +1,9 @@
-package org.bytedeco.nvcodec.samples.encoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder;
 
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
 
-import static org.bytedeco.javacpp.Pointer.*;
+import static com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer.*;
 
 public class YuvConverter {
     private BytePointer quad;

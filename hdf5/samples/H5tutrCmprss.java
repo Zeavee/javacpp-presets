@@ -19,9 +19,9 @@
  */
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.hdf5.*;
-import static org.bytedeco.hdf5.global.hdf5.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.hdf5.*;
+import static com.oracle.svm.shadowed.org.bytedeco.hdf5.global.hdf5.*;
 
 public class H5tutrCmprss {
     static final String FILE_NAME = "h5tutr_cmprss.h5";
@@ -38,7 +38,7 @@ public class H5tutrCmprss {
         try {
             // Turn off the auto-printing when failure occurs so that we can
             // handle the errors appropriately
-            org.bytedeco.hdf5.Exception.dontPrint();
+            com.oracle.svm.shadowed.org.bytedeco.hdf5.Exception.dontPrint();
 
             // Create a new file using the default property lists.
             H5File file = new H5File(FILE_NAME, H5F_ACC_TRUNC);

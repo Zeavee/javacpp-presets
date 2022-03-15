@@ -1,9 +1,9 @@
 // © Copyright 2019, Torch Contributors.
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.pytorch.*;
-import org.bytedeco.pytorch.Module;
-import static org.bytedeco.pytorch.global.torch.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.pytorch.*;
+import com.oracle.svm.shadowed.org.bytedeco.pytorch.Module;
+import static com.oracle.svm.shadowed.org.bytedeco.pytorch.global.torch.*;
 
 public class SimpleMNIST {
 
@@ -32,7 +32,7 @@ public class SimpleMNIST {
 
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
         // Create a new Net.
         Net net = new Net();

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
     <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>nvcodec-platform</artifactId>
   <version>11.1.5-${project.parent.version}</version>
   <name>JavaCPP Presets Platform for NVIDIA Video Codec SDK</name>
@@ -21,7 +21,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>cuda-platform</artifactId>
       <version>11.6-8.3-${project.parent.version}</version>
     </dependency>
@@ -110,11 +110,11 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.moduleId}.platform {
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.arm64;
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.x86_64;
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.ppc64le;
-                      requires static org.bytedeco.${javacpp.moduleId}.windows.x86_64;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.platform {
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.arm64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.x86_64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.ppc64le;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86_64;
                     }
                   </moduleInfoSource>
                 </module>

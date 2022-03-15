@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -38,8 +38,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(include = {/*"<opencv2/imgcodecs/imgcodecs_c.h>",*/ "<opencv2/imgcodecs.hpp>"}, link = "opencv_imgcodecs@.405"),
         @Platform(value = "ios", preload = "libopencv_imgcodecs"),
         @Platform(value = "windows", link = "opencv_imgcodecs455")},
-    global = "org.bytedeco.opencv.global.opencv_imgcodecs",
-    helper = "org.bytedeco.opencv.helper.opencv_imgcodecs"
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs",
+    helper = "com.oracle.svm.shadowed.org.bytedeco.opencv.helper.opencv_imgcodecs"
 )
 public class opencv_imgcodecs implements InfoMapper {
     public void map(InfoMap infoMap) {

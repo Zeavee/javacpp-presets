@@ -1,11 +1,11 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.gsl.*;
-import static org.bytedeco.gsl.global.gsl.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.gsl.*;
+import static com.oracle.svm.shadowed.org.bytedeco.gsl.global.gsl.*;
 
 public class Demo {
     public static void main(String[] args) {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
         gsl_rng_type T;
         gsl_rng r;

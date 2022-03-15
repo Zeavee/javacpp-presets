@@ -1,19 +1,19 @@
-package org.bytedeco.nvcodec.samples.encoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder;
 
-import org.bytedeco.nvcodec.samples.dispose.Disposable;
-import org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
-import org.bytedeco.nvcodec.samples.util.VectorEx;
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.PointerPointer;
-import org.bytedeco.nvcodec.nvencodeapi.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.dispose.Disposable;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.VectorEx;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.*;
 
 import java.util.Vector;
 
-import static org.bytedeco.nvcodec.global.nvencodeapi.*;
-import static org.bytedeco.nvcodec.samples.util.NvCodecUtil.*;
-import static org.bytedeco.javacpp.Pointer.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.NvCodecUtil.*;
+import static com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer.*;
 
 public abstract class NvEncoder implements Disposable {
     private int width;

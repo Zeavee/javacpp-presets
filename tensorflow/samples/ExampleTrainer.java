@@ -18,8 +18,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import org.bytedeco.tensorflow.*;
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
 public class ExampleTrainer {
 

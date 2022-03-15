@@ -1,30 +1,30 @@
-package org.bytedeco.nvcodec.samples;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples;
 
-import org.bytedeco.nvcodec.samples.cuda.CRC;
-import org.bytedeco.nvcodec.samples.encoder.*;
-import org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
-import org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
-import org.bytedeco.nvcodec.samples.util.NvCodecUtil;
-import org.bytedeco.nvcodec.samples.exceptions.CudaException;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.LongPointer;
-import org.bytedeco.nvcodec.global.nvencodeapi.*;
-import org.bytedeco.nvcodec.nvencodeapi.NV_ENC_CONFIG;
-import org.bytedeco.nvcodec.nvencodeapi.NV_ENC_INITIALIZE_PARAMS;
-import org.bytedeco.nvcodec.nvencodeapi.NV_ENC_OUTPUT_PTR;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.cuda.CRC;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.NvCodecUtil;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.CudaException;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LongPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.NV_ENC_CONFIG;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.NV_ENC_INITIALIZE_PARAMS;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.NV_ENC_OUTPUT_PTR;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Vector;
 
-import static org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
 import static java.lang.System.exit;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.cuda.global.cudart.cuDeviceGetName;
-import static org.bytedeco.nvcodec.global.nvencodeapi.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.cuDeviceGetName;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
 
 public class AppEncCuda {
     public static int iGpu = 0;

@@ -7,7 +7,7 @@ if [[ "$TRAVIS_PULL_REQUEST" != "false" ]] || [[ "$TRAVIS_BRANCH" == "release" ]
     exit 0
 fi
 
-GROUP="org.bytedeco"
+GROUP="com.oracle.svm.shadowed.org.bytedeco"
 REPOSITORY_ID="sonatype-nexus-snapshots"
 REPOSITORY_URL="https://oss.sonatype.org/content/repositories/snapshots/"
 MAVEN_ARGS="-N -B -U -Dmaven.repo.local=$HOME/.m2/repository --settings $TRAVIS_BUILD_DIR/ci/settings.xml"

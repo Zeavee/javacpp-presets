@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorrt.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tensorrt.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -37,8 +37,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     value = @Platform(
         include = {"NvCaffeParser.h", "NvUffParser.h"},
         link = "nvparsers@.8.2.3"),
-    target = "org.bytedeco.tensorrt.nvparsers",
-    global = "org.bytedeco.tensorrt.global.nvparsers")
+    target = "com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvparsers",
+    global = "com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvparsers")
 public class nvparsers implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("nvuffparser::IPluginFactory").pointerTypes("IUffPluginFactory"))

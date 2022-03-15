@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.qt.helper;
+package com.oracle.svm.shadowed.org.bytedeco.qt.helper;
 
 import java.io.File;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.Opaque;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Opaque;
 
-public class Qt5Gui extends org.bytedeco.qt.presets.Qt5Gui {
+public class Qt5Gui extends com.oracle.svm.shadowed.org.bytedeco.qt.presets.Qt5Gui {
 
 //  static {
 //    File framework = new File("/usr/local/Cellar/qt/5.15.1/lib/QtGui.framework/QtGui");

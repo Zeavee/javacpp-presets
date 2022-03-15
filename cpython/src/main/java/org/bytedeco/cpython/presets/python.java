@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpython.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cpython.presets;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,15 +30,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -204,22 +204,22 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "macosx",  link = "python3.10!"),
         @Platform(value = "windows", link = "python310"),
     },
-    target = "org.bytedeco.cpython",
-    global = "org.bytedeco.cpython.global.python",
-    helper = "org.bytedeco.cpython.helper.python"
+    target = "com.oracle.svm.shadowed.org.bytedeco.cpython",
+    global = "com.oracle.svm.shadowed.org.bytedeco.cpython.global.python",
+    helper = "com.oracle.svm.shadowed.org.bytedeco.cpython.helper.python"
 )
 @NoException
 public class python implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "cpython"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "cpython"); }
 
     private static File packageFile = null;
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/cpython/" + Loader.getPlatform())} and monkey patches files accordingly. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/cpython/" + Loader.getPlatform())} and monkey patches files accordingly. */
     public static synchronized File cachePackage() throws IOException {
         if (packageFile != null) {
             return packageFile;
         }
-        File pythonFile = Loader.cacheResource("/org/bytedeco/cpython/" + Loader.getPlatform());
+        File pythonFile = Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/cpython/" + Loader.getPlatform());
         File configDir = new File(pythonFile, "lib/python3.10/");
         if (configDir.exists()) {
             String pythonPath = pythonFile.getAbsolutePath();

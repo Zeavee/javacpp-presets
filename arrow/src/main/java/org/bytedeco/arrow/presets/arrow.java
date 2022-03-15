@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.arrow.presets;
+package com.oracle.svm.shadowed.org.bytedeco.arrow.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -158,14 +158,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = "arrow@.500"
         ),
     },
-    target = "org.bytedeco.arrow",
-    global = "org.bytedeco.arrow.global.arrow"
+    target = "com.oracle.svm.shadowed.org.bytedeco.arrow",
+    global = "com.oracle.svm.shadowed.org.bytedeco.arrow.global.arrow"
 )
 public class arrow implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "arrow"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "arrow"); }
 
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info().enumerate().javaText("import org.bytedeco.arrow.Function;"))
+        infoMap.put(new Info().enumerate().javaText("import com.oracle.svm.shadowed.org.bytedeco.arrow.Function;"))
                .put(new Info("defined(__cplusplus)").define())
                .put(new Info("__cplusplus_cli", "ARROW_EXTRA_ERROR_CONTEXT").define(false))
                .put(new Info("ARROW_NORETURN", "ARROW_MUST_USE_RESULT", "NULLPTR", "ARROW_EXPORT", "ARROW_FORCE_INLINE",
@@ -182,7 +182,7 @@ public class arrow implements InfoMapper {
                .put(new Info("arrow::internal::BitsetStack::reference").pointerTypes("BoolPointer"))
                .put(new Info("arrow::util::bytes_view", "arrow::util::string_view", "arrow::internal::Bitmap", "std::atomic<int64_t>", "std::initializer_list").skip())
                .put(new Info("arrow::Buffer").pointerTypes("ArrowBuffer"))
-               .put(new Info("arrow::EqualOptions::nans_equal", "arrow::EqualOptions::atol", "arrow::EqualOptions::diff_sink").annotations("@org.bytedeco.javacpp.annotation.Function"))
+               .put(new Info("arrow::EqualOptions::nans_equal", "arrow::EqualOptions::atol", "arrow::EqualOptions::diff_sink").annotations("@com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Function"))
                .put(new Info("arrow::detail::CTypeImpl", "arrow::detail::IntegerTypeImpl", "arrow::internal::IsOneOf", "arrow::util::internal::non_null_filler", "arrow::TypeTraits",
                              "arrow::detail::CTypeImpl<DERIVED,BASE,TYPE_ID,C_TYPE>::type_id", "arrow::detail::Empty", "arrow::detail::is_future", "arrow::util::detail::all",
                              "arrow::util::detail::delete_copy_constructor", "arrow::internal::max_size_traits", "arrow::internal::max_size", "arrow::GetPhysicalType",

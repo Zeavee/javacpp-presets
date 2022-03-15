@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
     <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>mkl-dnn-platform</artifactId>
   <version>0.21.5-${project.parent.version}</version>
   <name>JavaCPP Presets Platform for MKL-DNN</name>
@@ -22,7 +22,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp-platform</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
@@ -105,10 +105,10 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.packageName}.platform {
-                      requires static org.bytedeco.${javacpp.packageName}.linux.x86_64;
-                      requires static org.bytedeco.${javacpp.packageName}.macosx.x86_64;
-                      requires static org.bytedeco.${javacpp.packageName}.windows.x86_64;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.platform {
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.linux.x86_64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.macosx.x86_64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.windows.x86_64;
                     }
                   </moduleInfoSource>
                 </module>

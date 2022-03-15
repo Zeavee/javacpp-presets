@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.leptonica;
+package com.oracle.svm.shadowed.org.bytedeco.leptonica;
 
 import java.nio.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
-import static org.bytedeco.leptonica.global.lept.*;
+import static com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.*;
 
-@Properties(inherit = org.bytedeco.leptonica.presets.lept.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.leptonica.presets.lept.class)
 public abstract class AbstractFPIX extends Pointer implements Indexable {
     protected static class DestroyDeallocator extends FPIX implements Pointer.Deallocator {
         DestroyDeallocator(FPIX p) { super(p); }

@@ -1,6 +1,6 @@
-module org.bytedeco.numpy {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.numpy.global;
-  exports org.bytedeco.numpy.presets;
-  exports org.bytedeco.numpy;
+module com.oracle.svm.shadowed.org.bytedeco.numpy {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.numpy.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.numpy.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.numpy;
 }

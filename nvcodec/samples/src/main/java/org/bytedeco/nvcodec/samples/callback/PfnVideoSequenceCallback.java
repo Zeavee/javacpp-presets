@@ -1,9 +1,9 @@
-package org.bytedeco.nvcodec.samples.callback;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.callback;
 
-import org.bytedeco.nvcodec.samples.decoder.NvDecoder;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.nvcodec.nvcuvid.CUVIDEOFORMAT;
-import org.bytedeco.nvcodec.nvcuvid.PFNVIDSEQUENCECALLBACK;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.decoder.NvDecoder;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid.CUVIDEOFORMAT;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid.PFNVIDSEQUENCECALLBACK;
 
 public class PfnVideoSequenceCallback extends PFNVIDSEQUENCECALLBACK {
     private NvDecoder decoder;

@@ -20,30 +20,30 @@
  * limitations under the License.
  */
 
-package org.bytedeco.chilitags.presets;
+package com.oracle.svm.shadowed.org.bytedeco.chilitags.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.opencv.presets.opencv_calib3d;
-import org.bytedeco.opencv.presets.opencv_video;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_calib3d;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_video;
 
 /**
  * @author Samuel Audet
  */
 @Properties(value = @Platform(define = "CHILITAGS_STATIC_DEFINE", include = "chilitags/chilitags.hpp",
                               link = "chilitags_static"/*, resource = {"include", "lib"}*/, compiler = "cpp11"),
-    inherit = {opencv_calib3d.class, opencv_video.class}, target = "org.bytedeco.chilitags",
-                                                          global = "org.bytedeco.chilitags.global.chilitags")
+    inherit = {opencv_calib3d.class, opencv_video.class}, target = "com.oracle.svm.shadowed.org.bytedeco.chilitags",
+                                                          global = "com.oracle.svm.shadowed.org.bytedeco.chilitags.global.chilitags")
 public class chilitags implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "chilitags"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "chilitags"); }
 
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info().javaText("import org.bytedeco.javacpp.annotation.Index;"))
+        infoMap.put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Index;"))
 
                .put(new Info("chilitags::Quad").annotations("@ByRef @Cast(\"chilitags::Quad*\")").pointerTypes("FloatPointer"))
                .put(new Info("std::map<int,chilitags::Quad>").pointerTypes("TagCornerMap").define())

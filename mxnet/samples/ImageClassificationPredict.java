@@ -42,17 +42,17 @@ import java.util.List;
 import java.util.ListIterator;
 
 import org.apache.mxnet.javaapi.*;
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
 // Path for c_predict_api
-import org.bytedeco.mxnet.*;
-import static org.bytedeco.mxnet.global.mxnet.*;
+import com.oracle.svm.shadowed.org.bytedeco.mxnet.*;
+import static com.oracle.svm.shadowed.org.bytedeco.mxnet.global.mxnet.*;
 
-import org.bytedeco.opencv.opencv_core.*;
-import org.bytedeco.opencv.opencv_imgproc.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
-import static org.bytedeco.opencv.global.opencv_imgproc.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc.*;
 
 public class ImageClassificationPredict {
 
@@ -225,7 +225,7 @@ public class ImageClassificationPredict {
 
     public static void main(String[] args) throws Exception {
         // Preload required by JavaCPP
-        Loader.load(org.bytedeco.mxnet.global.mxnet.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.mxnet.global.mxnet.class);
 
         if (args.length < 1) {
             System.out.println("No test image here.");

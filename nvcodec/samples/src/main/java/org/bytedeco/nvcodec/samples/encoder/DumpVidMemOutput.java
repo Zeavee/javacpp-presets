@@ -1,17 +1,17 @@
-package org.bytedeco.nvcodec.samples.encoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder;
 
-import org.bytedeco.nvcodec.samples.exceptions.CudaException;
-import org.bytedeco.nvcodec.samples.util.CudaUtil;
-import org.bytedeco.nvcodec.samples.dispose.Disposable;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.LongPointer;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.nvcodec.nvencodeapi.NV_ENC_ENCODE_OUT_PARAMS;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.CudaException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.dispose.Disposable;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LongPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.NV_ENC_ENCODE_OUT_PARAMS;
 
 import java.io.*;
 
-import static org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
 
 public class DumpVidMemOutput implements Disposable {
     private int bfrSize;

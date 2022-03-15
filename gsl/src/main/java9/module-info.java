@@ -1,7 +1,7 @@
-module org.bytedeco.gsl {
-  requires transitive org.bytedeco.javacpp;
-  requires transitive org.bytedeco.openblas;
-  exports org.bytedeco.gsl.global;
-  exports org.bytedeco.gsl.presets;
-  exports org.bytedeco.gsl;
+module com.oracle.svm.shadowed.org.bytedeco.gsl {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.openblas;
+  exports com.oracle.svm.shadowed.org.bytedeco.gsl.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.gsl.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.gsl;
 }

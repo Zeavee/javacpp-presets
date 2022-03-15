@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tritonserver.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tritonserver.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -52,11 +52,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             preloadpath = "C:/Program Files/NVIDIA GPU Computing Toolkit/TritonServer/bin/"
         )
     },
-    target = "org.bytedeco.tritonserver.tritonserver",
-    global = "org.bytedeco.tritonserver.global.tritonserver"
+    target = "com.oracle.svm.shadowed.org.bytedeco.tritonserver.tritonserver",
+    global = "com.oracle.svm.shadowed.org.bytedeco.tritonserver.global.tritonserver"
 )
 public class tritonserver implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "tritonserver"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tritonserver"); }
     public void map(InfoMap infoMap) {
         infoMap.putFirst(new Info().enumerate(false))
                .put(new Info("bool").cast().valueTypes("boolean").pointerTypes("boolean[]", "BoolPointer"))

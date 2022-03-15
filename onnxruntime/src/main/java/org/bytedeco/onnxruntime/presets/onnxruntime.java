@@ -19,19 +19,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.onnxruntime.presets;
+package com.oracle.svm.shadowed.org.bytedeco.onnxruntime.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.dnnl.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.dnnl.presets.*;
 
 /**
  *
@@ -73,11 +73,11 @@ import org.bytedeco.dnnl.presets.*;
             link = {"onnxruntime_providers_shared", "onnxruntime@.1.10.0", "onnxruntime_providers_dnnl", "onnxruntime_providers_cuda"}
         ),
     },
-    target = "org.bytedeco.onnxruntime",
-    global = "org.bytedeco.onnxruntime.global.onnxruntime"
+    target = "com.oracle.svm.shadowed.org.bytedeco.onnxruntime",
+    global = "com.oracle.svm.shadowed.org.bytedeco.onnxruntime.global.onnxruntime"
 )
 public class onnxruntime implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "onnxruntime"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "onnxruntime"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -109,7 +109,7 @@ public class onnxruntime implements LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
         }
     }
 

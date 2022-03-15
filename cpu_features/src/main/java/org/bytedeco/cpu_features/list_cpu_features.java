@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpu_features;
+package com.oracle.svm.shadowed.org.bytedeco.cpu_features;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
 /**
  * With this class, we can extract easily the {@code list_cpu_features} program ready for execution.
  * For example, we can print the CPU features from Java in a portable fashion this way:
  * <pre>{@code
- *     String list_cpu_features = Loader.load(org.bytedeco.cpu_features.list_cpu_features.class);
+ *     String list_cpu_features = Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpu_features.list_cpu_features.class);
  *     ProcessBuilder pb = new ProcessBuilder(list_cpu_features);
  *     pb.inheritIO().start().waitFor();
  * }</pre>
@@ -38,7 +38,7 @@ import org.bytedeco.javacpp.annotation.Properties;
  * @author Samuel Audet
  */
 @Properties(
-    inherit = org.bytedeco.cpu_features.presets.cpu_features.class,
+    inherit = com.oracle.svm.shadowed.org.bytedeco.cpu_features.presets.cpu_features.class,
     value = @Platform(executable = "list_cpu_features")
 )
 public class list_cpu_features {

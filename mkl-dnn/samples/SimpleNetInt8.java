@@ -14,10 +14,10 @@
 * limitations under the License.
 *******************************************************************************/
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.mkldnn.*;
-import static org.bytedeco.mkldnn.global.mkldnn.*;
+import com.oracle.svm.shadowed.org.bytedeco.mkldnn.*;
+import static com.oracle.svm.shadowed.org.bytedeco.mkldnn.global.mkldnn.*;
 
 public class SimpleNetInt8 {
 

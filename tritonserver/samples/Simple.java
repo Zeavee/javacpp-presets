@@ -28,11 +28,11 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
 import com.google.gson.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cuda.cudart.*;
-import org.bytedeco.tritonserver.tritonserver.*;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.tritonserver.global.tritonserver.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.*;
+import com.oracle.svm.shadowed.org.bytedeco.tritonserver.tritonserver.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tritonserver.global.tritonserver.*;
 
 public class Simple {
     static final double TRITON_MIN_COMPUTE_CAPABILITY = 6.0;

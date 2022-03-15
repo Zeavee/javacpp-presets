@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.hyperscan.presets;
+package com.oracle.svm.shadowed.org.bytedeco.hyperscan.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = javacpp.class,
@@ -40,11 +40,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = {"hs@.5", "hs_runtime@.5"}
         )
     },
-    target = "org.bytedeco.hyperscan",
-    global = "org.bytedeco.hyperscan.global.hyperscan"
+    target = "com.oracle.svm.shadowed.org.bytedeco.hyperscan",
+    global = "com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan"
 )
 public class hyperscan implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "hyperscan"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "hyperscan"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("HS_CDECL").cppTypes().annotations());

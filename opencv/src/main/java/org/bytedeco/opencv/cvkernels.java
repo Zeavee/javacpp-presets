@@ -20,29 +20,29 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv;
+package com.oracle.svm.shadowed.org.bytedeco.opencv;
 
 import java.nio.DoubleBuffer;
 import java.util.Arrays;
-import org.bytedeco.javacpp.annotation.ByRef;
-import org.bytedeco.javacpp.annotation.MemberSetter;
-import org.bytedeco.javacpp.annotation.Name;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByRef;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.MemberSetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Name;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.opencv.opencv_core.CvMat;
-import org.bytedeco.opencv.opencv_core.CvRect;
-import org.bytedeco.opencv.opencv_core.CvScalar;
-import org.bytedeco.opencv.opencv_core.IplImage;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.CvMat;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.CvRect;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.CvScalar;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.IplImage;
 
-import static org.bytedeco.javacpp.Loader.*;
+import static com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader.*;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit=org.bytedeco.opencv.presets.opencv_core.class, value={
+@Properties(inherit=com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class, value={
     @Platform(define={"MAX_SIZE 16", "CV_INLINE static inline"}, include="cvkernels.h", compiler="fastfpu") })
 public class cvkernels {
     static { load(); }

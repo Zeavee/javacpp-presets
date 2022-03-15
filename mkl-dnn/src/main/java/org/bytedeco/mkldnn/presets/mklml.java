@@ -20,19 +20,19 @@
  * limitations under the License.
  */
 
-package org.bytedeco.mkldnn.presets;
+package com.oracle.svm.shadowed.org.bytedeco.mkldnn.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -62,10 +62,10 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             preload = {"libwinpthread-1", "libgcc_s_seh-1", "libgomp-1", "libstdc++-6", "msvcr120", "libiomp5md"},
             preloadpath = {"C:/Program Files (x86)/Intel/oneAPI/mkl/latest/redist/intel64/",
                            "C:/Program Files (x86)/Intel/oneAPI/compiler/latest/windows/redist/intel64_win/compiler/"})},
-    global = "org.bytedeco.mkldnn.global.mklml")
+    global = "com.oracle.svm.shadowed.org.bytedeco.mkldnn.global.mklml")
 @NoException
 public class mklml implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "mkl-dnn"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "mkl-dnn"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -78,7 +78,7 @@ public class mklml implements LoadEnabled, InfoMapper {
         }
 
         // Let users enable loading of the full version of MKL
-        String lib = System.getProperty("org.bytedeco.mklml.load", "").toLowerCase();
+        String lib = System.getProperty("com.oracle.svm.shadowed.org.bytedeco.mklml.load", "").toLowerCase();
 
         int i = 0;
         if (lib.equals("mkl") || lib.equals("mkl_rt")) {
@@ -88,7 +88,7 @@ public class mklml implements LoadEnabled, InfoMapper {
                 preloads.add(i, libs[i] + "#" + libs[i]);
             }
             lib = "mkl_rt@.2";
-            resources.add("/org/bytedeco/mkl/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/mkl/");
         }
 
         if (lib.length() > 0) {

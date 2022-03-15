@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = opencv_photo.class,
@@ -46,8 +46,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "ios", preload = "libopencv_xphoto"),
         @Platform(value = "windows", link = "opencv_xphoto455")
     },
-    target = "org.bytedeco.opencv.opencv_xphoto",
-    global = "org.bytedeco.opencv.global.opencv_xphoto"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_xphoto",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_xphoto"
 )
 public class opencv_xphoto implements InfoMapper {
     @Override public void map(InfoMap infoMap) {

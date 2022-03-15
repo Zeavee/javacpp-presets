@@ -1,6 +1,6 @@
-module org.bytedeco.opencl {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.opencl.global;
-  exports org.bytedeco.opencl.presets;
-  exports org.bytedeco.opencl;
+module com.oracle.svm.shadowed.org.bytedeco.opencl {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.opencl.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.opencl.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.opencl;
 }

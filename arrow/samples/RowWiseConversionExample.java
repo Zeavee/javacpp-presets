@@ -16,9 +16,9 @@
 // under the License.
 
 import java.util.Arrays;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.arrow.*;
-import static org.bytedeco.arrow.global.arrow.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.arrow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.arrow.global.arrow.*;
 
 public class RowWiseConversionExample {
     // While we want to use columnar data structures to build efficient operations, we

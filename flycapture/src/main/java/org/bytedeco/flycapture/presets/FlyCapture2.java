@@ -27,15 +27,15 @@
  *
  */
 
-package org.bytedeco.flycapture.presets;
+package com.oracle.svm.shadowed.org.bytedeco.flycapture.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * Wrapper for Point Grey FlyCapture2 library (the C++ API v.2).
@@ -43,8 +43,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  * @author Jarek Sacha
  */
 @Properties(inherit = javacpp.class,
-            target = "org.bytedeco.flycapture.FlyCapture2",
-            global = "org.bytedeco.flycapture.global.FlyCapture2", value = {
+            target = "com.oracle.svm.shadowed.org.bytedeco.flycapture.FlyCapture2",
+            global = "com.oracle.svm.shadowed.org.bytedeco.flycapture.global.FlyCapture2", value = {
         @Platform(value = {"linux-x86", "linux-arm", "windows"},
                 include = {"<FlyCapture2Platform.h>", "<FlyCapture2Defs.h>",
                 "<Error.h>", "<BusManager.h>", "<CameraBase.h>", "<Camera.h>", "<GigECamera.h>", "<Image.h>",
@@ -72,7 +72,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                 linkpath    = "C:/Program Files/Point Grey Research/FlyCapture2/lib64/vs2015/",
                 preloadpath = "C:/Program Files/Point Grey Research/FlyCapture2/bin64/vs2015/") })
 public class FlyCapture2 implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "flycapture"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "flycapture"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("FLYCAPTURE2_API", "FLYCAPTURE2_LOCAL",

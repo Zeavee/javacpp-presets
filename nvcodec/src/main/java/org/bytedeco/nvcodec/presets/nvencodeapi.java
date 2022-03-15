@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.nvcodec.presets;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
-import org.bytedeco.nvcodec.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.presets.*;
 
 /**
  *
@@ -47,8 +47,8 @@ import org.bytedeco.nvcodec.presets.*;
             link = "nvencodeapi"
         )
     },
-    target = "org.bytedeco.nvcodec.nvencodeapi",
-    global = "org.bytedeco.nvcodec.global.nvencodeapi"
+    target = "com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi",
+    global = "com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi"
 )
 
 public class nvencodeapi implements InfoMapper {

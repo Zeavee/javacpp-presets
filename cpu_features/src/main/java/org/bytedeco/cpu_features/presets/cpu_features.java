@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpu_features.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cpu_features.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -53,12 +53,12 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             resource = {"include", "lib"}
         ),
     },
-    target = "org.bytedeco.cpu_features",
-    global = "org.bytedeco.cpu_features.global.cpu_features"
+    target = "com.oracle.svm.shadowed.org.bytedeco.cpu_features",
+    global = "com.oracle.svm.shadowed.org.bytedeco.cpu_features.global.cpu_features"
 )
 @NoException
 public class cpu_features implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "cpu_features"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "cpu_features"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("defined(__cplusplus)").define())

@@ -1,7 +1,7 @@
 JavaCPP Presets for Hyperscan
 =============================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/hyperscan/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/hyperscan) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/hyperscan.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/hyperscan/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/hyperscan) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/hyperscan.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![hyperscan](https://github.com/bytedeco/javacpp-presets/workflows/hyperscan/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Ahyperscan)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -39,7 +39,7 @@ Be aware that flag `-Djavacpp.platform` can be used to specify the target platfo
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.hyperscan</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.hyperscan</groupId>
     <artifactId>HyperscanTest</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -49,7 +49,7 @@ Be aware that flag `-Djavacpp.platform` can be used to specify the target platfo
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>hyperscan-platform</artifactId>
             <version>5.4.0-1.5.7</version>
         </dependency>
@@ -62,20 +62,20 @@ Be aware that flag `-Djavacpp.platform` can be used to specify the target platfo
 
 ### The `HyperscanTest.java` source file
 ```java
-import org.bytedeco.hyperscan.global.hyperscan;
-import org.bytedeco.hyperscan.hs_compile_error_t;
-import org.bytedeco.hyperscan.hs_database_t;
-import org.bytedeco.hyperscan.hs_scratch_t;
-import org.bytedeco.hyperscan.match_event_handler;
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.PointerPointer;
-import org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.hs_compile_error_t;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.hs_database_t;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.hs_scratch_t;
+import com.oracle.svm.shadowed.org.bytedeco.hyperscan.match_event_handler;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
 
-import static org.bytedeco.hyperscan.global.hyperscan.HS_FLAG_SINGLEMATCH;
-import static org.bytedeco.hyperscan.global.hyperscan.HS_MODE_BLOCK;
+import static com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan.HS_FLAG_SINGLEMATCH;
+import static com.oracle.svm.shadowed.org.bytedeco.hyperscan.global.hyperscan.HS_MODE_BLOCK;
 
 public class HyperscanTest {
 

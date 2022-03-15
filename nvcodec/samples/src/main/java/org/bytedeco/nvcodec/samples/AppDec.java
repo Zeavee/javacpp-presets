@@ -1,16 +1,16 @@
-package org.bytedeco.nvcodec.samples;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples;
 
-import org.bytedeco.nvcodec.samples.decoder.NvDecoder;
-import org.bytedeco.nvcodec.samples.encoder.YuvConverter;
-import org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
-import org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
-import org.bytedeco.nvcodec.samples.util.AppDecUtils;
-import org.bytedeco.nvcodec.samples.util.Dimension;
-import org.bytedeco.nvcodec.samples.util.Rectangle;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.nvcodec.global.nvcuvid.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.decoder.NvDecoder;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder.YuvConverter;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.InvalidArgument;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.AppDecUtils;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.Dimension;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.Rectangle;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
 
 import org.jcodec.common.DemuxerTrack;
 import org.jcodec.common.io.NIOUtils;
@@ -19,13 +19,13 @@ import org.jcodec.containers.mp4.demuxer.MP4Demuxer;
 
 import java.io.*;
 
-import static org.bytedeco.nvcodec.global.nvcuvid.*;
-import static org.bytedeco.nvcodec.global.nvencodeapi.*;
-import static org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvencodeapi.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
 
-import static org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
-import static org.bytedeco.nvcodec.samples.util.NvCodecUtil.checkInputFile;
-import static org.bytedeco.nvcodec.samples.util.NvCodecUtil.convertToNvCodec;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.NvCodecUtil.checkInputFile;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.NvCodecUtil.convertToNvCodec;
 import static java.lang.System.exit;
 
 public class AppDec {

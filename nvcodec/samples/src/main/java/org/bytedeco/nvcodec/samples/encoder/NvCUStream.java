@@ -1,14 +1,14 @@
-package org.bytedeco.nvcodec.samples.encoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.encoder;
 
-import org.bytedeco.nvcodec.samples.dispose.Disposable;
-import org.bytedeco.nvcodec.samples.exceptions.CudaException;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.cuda.cudart.CUstream_st;
-import org.bytedeco.javacpp.PointerPointer;
-import org.bytedeco.nvcodec.nvencodeapi.NV_ENC_CUSTREAM_PTR;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.dispose.Disposable;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.CudaException;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUstream_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.NV_ENC_CUSTREAM_PTR;
 
-import static org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
-import static org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
 
 public class NvCUStream implements Disposable {
     private CUctx_st device;

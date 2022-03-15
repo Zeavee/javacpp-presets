@@ -1,7 +1,7 @@
 JavaCPP Presets for OpenPose
 ============================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/openpose/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/openpose) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/openpose.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/openpose/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/openpose) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/openpose.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![openpose](https://github.com/bytedeco/javacpp-presets/workflows/openpose/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Aopenpose)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -33,7 +33,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.openpose</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.openpose</groupId>
     <artifactId>openpose</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -41,7 +41,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>openpose-platform</artifactId>
             <version>1.7.0-1.5.7</version>
         </dependency>
@@ -55,27 +55,27 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ### The `openpose.java` source file
 ```java
 import java.lang.System;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.openpose.*;
-import org.bytedeco.opencv.opencv_core.Mat;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.imread;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.imwrite;
-import static org.bytedeco.openpose.global.openpose.ThreadManagerMode;
-import static org.bytedeco.openpose.global.openpose.OP_CV2OPCONSTMAT;
-import static org.bytedeco.openpose.global.openpose.OP_OP2CVCONSTMAT;
-import static org.bytedeco.openpose.global.openpose.PoseMode;
-import static org.bytedeco.openpose.global.openpose.ScaleMode;
-import static org.bytedeco.openpose.global.openpose.RenderMode;
-import static org.bytedeco.openpose.global.openpose.PoseModel;
-import static org.bytedeco.openpose.global.openpose.HeatMapType;
-import static org.bytedeco.openpose.global.openpose.POSE_DEFAULT_ALPHA_KEYPOINT;
-import static org.bytedeco.openpose.global.openpose.POSE_DEFAULT_ALPHA_HEAT_MAP;
-import org.bytedeco.openpose.OpWrapper;
-import org.bytedeco.openpose.OpString;
-import org.bytedeco.openpose.WrapperStructFace;
-import org.bytedeco.openpose.WrapperStructHand;
-import org.bytedeco.openpose.WrapperStructPose;
-import org.bytedeco.openpose.Matrix;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.Mat;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.imread;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.imwrite;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.ThreadManagerMode;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.OP_CV2OPCONSTMAT;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.OP_OP2CVCONSTMAT;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.PoseMode;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.ScaleMode;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.RenderMode;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.PoseModel;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.HeatMapType;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.POSE_DEFAULT_ALPHA_KEYPOINT;
+import static com.oracle.svm.shadowed.org.bytedeco.openpose.global.openpose.POSE_DEFAULT_ALPHA_HEAT_MAP;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.OpWrapper;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.OpString;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.WrapperStructFace;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.WrapperStructHand;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.WrapperStructPose;
+import com.oracle.svm.shadowed.org.bytedeco.openpose.Matrix;
 
 
 public class openpose {

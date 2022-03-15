@@ -1,15 +1,15 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpython.*;
-import org.bytedeco.numpy.*;
-import static org.bytedeco.cpython.global.python.*;
-import static org.bytedeco.numpy.global.numpy.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import com.oracle.svm.shadowed.org.bytedeco.numpy.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
+import static com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.*;
 
 public class SparseLinalg {
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
-        Py_Initialize(org.bytedeco.scipy.presets.scipy.cachePackages());
+        Py_Initialize(com.oracle.svm.shadowed.org.bytedeco.scipy.presets.scipy.cachePackages());
         if (_import_array() < 0) {
             System.err.println("numpy.core.multiarray failed to import");
             PyErr_Print();

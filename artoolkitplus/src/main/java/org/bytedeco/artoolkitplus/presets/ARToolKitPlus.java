@@ -24,21 +24,21 @@
  * If your program uses this class, it will become bound to that license.
  */
 
-package org.bytedeco.artoolkitplus.presets;
+package com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit=javacpp.class, target="org.bytedeco.artoolkitplus", global="org.bytedeco.artoolkitplus.global.ARToolKitPlus", value={
+@Properties(inherit=javacpp.class, target="com.oracle.svm.shadowed.org.bytedeco.artoolkitplus", global="com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.global.ARToolKitPlus", value={
     @Platform(include={"ARToolKitPlus_plus.h", "<ARToolKitPlus/ARToolKitPlus.h>", "<ARToolKitPlus/config.h>", "<ARToolKitPlus/ar.h>",
         "<ARToolKitPlus/arMulti.h>", "<ARToolKitPlus/matrix.h>", "<ARToolKitPlus/vector.h>", "<ARToolKitPlus/Camera.h>",
         "<ARToolKitPlus/extra/BCH.h>", "<ARToolKitPlus/extra/Hull.h>", "<ARToolKitPlus/extra/rpp.h>",
@@ -49,7 +49,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value="windows-x86_64", includepath="C:/Program Files/ARToolKitPlus/include/",
         linkpath="C:/Program Files/ARToolKitPlus/lib/") })
 public class ARToolKitPlus implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "artoolkitplus"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "artoolkitplus"); }
 
     public void map(InfoMap infoMap) {
           infoMap.put(new Info("AR_EXPORT").cppTypes().annotations())

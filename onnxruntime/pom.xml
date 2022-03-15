@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>onnxruntime</artifactId>
   <version>1.10.0-${project.parent.version}</version>
   <name>JavaCPP Presets for ONNX Runtime</name>
@@ -20,12 +20,12 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>dnnl</artifactId>
       <version>2.5.3-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -43,11 +43,11 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>dnnl-platform</artifactId>
             <version>2.5.3-${project.parent.version}</version>
           </dependency>
@@ -59,16 +59,16 @@
             <classPath>${project.build.outputDirectory}</classPath>
           </classPaths>
           <includePaths>
-            <includePath>${basedir}/../opencl/target/classes/org/bytedeco/opencl/include/</includePath>
-            <includePath>${basedir}/../opencl/src/main/resources/org/bytedeco/opencl/include/</includePath>
+            <includePath>${basedir}/../opencl/target/classes/com/oracle/svm/shadowed/org/bytedeco/opencl/include/</includePath>
+            <includePath>${basedir}/../opencl/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/opencl/include/</includePath>
             <includePath>${basedir}/../opencl/cppbuild/${javacpp.platform}/include/</includePath>
-            <includePath>${basedir}/../dnnl/target/classes/org/bytedeco/dnnl/include/</includePath>
-            <includePath>${basedir}/../dnnl/src/main/resources/org/bytedeco/dnnl/include/</includePath>
+            <includePath>${basedir}/../dnnl/target/classes/com/oracle/svm/shadowed/org/bytedeco/dnnl/include/</includePath>
+            <includePath>${basedir}/../dnnl/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/dnnl/include/</includePath>
             <includePath>${basedir}/../dnnl/cppbuild/${javacpp.platform}/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/onnxruntime/core/session/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/onnxruntime/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
           <linkPaths>
             <linkPath>${basedir}/../opencl/cppbuild/${javacpp.platform}/lib/</linkPath>
@@ -82,23 +82,23 @@
           </preloadPaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/opencl/${javacpp.platform}/</buildResource>
-            <buildResource>/org/bytedeco/dnnl/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/opencl/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/dnnl/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/opencl/include/</includeResource>
-            <includeResource>/org/bytedeco/opencl/${javacpp.platform}/include/</includeResource>
-            <includeResource>/org/bytedeco/dnnl/include/</includeResource>
-            <includeResource>/org/bytedeco/dnnl/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/opencl/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/opencl/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/dnnl/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/dnnl/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/opencl/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/opencl/${javacpp.platform}/lib/</linkResource>
-            <linkResource>/org/bytedeco/dnnl/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/dnnl/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/opencl/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/opencl/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/dnnl/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/dnnl/${javacpp.platform}/lib/</linkResource>
           </linkResources>
           <compilerOptions>
             <compilerOption>${onnxruntime.path}/java/src/main/native/ai_onnxruntime_OnnxMap.cpp</compilerOption>
@@ -121,7 +121,7 @@
             <configuration>
               <includes>
                 <include>ai/onnxruntime/**</include>
-                <include>org/bytedeco/onnxruntime/**</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/onnxruntime/**</include>
               </includes>
             </configuration>
           </execution>
@@ -130,10 +130,10 @@
             <phase>package</phase>
             <configuration>
               <excludes>
-                <exclude>org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*.exp</exclude>
-                <exclude>org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*.lib</exclude>
-                <exclude>org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*.obj</exclude>
-                <exclude>org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*omp*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/onnxruntime/${javacpp.platform}${javacpp.platform.extension}/*omp*</exclude>
               </excludes>
             </configuration>
           </execution>

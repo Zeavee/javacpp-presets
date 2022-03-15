@@ -20,19 +20,19 @@
  * limitations under the License.
  */
 
-package org.bytedeco.libpostal;
+package com.oracle.svm.shadowed.org.bytedeco.libpostal;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import org.bytedeco.libpostal.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.libpostal.presets.*;
 
 /**
  * With this class, we can extract easily the {@code libpostal_data} program ready for execution.
  * For example, we can check for and download any new data files all from Java in a portable fashion this way:
  * <pre>{@code
- *     String libpostal_data = Loader.load(org.bytedeco.libpostal.libpostal_data.class);
+ *     String libpostal_data = Loader.load(com.oracle.svm.shadowed.org.bytedeco.libpostal.libpostal_data.class);
  *     ProcessBuilder pb = new ProcessBuilder("bash", libpostal_data, "download", "all", "/path/to/libpostal/data/");
  *     pb.inheritIO().start().waitFor();
  * }</pre>

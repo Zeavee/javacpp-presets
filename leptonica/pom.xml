@@ -4,19 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>leptonica</artifactId>
   <version>1.82.0-${project.parent.version}</version>
   <name>JavaCPP Presets for Leptonica</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -30,7 +30,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
       </plugin>
       <plugin>
@@ -41,16 +41,16 @@
             <phase>package</phase>
             <configuration>
               <excludes>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/bin/*</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/libg*.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/libj*.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/liblept.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/libp*.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/libt*.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/libw*.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/libz*.a</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/*.dylib</exclude>
-                <exclude>org/bytedeco/leptonica/${javacpp.platform}/lib/*.so*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/bin/*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/libg*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/libj*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/liblept.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/libp*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/libt*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/libw*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/libz*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/*.dylib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/leptonica/${javacpp.platform}/lib/*.so*</exclude>
                 <exclude>${javacpp.platform.library.path}/lib/*.a</exclude>
                 <exclude>${javacpp.platform.library.path}/lib/*.dylib</exclude>
                 <exclude>${javacpp.platform.library.path}/lib/*.so*</exclude>
@@ -84,7 +84,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}-mingw</properties>

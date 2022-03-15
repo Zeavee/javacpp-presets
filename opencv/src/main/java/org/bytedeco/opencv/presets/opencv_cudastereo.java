@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = opencv_calib3d.class,
@@ -42,14 +42,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             extension = "-gpu"
         )
     },
-    target = "org.bytedeco.opencv.opencv_cudastereo",
-    global = "org.bytedeco.opencv.global.opencv_cudastereo"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_cudastereo",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_cudastereo"
 )
 public class opencv_cudastereo implements InfoMapper {
 
     @Override
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info("cv::StereoBM").pointerTypes("org.bytedeco.opencv.opencv_calib3d.StereoBM"))
-               .put(new Info("cv::cuda::StereoBM").pointerTypes("org.bytedeco.opencv.opencv_cudastereo.StereoBM"));
+        infoMap.put(new Info("cv::StereoBM").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_calib3d.StereoBM"))
+               .put(new Info("cv::cuda::StereoBM").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_cudastereo.StereoBM"));
     }
 }

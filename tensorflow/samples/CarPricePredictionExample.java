@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.tensorflow.*;
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
 /**
  *

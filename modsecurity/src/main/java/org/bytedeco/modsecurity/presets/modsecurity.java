@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.modsecurity.presets;
+package com.oracle.svm.shadowed.org.bytedeco.modsecurity.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * @author Artem Martynenko artem7mag@gmail.com
@@ -52,11 +52,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                 linkpath = {"lib","include"},
                 includepath = {"lib","include"},
                 link = "modsecurity@.3"),
-        target = "org.bytedeco.modsecurity",
-        global = "org.bytedeco.modsecurity.global.modsecurity")
+        target = "com.oracle.svm.shadowed.org.bytedeco.modsecurity",
+        global = "com.oracle.svm.shadowed.org.bytedeco.modsecurity.global.modsecurity")
 public class modsecurity implements InfoMapper {
     static {
-        Loader.checkVersion("org.bytedeco", "modsecurity");
+        Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "modsecurity");
     }
 
     @Override

@@ -20,18 +20,18 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorflowlite.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tensorflowlite.presets;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -81,10 +81,10 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 //            link = "tensorflowlite_c"
         ),
     },
-    target = "org.bytedeco.tensorflowlite",
-    global = "org.bytedeco.tensorflowlite.global.tensorflowlite")
+    target = "com.oracle.svm.shadowed.org.bytedeco.tensorflowlite",
+    global = "com.oracle.svm.shadowed.org.bytedeco.tensorflowlite.global.tensorflowlite")
 public class tensorflowlite implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "tensorflow-lite"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tensorflow-lite"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("TFLITE_ATTRIBUTE_WEAK").cppTypes().annotations())

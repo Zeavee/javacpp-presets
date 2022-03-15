@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>tensorflow-lite</artifactId>
   <version>${tensorflow.version}-${project.parent.version}</version>
   <name>JavaCPP Presets for TensorFlow Lite</name>
@@ -22,7 +22,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -36,7 +36,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <configuration>
           <properties>${javacpp.platform}</properties>
@@ -46,7 +46,7 @@
             <includePath>${tensorflow.path}/tensorflow/lite/c/</includePath>
             <includePath>${tensorflow.path}/../build/flatbuffers/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
           <linkPaths>
             <linkPath>${tensorflow.path}/../build/</linkPath>
@@ -90,7 +90,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}</properties>

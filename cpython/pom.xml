@@ -4,19 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.8-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>cpython</artifactId>
   <version>3.10.2-${project.parent.version}</version>
   <name>JavaCPP Presets for CPython</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -30,7 +30,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <configuration>
           <includePaths>
@@ -51,15 +51,15 @@
             <phase>package</phase>
             <configuration>
               <excludes>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/*.exp</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/*.lib</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/*.obj</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/**/*.a</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/lib/libpython*</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/lib/python*.dll</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/bin/python*.dll</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/bin/openssl*</exclude>
-                <exclude>org/bytedeco/cpython/${javacpp.platform}/include/openssl/**</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/**/*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/lib/libpython*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/lib/python*.dll</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/bin/python*.dll</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/bin/openssl*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/cpython/${javacpp.platform}/include/openssl/**</exclude>
               </excludes>
             </configuration>
           </execution>

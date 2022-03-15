@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.qt.presets;
+package com.oracle.svm.shadowed.org.bytedeco.qt.presets;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
 
 @Properties(
     inherit = Qt5Gui.class,
-    target = "org.bytedeco.qt.Qt5Widgets",
-    global = "org.bytedeco.qt.global.Qt5Widgets",
-    helper = "org.bytedeco.qt.helper.Qt5Widgets",
+    target = "com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Widgets",
+    global = "com.oracle.svm.shadowed.org.bytedeco.qt.global.Qt5Widgets",
+    helper = "com.oracle.svm.shadowed.org.bytedeco.qt.helper.Qt5Widgets",
     value = {
         @Platform(
             include = {

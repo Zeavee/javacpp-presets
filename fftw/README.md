@@ -1,7 +1,7 @@
 JavaCPP Presets for FFTW
 ========================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/fftw/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/fftw) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/fftw.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/fftw/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/fftw) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/fftw.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![fftw](https://github.com/bytedeco/javacpp-presets/workflows/fftw/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Afftw)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -36,7 +36,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.fftw</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.fftw</groupId>
     <artifactId>example</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -44,7 +44,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>fftw-platform</artifactId>
             <version>3.3.10-1.5.7</version>
         </dependency>
@@ -59,9 +59,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```java
 /* Start reading here */
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 import static java.lang.Math.*;
-import static org.bytedeco.fftw.global.fftw3.*;
+import static com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3.*;
 
 public class Example {
 
@@ -104,7 +104,7 @@ public class Example {
     /* Resume reading here */
 
     public static void main(String args[]) {
-        Loader.load(org.bytedeco.fftw.global.fftw3.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3.class);
 
         DoublePointer signal = new DoublePointer(2 * NUM_POINTS);
         DoublePointer result = new DoublePointer(2 * NUM_POINTS);

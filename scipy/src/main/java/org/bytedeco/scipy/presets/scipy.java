@@ -20,22 +20,22 @@
  * limitations under the License.
  */
 
-package org.bytedeco.scipy.presets;
+package com.oracle.svm.shadowed.org.bytedeco.scipy.presets;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.cpython.presets.*;
-import org.bytedeco.openblas.presets.*;
-import org.bytedeco.numpy.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.numpy.presets.*;
 
 /**
  *
@@ -51,23 +51,23 @@ import org.bytedeco.numpy.presets.*;
 )
 @NoException
 public class scipy {
-    static { Loader.checkVersion("org.bytedeco", "scipy"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "scipy"); }
 
     private static File packageFile = null;
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/scipy/" + Loader.getPlatform() + "/python/")}. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/scipy/" + Loader.getPlatform() + "/python/")}. */
     public static synchronized File cachePackage() throws IOException {
         if (packageFile != null) {
             return packageFile;
         }
         Loader.load(scipy.class);
-        packageFile = Loader.cacheResource("/org/bytedeco/scipy/" + Loader.getPlatform() + "/python/");
+        packageFile = Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/scipy/" + Loader.getPlatform() + "/python/");
         return packageFile;
     }
 
     /** Returns {@code {numpy.cachePackages(), scipy.cachePackage()}}. */
     public static File[] cachePackages() throws IOException {
-        File[] path = org.bytedeco.numpy.global.numpy.cachePackages();
+        File[] path = com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.cachePackages();
         path = Arrays.copyOf(path, path.length + 1);
         path[path.length - 1] = cachePackage();
         return path;

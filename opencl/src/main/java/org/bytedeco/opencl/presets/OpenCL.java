@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencl.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencl.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -52,11 +52,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             framework = "OpenCL"
         ),
     },
-    target = "org.bytedeco.opencl",
-    global = "org.bytedeco.opencl.global.OpenCL"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencl",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencl.global.OpenCL"
 )
 public class OpenCL implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "opencl"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "opencl"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("CL_API_ENTRY", "CL_API_CALL", "CL_CALLBACK",

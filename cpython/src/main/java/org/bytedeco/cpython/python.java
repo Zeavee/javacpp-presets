@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpython;
+package com.oracle.svm.shadowed.org.bytedeco.cpython;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
 /**
  * With this class, we can extract easily the {@code python} program ready for execution.
  * For example, we can print the module search path from Java in a portable fashion this way:
  * <pre>{@code
- *     String python = Loader.load(org.bytedeco.cpython.python.class);
+ *     String python = Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.python.class);
  *     ProcessBuilder pb = new ProcessBuilder(python, "-m", "site");
  *     pb.inheritIO().start().waitFor();
  * }</pre>
@@ -38,7 +38,7 @@ import org.bytedeco.javacpp.annotation.Properties;
  * @author Samuel Audet
  */
 @Properties(
-    inherit = org.bytedeco.cpython.presets.python.class,
+    inherit = com.oracle.svm.shadowed.org.bytedeco.cpython.presets.python.class,
     value = {
         @Platform(
             executable = "python3.10"
@@ -56,7 +56,7 @@ import org.bytedeco.javacpp.annotation.Properties;
 public class python {
     static {
         try {
-            org.bytedeco.cpython.presets.python.cachePackage();
+            com.oracle.svm.shadowed.org.bytedeco.cpython.presets.python.cachePackage();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

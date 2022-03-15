@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpu_features.*;
-import static org.bytedeco.cpu_features.global.cpu_features.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpu_features.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpu_features.global.cpu_features.*;
 
 public class SimpleExample {
 

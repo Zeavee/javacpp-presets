@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv;
+package com.oracle.svm.shadowed.org.bytedeco.opencv;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
 /**
  * With this class, we can extract easily the {@code opencv_visualisation} program ready for execution:
  * <pre>{@code
- *     String opencv_visualisation = Loader.load(org.bytedeco.opencv.opencv_visualisation.class);
+ *     String opencv_visualisation = Loader.load(com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_visualisation.class);
  *     ProcessBuilder pb = new ProcessBuilder(opencv_visualisation, ...);
  *     pb.inheritIO().start().waitFor();
  * }</pre>
@@ -37,7 +37,7 @@ import org.bytedeco.javacpp.annotation.Properties;
  * @author Samuel Audet
  */
 @Properties(
-    inherit = org.bytedeco.opencv.presets.opencv_core.class,
+    inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class,
     value = @Platform(executable = "opencv_visualisation")
 )
 public class opencv_visualisation {

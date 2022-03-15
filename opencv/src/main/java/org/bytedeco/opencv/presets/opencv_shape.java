@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -40,8 +40,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             "<opencv2/shape/hist_cost.hpp>", "<opencv2/shape/shape_distance.hpp>"}, link = "opencv_shape@.405"),
         @Platform(value = "ios", preload = "libopencv_shape"),
         @Platform(value = "windows", link = "opencv_shape455")},
-    target = "org.bytedeco.opencv.opencv_shape",
-    global = "org.bytedeco.opencv.global.opencv_shape"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_shape",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_shape"
 )
 public class opencv_shape implements InfoMapper {
     public void map(InfoMap infoMap) {

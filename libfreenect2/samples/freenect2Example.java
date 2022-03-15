@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libfreenect2.*;
-import static org.bytedeco.libfreenect2.global.freenect2.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libfreenect2.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global.freenect2.*;
 
 /**
  *
@@ -10,7 +10,7 @@ public class freenect2Example {
     public static void main(String[] args) {
         Freenect2 freenect2Context;
         try {
-            Loader.load(org.bytedeco.libfreenect2.global.freenect2.class);
+            Loader.load(com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global.freenect2.class);
             // Context is shared accross cameras.
             freenect2Context = new Freenect2();
         } catch (Exception e) {

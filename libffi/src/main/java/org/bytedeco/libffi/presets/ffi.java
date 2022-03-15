@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.libffi.presets;
+package com.oracle.svm.shadowed.org.bytedeco.libffi.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.MemberGetter;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.MemberGetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -50,12 +50,12 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = "libffi-8"
         ),
     },
-    target = "org.bytedeco.libffi",
-    global = "org.bytedeco.libffi.global.ffi"
+    target = "com.oracle.svm.shadowed.org.bytedeco.libffi",
+    global = "com.oracle.svm.shadowed.org.bytedeco.libffi.global.ffi"
 )
 @NoException
 public class ffi implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "libffi"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "libffi"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("FFI_EXTRA_CIF_FIELDS", "FFI_NATIVE_RAW_API", "_CET_NOTRACK",

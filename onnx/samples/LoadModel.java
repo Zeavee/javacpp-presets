@@ -1,7 +1,7 @@
 import java.nio.file.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.onnx.*;
-import static org.bytedeco.onnx.global.onnx.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.onnx.*;
+import static com.oracle.svm.shadowed.org.bytedeco.onnx.global.onnx.*;
 
 public class LoadModel {
     public static void main(String[] args) throws Exception {

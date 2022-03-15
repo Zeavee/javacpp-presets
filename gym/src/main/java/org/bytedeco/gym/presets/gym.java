@@ -20,21 +20,21 @@
  * limitations under the License.
  */
 
-package org.bytedeco.gym.presets;
+package com.oracle.svm.shadowed.org.bytedeco.gym.presets;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.opencv.*;
-import org.bytedeco.scipy.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.*;
+import com.oracle.svm.shadowed.org.bytedeco.scipy.presets.*;
 
 /**
  *
@@ -50,24 +50,24 @@ import org.bytedeco.scipy.presets.*;
 )
 @NoException
 public class gym {
-    static { Loader.checkVersion("org.bytedeco", "gym"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "gym"); }
 
     private static File packageFile = null;
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/gym/python/")}. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/gym/python/")}. */
     public static synchronized File cachePackage() throws IOException {
         if (packageFile != null) {
             return packageFile;
         }
-        packageFile = Loader.cacheResource("/org/bytedeco/gym/python/");
+        packageFile = Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/gym/python/");
         return packageFile;
     }
 
     /** Returns {@code {opencv_python3.cachePackages(), scipy.cachePackages(), gym.cachePackage()}}. */
     public static File[] cachePackages() throws IOException {
-        File[] path = org.bytedeco.opencv.opencv_python3.cachePackages();
+        File[] path = com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_python3.cachePackages();
         path = Arrays.copyOf(path, path.length + 2);
-        path[path.length - 2] = org.bytedeco.scipy.presets.scipy.cachePackage();
+        path[path.length - 2] = com.oracle.svm.shadowed.org.bytedeco.scipy.presets.scipy.cachePackage();
         path[path.length - 1] = cachePackage();
         return path;
     }

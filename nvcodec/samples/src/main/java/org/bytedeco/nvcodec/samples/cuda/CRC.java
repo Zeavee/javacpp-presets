@@ -1,16 +1,16 @@
-package org.bytedeco.nvcodec.samples.cuda;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.cuda;
 
-import org.bytedeco.nvcodec.samples.dispose.Disposable;
-import org.bytedeco.nvcodec.samples.exceptions.CudaException;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.cuda.cudart.CUfunc_st;
-import org.bytedeco.cuda.cudart.CUmod_st;
-import org.bytedeco.cuda.cudart.CUstream_st;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.nvcodec.nvencodeapi.NV_ENC_OUTPUT_PTR;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.dispose.Disposable;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.CudaException;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUfunc_st;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUmod_st;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUstream_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi.NV_ENC_OUTPUT_PTR;
 
-import static org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
-import static org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil.checkCudaApiCall;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
 
 public class CRC implements Disposable {
     private CUmod_st module;

@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv;
+package com.oracle.svm.shadowed.org.bytedeco.opencv;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import org.bytedeco.opencv.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.presets.*;
 
 /**
  * This is only a placeholder to facilitate loading the {@code opencv_python3} module with JavaCPP.
@@ -78,16 +78,16 @@ public class opencv_python3 {
 
     private static File packageFile = null;
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/opencv/" + Loader.getPlatform() + extension + "/python/")}. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/opencv/" + Loader.getPlatform() + extension + "/python/")}. */
     public static synchronized File cachePackage() throws IOException {
         if (packageFile != null) {
             return packageFile;
         }
-        Loader.load(org.bytedeco.cpython.global.python.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.class);
         String path = Loader.load(opencv_core.class);
         if (path != null) {
             path = path.replace(File.separatorChar, '/');
-            int i = path.indexOf("/org/bytedeco/opencv/" + Loader.getPlatform());
+            int i = path.indexOf("/com/oracle/svm/shadowed/org/bytedeco/opencv/" + Loader.getPlatform());
             int j = path.lastIndexOf("/");
             packageFile = Loader.cacheResource(path.substring(i, j) + "/python/");
         }
@@ -96,7 +96,7 @@ public class opencv_python3 {
 
     /** Returns {@code {numpy.cachePackages(), opencv.cachePackage()}}. */
     public static File[] cachePackages() throws IOException {
-        File[] path = org.bytedeco.numpy.global.numpy.cachePackages();
+        File[] path = com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.cachePackages();
         path = Arrays.copyOf(path, path.length + 1);
         path[path.length - 1] = cachePackage();
         return path;

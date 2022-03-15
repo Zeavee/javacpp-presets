@@ -1,11 +1,11 @@
-module org.bytedeco.mxnet {
-  requires transitive org.bytedeco.javacpp;
-  requires transitive org.bytedeco.mkldnn;
-  requires transitive org.bytedeco.openblas;
-  requires transitive org.bytedeco.opencv;
-  exports org.bytedeco.mxnet.global;
-  exports org.bytedeco.mxnet.presets;
-  exports org.bytedeco.mxnet;
+module com.oracle.svm.shadowed.org.bytedeco.mxnet {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.mkldnn;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.openblas;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.opencv;
+  exports com.oracle.svm.shadowed.org.bytedeco.mxnet.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.mxnet.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.mxnet;
 
   exports org.apache.mxnet;
   exports org.apache.mxnet.contrib;

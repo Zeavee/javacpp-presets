@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.nvcodec</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.nvcodec</groupId>
     <artifactId>samplenvcodec</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -14,14 +14,14 @@
             <version>0.2.5</version>
         </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>nvcodec-platform</artifactId>
             <version>11.1.5-1.5.7</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>11.6-8.3-1.5.7</version>
         </dependency>

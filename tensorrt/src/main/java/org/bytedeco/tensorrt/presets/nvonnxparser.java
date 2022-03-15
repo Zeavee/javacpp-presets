@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorrt.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tensorrt.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -37,8 +37,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     value = @Platform(
         include = "NvOnnxParser.h",
         link = "nvonnxparser@.8.2.3"),
-    target = "org.bytedeco.tensorrt.nvonnxparser",
-    global = "org.bytedeco.tensorrt.global.nvonnxparser")
+    target = "com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvonnxparser",
+    global = "com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvonnxparser")
 public class nvonnxparser implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("SWIG").define(false))
@@ -47,7 +47,7 @@ public class nvonnxparser implements InfoMapper {
                .put(new Info("std::vector<size_t>").annotations("@StdVector").pointerTypes("SizeTPointer"))
                .put(new Info("nvonnxparser::IPluginFactory").pointerTypes("OnnxPluginFactory"))
                .put(new Info("nvonnxparser::IPluginFactoryExt").pointerTypes("OnnxPluginFactoryExt"))
-               .put(new Info("nvonnxparser::ErrorCode").valueTypes("org.bytedeco.tensorrt.global.nvonnxparser.ErrorCode").enumerate())
+               .put(new Info("nvonnxparser::ErrorCode").valueTypes("com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvonnxparser.ErrorCode").enumerate())
                .put(new Info("nvonnxparser::EnumMax<nvonnxparser::ErrorCode>", "nvonnxparser::EnumMax<ErrorCode>").javaNames("ErrorCodeEnumMax"));
     }
 }

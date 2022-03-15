@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cuda.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cuda.presets;
 
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -37,7 +37,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(define = {"CUBLASAPI", "CUBLAS_V2_H_"}, include = {"<cublas_api.h>", "<cublas.h>", "<cublasLt.h>", "<cublasXt.h>"},
         link = {"cublasLt@.11", "cublas@.11"}),
     @Platform(value = "windows-x86_64", preload = {"cublasLt64_11", "cublas64_11"})},
-        target = "org.bytedeco.cuda.cublas", global = "org.bytedeco.cuda.global.cublas")
+        target = "com.oracle.svm.shadowed.org.bytedeco.cuda.cublas", global = "com.oracle.svm.shadowed.org.bytedeco.cuda.global.cublas")
 @NoException
 public class cublas implements InfoMapper {
     public void map(InfoMap infoMap) {

@@ -1,11 +1,11 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libpostal.*;
-import static org.bytedeco.libpostal.global.postal.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libpostal.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libpostal.global.postal.*;
 
 public class Example {
     public static void main(String[] args) throws Exception {
         String dataDir = args.length >= 1 ? new String(args[0]) : "data/";
-        String libpostal_data = Loader.load(org.bytedeco.libpostal.libpostal_data.class);
+        String libpostal_data = Loader.load(com.oracle.svm.shadowed.org.bytedeco.libpostal.libpostal_data.class);
         ProcessBuilder pb = new ProcessBuilder("bash", libpostal_data, "download", "all", dataDir);
         pb.inheritIO().start().waitFor();
 

@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.arrow.presets;
+package com.oracle.svm.shadowed.org.bytedeco.arrow.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -51,11 +51,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             preload = {"libcrypto-1_1", "libssl-1_1"}
         ),
     },
-    target = "org.bytedeco.arrow_flight",
-    global = "org.bytedeco.arrow.global.arrow_flight"
+    target = "com.oracle.svm.shadowed.org.bytedeco.arrow_flight",
+    global = "com.oracle.svm.shadowed.org.bytedeco.arrow.global.arrow_flight"
 )
 public class arrow_flight implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "arrow_flight"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "arrow_flight"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("ARROW_FLIGHT_EXPORT").cppTypes().annotations())

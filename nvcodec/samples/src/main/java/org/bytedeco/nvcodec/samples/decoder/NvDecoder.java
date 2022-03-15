@@ -1,28 +1,28 @@
-package org.bytedeco.nvcodec.samples.decoder;
+package com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.decoder;
 
 
-import org.bytedeco.nvcodec.samples.callback.PfnVideoDecodeCallback;
-import org.bytedeco.nvcodec.samples.callback.PfnVideoDisplayCallback;
-import org.bytedeco.nvcodec.samples.callback.PfnVideoSequenceCallback;
-import org.bytedeco.nvcodec.samples.dispose.Disposable;
-import org.bytedeco.nvcodec.samples.exceptions.CudaException;
-import org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
-import org.bytedeco.nvcodec.samples.util.Dimension;
-import org.bytedeco.nvcodec.samples.util.Rectangle;
-import org.bytedeco.cuda.cudart.CUDA_MEMCPY2D_v2;
-import org.bytedeco.cuda.cudart.CUctx_st;
-import org.bytedeco.cuda.cudart.CUstream_st;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.nvcodec.global.nvcuvid;
-import org.bytedeco.nvcodec.global.nvcuvid.*;
-import org.bytedeco.nvcodec.nvcuvid.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.callback.PfnVideoDecodeCallback;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.callback.PfnVideoDisplayCallback;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.callback.PfnVideoSequenceCallback;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.dispose.Disposable;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.CudaException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.exceptions.NvCodecException;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.Dimension;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.Rectangle;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUDA_MEMCPY2D_v2;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUctx_st;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.CUstream_st;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
+import com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid.*;
 
 import java.util.*;
 
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.nvcodec.global.nvcuvid.*;
-import static org.bytedeco.nvcodec.samples.util.CudaUtil.*;
-import static org.bytedeco.nvcodec.samples.util.NvCodecUtil.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.global.nvcuvid.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.CudaUtil.*;
+import static com.oracle.svm.shadowed.org.bytedeco.nvcodec.samples.util.NvCodecUtil.*;
 
 /**
  * @brief Base class for decoder interface.

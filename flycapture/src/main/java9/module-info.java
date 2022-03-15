@@ -1,7 +1,7 @@
-module org.bytedeco.flycapture {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.flycapture.global;
-  exports org.bytedeco.flycapture.presets;
-  exports org.bytedeco.flycapture.FlyCapture2;
-  exports org.bytedeco.flycapture.FlyCapture2_C;
+module com.oracle.svm.shadowed.org.bytedeco.flycapture {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.flycapture.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.flycapture.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.flycapture.FlyCapture2;
+  exports com.oracle.svm.shadowed.org.bytedeco.flycapture.FlyCapture2_C;
 }

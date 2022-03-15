@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.llvm</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.llvm</groupId>
     <artifactId>MatMulBenchmark</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -11,7 +11,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>llvm-platform</artifactId>
             <version>13.0.1-1.5.7</version>
         </dependency>
@@ -21,17 +21,17 @@
             <version>5.5.0</version>
          </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libffi-platform</artifactId>
             <version>3.4.2-1.5.7</version>
         </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform</artifactId>
             <version>2022.0-1.5.7</version>
         </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform-redist</artifactId>
             <version>2022.0-1.5.7</version>
         </dependency>

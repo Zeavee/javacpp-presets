@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.pytorch;
+package com.oracle.svm.shadowed.org.bytedeco.pytorch;
 
 import java.nio.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
-import static org.bytedeco.pytorch.global.torch.*;
+import static com.oracle.svm.shadowed.org.bytedeco.pytorch.global.torch.*;
 
-@Properties(inherit = org.bytedeco.pytorch.presets.torch.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.pytorch.presets.torch.class)
 public abstract class AbstractTensor extends Pointer implements Indexable {
     static { Loader.load(); }
     public AbstractTensor(Pointer p) { super(p); }

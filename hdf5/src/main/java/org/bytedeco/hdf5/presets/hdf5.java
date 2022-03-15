@@ -20,22 +20,22 @@
  * limitations under the License.
  */
 
-package org.bytedeco.hdf5.presets;
+package com.oracle.svm.shadowed.org.bytedeco.hdf5.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.presets.javacpp;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.presets.javacpp;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit = javacpp.class, target = "org.bytedeco.hdf5", global = "org.bytedeco.hdf5.global.hdf5", value = {
+@Properties(inherit = javacpp.class, target = "com.oracle.svm.shadowed.org.bytedeco.hdf5", global = "com.oracle.svm.shadowed.org.bytedeco.hdf5.global.hdf5", value = {
     @Platform(value = {"linux", "macosx", "windows"},
             define = {"GENERIC_EXCEPTION_CLASS H5::Exception", "GENERIC_EXCEPTION_TOSTRING getCDetailMsg()"},
             include = {"H5pubconf.h", /* "H5version.h", */ "H5public.h", "H5Cpublic.h", "H5Ipublic.h",
@@ -51,7 +51,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             link = {"hdf5@.200", "hdf5_cpp@.200", "hdf5_hl@.200", "hdf5_hl_cpp@.200"}, resource = {"include", "lib"}),
     @Platform(value = "windows", link = {"zlibstatic", "libhdf5", "libhdf5_cpp", "libhdf5_hl", "libhdf5_hl_cpp"}) })
 public class hdf5 implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "hdf5"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "hdf5"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("H5_DLL", "H5_DLLVAR", "H5_HLDLL", "H5_DLLCPP", "H5CHECK", "H5OPEN", "H5E_ERR_CLS", "H5E_BEGIN_TRY", "H5E_END_TRY",

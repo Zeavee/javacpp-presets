@@ -1,7 +1,7 @@
 JavaCPP Presets for CUDA
 ========================
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/cuda/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/cuda) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/cuda.svg)](http://bytedeco.org/builds/)  
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/cuda/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/cuda) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/cuda.svg)](http://bytedeco.org/builds/)  
 <sup>Build status for all platforms:</sup> [![cuda](https://github.com/bytedeco/javacpp-presets/workflows/cuda/badge.svg)](https://github.com/bytedeco/javacpp-presets/actions?query=workflow%3Acuda)  <sup>Commercial support:</sup> [![xscode](https://img.shields.io/badge/Available%20on-xs%3Acode-blue?style=?style=plastic&logo=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAAlUlEQVR42uzXSwqAMAwE0Mn9L+3Ggtgkk35QwcnSJo9S+yGwM9DCooCbgn4YrJ4CIPUcQF7/XSBbx2TEz4sAZ2q1RAECBAiYBlCtvwN+KiYAlG7UDGj59MViT9hOwEqAhYCtAsUZvL6I6W8c2wcbd+LIWSCHSTeSAAECngN4xxIDSK9f4B9t377Wd7H5Nt7/Xz8eAgwAvesLRjYYPuUAAAAASUVORK5CYII=)](https://xscode.com/bytedeco/javacpp-presets)
 
 
@@ -54,7 +54,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.cuda</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.cuda</groupId>
     <artifactId>mnistcudnn</artifactId>
     <version>1.5.7</version>
     <properties>
@@ -62,14 +62,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform</artifactId>
             <version>11.6-8.3-1.5.7</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA, cuDNN, and NCCL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>11.6-8.3-1.5.7</version>
         </dependency>
@@ -105,13 +105,13 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
  */
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cuda.cublas.*;
-import org.bytedeco.cuda.cudart.*;
-import org.bytedeco.cuda.cudnn.*;
-import static org.bytedeco.cuda.global.cublas.*;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.cuda.global.cudnn.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cublas.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudnn.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cublas.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudnn.*;
 
 public class MNISTCUDNN {
     static final int IMAGE_H = 28;

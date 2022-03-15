@@ -40,12 +40,12 @@
 //
 //M*/
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.opencv.opencv_core.*;
-import org.bytedeco.opencv.opencv_stitching.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
-import static org.bytedeco.opencv.global.opencv_stitching.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_stitching.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_stitching.*;
 
 public class Stitching {
     static boolean try_use_gpu = false;

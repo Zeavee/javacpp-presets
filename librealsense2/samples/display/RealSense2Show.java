@@ -1,10 +1,10 @@
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.librealsense2.global.realsense2;
-import org.bytedeco.librealsense2.*;
-import org.bytedeco.opencv.global.opencv_core;
-import org.bytedeco.opencv.global.opencv_imgproc;
-import org.bytedeco.opencv.opencv_core.Mat;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import com.oracle.svm.shadowed.org.bytedeco.librealsense2.global.realsense2;
+import com.oracle.svm.shadowed.org.bytedeco.librealsense2.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.Mat;
 
 public class RealSense2Show {
     public static void main(String[] args) {

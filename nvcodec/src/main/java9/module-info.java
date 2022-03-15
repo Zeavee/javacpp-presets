@@ -1,8 +1,8 @@
-module org.bytedeco.nvcodec {
-  requires transitive org.bytedeco.javacpp;
-  requires transitive org.bytedeco.cuda;
-  exports org.bytedeco.nvcodec.global;
-  exports org.bytedeco.nvcodec.presets;
-  exports org.bytedeco.nvcodec.nvcuvid;
-  exports org.bytedeco.nvcodec.nvencodeapi;
+module com.oracle.svm.shadowed.org.bytedeco.nvcodec {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.cuda;
+  exports com.oracle.svm.shadowed.org.bytedeco.nvcodec.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.nvcodec.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvcuvid;
+  exports com.oracle.svm.shadowed.org.bytedeco.nvcodec.nvencodeapi;
 }
