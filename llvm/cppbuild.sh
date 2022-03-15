@@ -72,6 +72,20 @@ case $PLATFORM in
         make -C $LLVM_BUILD install > /dev/null
         cp $INSTALL_PATH/lib/LLVMPolly.so $INSTALL_PATH/lib/libLLVMPolly.so
         ;;
+    linux-riscv64)
+        mkdir -p ../tblgen
+        cd ../tblgen
+        $CMAKE -S ../llvm -B $TBLGEN_BUILD -DLLVM_CCACHE_BUILD=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_HOST_TRIPLE=riscv64-unknown-linux-gnu -DLLVM_DEFAULT_TARGET_TRIPLE=riscv64-unknown-linux-gnu -DLLVM_TARGET_ARCH=Riscv64 -DLLVM_TARGETS_TO_BUILD=Riscv64 -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_INCLUDE_TESTS=OFF -DLLVM_ENABLE_PROJECTS="$PROJECTS"
+        make -C $TBLGEN_BUILD -j $MAKEJ llvm-tblgen clang-tblgen
+        TBLGEN=`pwd`
+        cd ../build
+        export CC="riscv64-unknown-linux-gnu-gcc"
+        export CXX="riscv64-unknown-linux-gnu-g++"
+        $CMAKE -S ../llvm -B $LLVM_BUILD -DLLVM_CCACHE_BUILD=OFF -DCMAKE_CROSSCOMPILING=True -DLLVM_TEMPORARILY_ALLOW_OLD_TOOLCHAIN=ON -DCMAKE_EXE_LINKER_FLAGS='-Wl,-rpath,$ORIGIN/' -DCMAKE_INSTALL_PREFIX=$INSTALL_PATH -DLLVM_TABLEGEN="$TBLGEN/bin/llvm-tblgen" -DCLANG_TABLEGEN="$TBLGEN/bin/clang-tblgen" -DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON -DCMAKE_BUILD_TYPE=Release -DLLVM_HOST_TRIPLE=riscv64-unknown-linux-gnu -DLLVM_DEFAULT_TARGET_TRIPLE=riscv64-unknown-linux-gnu -DLLVM_TARGET_ARCH=Riscv64 -DLLVM_TARGETS_TO_BUILD=all -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_INCLUDE_TESTS=OFF -DLLVM_ENABLE_PROJECTS="$PROJECTS"
+        make -C $LLVM_BUILD -j $MAKEJ
+        make -C $LLVM_BUILD install > /dev/null
+        cp $INSTALL_PATH/lib/LLVMPolly.so $INSTALL_PATH/lib/libLLVMPolly.so
+        ;;
     linux-ppc64le)
         mkdir -p ../tblgen
         cd ../tblgen
