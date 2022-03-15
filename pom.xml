@@ -1155,6 +1155,39 @@
     </profile>
 
     <profile>
+      <id>javacpp-platform-linux-riscv64</id>
+      <activation>
+        <property>
+          <name>javacpp.platform</name>
+          <value>linux-riscv64</value>
+        </property>
+      </activation>
+      <modules>
+        <module>llvm</module>
+      </modules>
+      <properties>
+        <javacpp.platform.android-arm></javacpp.platform.android-arm>
+        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+        <javacpp.platform.android-x86></javacpp.platform.android-x86>
+        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
+        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
+        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
+        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
+        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
+        <javacpp.platform.linux-riscv64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.linux-riscv64>
+        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
+        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
+        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
+        <javacpp.platform.macosx-arm64></javacpp.platform.macosx-arm64>
+        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
+        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
+        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
+      </properties>
+    </profile>
+
+    <profile>
       <id>javacpp-platform-linux-ppc64le</id>
       <activation>
         <property>
@@ -1784,6 +1817,19 @@
       </activation>
       <properties>
         <javacpp.platform.linux-arm64>linux-arm64${javacpp.platform.extension}</javacpp.platform.linux-arm64>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>javacpp.platform.custom-linux-riscv64</id>
+      <activation>
+        <property>
+          <name>javacpp.platform.host</name>
+        </property>
+        <os><name>linux</name><arch>riscv64</arch></os>
+      </activation>
+      <properties>
+        <javacpp.platform.linux-riscv64>linux-riscv64${javacpp.platform.extension}</javacpp.platform.linux-riscv64>
       </properties>
     </profile>
 
