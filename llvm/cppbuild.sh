@@ -20,6 +20,12 @@ cd llvm-$LLVM_VERSION.src
 mkdir -p build tools
 cd tools
 tar --totals -xf ../../../cfe-$LLVM_VERSION.src.tar.xz || tar --totals -xf ../../../cfe-$LLVM_VERSION.src.tar.xz
+cd dsymutil
+echo '' >> CMakeLists.txt
+#echo 'if(HAVE_CXX_ATOMICS_WITH_LIB OR HAVE_CXX_ATOMICS64_WITH_LIB)' >> CMakeLists.txt
+echo 'target_link_libraries(dsymutil PRIVATE atomic)' >> CMakeLists.txt
+#echo 'endif()' >> CMakeLists.txt
+cd ..
 rm -Rf clang
 mv cfe-$LLVM_VERSION.src clang
 sedinplace '/Generating libLLVM is not supported on MSVC/d' llvm-shlib/CMakeLists.txt
