@@ -1,11 +1,11 @@
-package org.bytedeco.opencv.opencv_core;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Name;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.annotation.ValueGetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Name;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ValueGetter;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_core.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class)
 @Name("IplImage*")
 public class IplImageArray extends CvArrArray {
     public IplImageArray(IplImage ... array) { this(array.length); put(array); position(0); }

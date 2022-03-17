@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.ngraph</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.ngraph</groupId>
     <artifactId>abc</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>ngraph-platform</artifactId>
             <version>0.26.0-1.5.2</version>
         </dependency>
@@ -69,10 +69,10 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 // limitations under the License.
 //*****************************************************************************
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.ngraph.*;
-import static org.bytedeco.ngraph.global.ngraph.*;
+import com.oracle.svm.shadowed.org.bytedeco.ngraph.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ngraph.global.ngraph.*;
 
 public class ABC {
     public static void main(String[] args) {

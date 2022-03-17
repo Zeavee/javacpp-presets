@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.tesseract</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.tesseract</groupId>
     <artifactId>BasicExample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tesseract-platform</artifactId>
             <version>4.1.0-1.5.2</version>
         </dependency>

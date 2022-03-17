@@ -1,9 +1,9 @@
 // General stuff
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
 // Headers required by LLVM
-import org.bytedeco.llvm.LLVM.*;
-import static org.bytedeco.llvm.global.LLVM.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.*;
+import static com.oracle.svm.shadowed.org.bytedeco.llvm.global.LLVM.*;
 
 public class Fac {
     public static void main (String[] args) {

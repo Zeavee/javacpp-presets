@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.gsl</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.gsl</groupId>
     <artifactId>demo</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,14 +40,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>gsl-platform</artifactId>
             <version>2.6-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled full version of MKL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform-redist</artifactId>
             <version>2019.5-1.5.2</version>
         </dependency>
@@ -61,14 +61,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `Demo.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.gsl.*;
-import static org.bytedeco.gsl.global.gsl.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.gsl.*;
+import static com.oracle.svm.shadowed.org.bytedeco.gsl.global.gsl.*;
 
 public class Demo {
     public static void main(String[] args) {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
         gsl_rng_type T;
         gsl_rng r;

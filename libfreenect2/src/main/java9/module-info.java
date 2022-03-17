@@ -1,6 +1,6 @@
-module org.bytedeco.libfreenect2 {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.libfreenect2.global;
-  exports org.bytedeco.libfreenect2.presets;
-  exports org.bytedeco.libfreenect2;
+module com.oracle.svm.shadowed.org.bytedeco.libfreenect2 {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.libfreenect2.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.libfreenect2;
 }

@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.librealsense.*;
-import static org.bytedeco.librealsense.global.RealSense.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.librealsense.*;
+import static com.oracle.svm.shadowed.org.bytedeco.librealsense.global.RealSense.*;
 
 public class TestConnection {
 

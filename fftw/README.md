@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.fftw</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.fftw</groupId>
     <artifactId>example</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>fftw-platform</artifactId>
             <version>3.3.8-1.5.2</version>
         </dependency>
@@ -55,9 +55,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```java
 /* Start reading here */
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 import static java.lang.Math.*;
-import static org.bytedeco.fftw.global.fftw3.*;
+import static com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3.*;
 
 public class Example {
 
@@ -100,7 +100,7 @@ public class Example {
     /* Resume reading here */
 
     public static void main(String args[]) {
-        Loader.load(org.bytedeco.fftw.global.fftw3.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3.class);
 
         DoublePointer signal = new DoublePointer(2 * NUM_POINTS);
         DoublePointer result = new DoublePointer(2 * NUM_POINTS);

@@ -20,12 +20,12 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ffmpeg.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ffmpeg.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -33,8 +33,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  */
 @Properties(
     inherit = avutil.class,
-    target = "org.bytedeco.ffmpeg.swresample",
-    global = "org.bytedeco.ffmpeg.global.swresample",
+    target = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.swresample",
+    global = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.swresample",
     value = {
         @Platform(cinclude = "<libswresample/swresample.h>", link = "swresample@.3"),
         @Platform(value = "windows", preload = "swresample-3")

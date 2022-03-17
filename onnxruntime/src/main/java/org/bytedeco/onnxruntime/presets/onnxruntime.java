@@ -19,17 +19,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.onnxruntime.presets;
+package com.oracle.svm.shadowed.org.bytedeco.onnxruntime.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -46,14 +46,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             },
             link = "onnxruntime@.0.5.0",
             preload = {"iomp5", "mklml", "mklml_intel", "mkldnn@.0"},
-            preloadresource = "/org/bytedeco/mkldnn/"
+            preloadresource = "/com/oracle/svm/shadowed/org/bytedeco/mkldnn/"
         ),
     },
-    target = "org.bytedeco.onnxruntime",
-    global = "org.bytedeco.onnxruntime.global.onnxruntime"
+    target = "com.oracle.svm.shadowed.org.bytedeco.onnxruntime",
+    global = "com.oracle.svm.shadowed.org.bytedeco.onnxruntime.global.onnxruntime"
 )
 public class onnxruntime implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "onnxruntime"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "onnxruntime"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("ORTCHAR_T", "ORT_EXPORT", "ORT_API_CALL", "NO_EXCEPTION", "ORT_ALL_ARGS_NONNULL").cppTypes().annotations());

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
     <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>videoinput-platform</artifactId>
   <version>0.200-${project.parent.version}</version>
   <name>JavaCPP Presets Platform for videoInput</name>
@@ -93,9 +93,9 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.moduleId}.platform {
-                      requires org.bytedeco.${javacpp.moduleId}.windows.x86;
-                      requires org.bytedeco.${javacpp.moduleId}.windows.x86_64;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.platform {
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86_64;
                     }
                   </moduleInfoSource>
                 </module>

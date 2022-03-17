@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ffmpeg.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ffmpeg.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -34,8 +34,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  */
 @Properties(
     inherit = swresample.class,
-    target = "org.bytedeco.ffmpeg.avcodec",
-    global = "org.bytedeco.ffmpeg.global.avcodec",
+    target = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avcodec",
+    global = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avcodec",
     value = {
         @Platform(cinclude = {"<libavcodec/avcodec.h>", "<libavcodec/jni.h>", /* "<libavcodec/avfft.h>" */}, link = "avcodec@.58"),
         @Platform(value = "linux-arm", preload = {"asound@.2", "vchiq_arm", "vcos", "vcsm", "bcm_host", "mmal_core", "mmal_util", "mmal_vc_client"}),

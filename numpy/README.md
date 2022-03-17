@@ -34,7 +34,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.numpy</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.numpy</groupId>
     <artifactId>matmul</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -42,14 +42,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>numpy-platform</artifactId>
             <version>1.17.3-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled full version of MKL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform-redist</artifactId>
             <version>2019.5-1.5.2</version>
         </dependency>
@@ -63,19 +63,19 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `MatMul.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
-import org.bytedeco.cpython.*;
-import org.bytedeco.numpy.*;
-import static org.bytedeco.cpython.global.python.*;
-import static org.bytedeco.numpy.global.numpy.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import com.oracle.svm.shadowed.org.bytedeco.numpy.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
+import static com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.*;
 
 public class MatMul {
     public static void main(String[] args) throws Exception {
         /* try to use MKL when available */
-        System.setProperty("org.bytedeco.openblas.load", "mkl");
+        System.setProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "mkl");
 
-        Py_SetPath(org.bytedeco.numpy.global.numpy.cachePackages());
+        Py_SetPath(com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.cachePackages());
         Py_Initialize();
         if (_import_array() < 0) {
             System.err.println("numpy.core.multiarray failed to import");

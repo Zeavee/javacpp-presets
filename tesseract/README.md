@@ -33,7 +33,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.tesseract</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.tesseract</groupId>
     <artifactId>BasicExample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -41,7 +41,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tesseract-platform</artifactId>
             <version>4.1.0-1.5.2</version>
         </dependency>
@@ -54,11 +54,11 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `BasicExample.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.leptonica.*;
-import org.bytedeco.tesseract.*;
-import static org.bytedeco.leptonica.global.lept.*;
-import static org.bytedeco.tesseract.global.tesseract.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.leptonica.*;
+import com.oracle.svm.shadowed.org.bytedeco.tesseract.*;
+import static com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tesseract.global.tesseract.*;
 
 public class BasicExample {
     public static void main(String[] args) {

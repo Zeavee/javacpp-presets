@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.libpostal.presets;
+package com.oracle.svm.shadowed.org.bytedeco.libpostal.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * @author Maurice Betzel, Samuel Audet
@@ -41,11 +41,11 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             preload = "libpostal-1"
         )
     },
-    target = "org.bytedeco.libpostal",
-    global = "org.bytedeco.libpostal.global.postal"
+    target = "com.oracle.svm.shadowed.org.bytedeco.libpostal",
+    global = "com.oracle.svm.shadowed.org.bytedeco.libpostal.global.postal"
 )
 public class postal implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "libpostal"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "libpostal"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("LIBPOSTAL_EXPORT").cppTypes().annotations())

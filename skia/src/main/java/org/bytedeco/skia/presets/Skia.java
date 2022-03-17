@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.skia.presets;
+package com.oracle.svm.shadowed.org.bytedeco.skia.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.*;
-import org.bytedeco.javacpp.tools.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.*;
 
 @Properties(
-    target = "org.bytedeco.skia",
-    global = "org.bytedeco.skia.global.Skia",
+    target = "com.oracle.svm.shadowed.org.bytedeco.skia",
+    global = "com.oracle.svm.shadowed.org.bytedeco.skia.global.Skia",
     value = {
         @Platform(
             value = {"ios", "linux-x86", "macosx"},
@@ -69,7 +69,7 @@ import org.bytedeco.javacpp.tools.*;
     }
 )
 public class Skia implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "skia"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "skia"); }
 
     public void map(InfoMap infoMap) {
         infoMap

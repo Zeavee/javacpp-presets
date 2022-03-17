@@ -35,7 +35,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.llvm</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.llvm</groupId>
     <artifactId>fac</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -43,7 +43,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>llvm-platform</artifactId>
             <version>9.0.0-1.5.2</version>
         </dependency>
@@ -57,11 +57,11 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ### The `Fac.java` source file
 ```java
 // General stuff
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
 // Headers required by LLVM
-import org.bytedeco.llvm.LLVM.*;
-import static org.bytedeco.llvm.global.LLVM.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.*;
+import static com.oracle.svm.shadowed.org.bytedeco.llvm.global.LLVM.*;
 
 public class Fac {
     public static void main (String[] args) {

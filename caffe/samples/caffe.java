@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.caffe.*;
-import static org.bytedeco.caffe.global.caffe.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.caffe.*;
+import static com.oracle.svm.shadowed.org.bytedeco.caffe.global.caffe.*;
 
 public class caffe {
     static final Logger logger = Logger.getLogger(caffe.class.getSimpleName());

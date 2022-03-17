@@ -20,26 +20,26 @@
  * limitations under the License.
  */
 
-package org.bytedeco.openblas.presets;
+package com.oracle.svm.shadowed.org.bytedeco.openblas.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(global = "org.bytedeco.openblas.global.openblas_nolapack", value = {
+@Properties(global = "com.oracle.svm.shadowed.org.bytedeco.openblas.global.openblas_nolapack", value = {
     @Platform(define = {"__OPENBLAS 1", "LAPACK_COMPLEX_CPP"},
               include = {"openblas_config.h", "cblas.h"},
               link    =  "openblas_nolapack@.0", resource = {"include", "lib"},
@@ -62,7 +62,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value = "ios", preload = "libopenblas") })
 @NoException
 public class openblas_nolapack implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "openblas"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "openblas"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -78,9 +78,9 @@ public class openblas_nolapack implements LoadEnabled, InfoMapper {
         }
 
         // Let users enable loading of arbitrary library (for Accelerate, MKL, etc)
-        String lib = System.getProperty("org.bytedeco." + className + ".load", "").toLowerCase();
+        String lib = System.getProperty("com.oracle.svm.shadowed.org.bytedeco." + className + ".load", "").toLowerCase();
         if (lib.length() == 0) {
-            lib = System.getProperty("org.bytedeco.openblas.load", "").toLowerCase();
+            lib = System.getProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load", "").toLowerCase();
         }
 
         int i = 0;
@@ -91,7 +91,7 @@ public class openblas_nolapack implements LoadEnabled, InfoMapper {
                     preloads.add(i, libs[i] + "#" + libs[i]);
                 }
                 lib = platform.startsWith("linux") ? "mklml_intel" : "mklml";
-                resources.add("/org/bytedeco/mkldnn/");
+                resources.add("/com/oracle/svm/shadowed/org/bytedeco/mkldnn/");
             } else if (lib.equals("mkl") || lib.equals("mkl_rt")) {
                 String[] libs = {"iomp5", "libiomp5md", "mkl_core", "mkl_avx", "mkl_avx2", "mkl_avx512", "mkl_avx512_mic",
                                  "mkl_def", "mkl_mc", "mkl_mc3", "mkl_intel_lp64", "mkl_intel_thread", "mkl_gnu_thread", "mkl_rt"};
@@ -99,7 +99,7 @@ public class openblas_nolapack implements LoadEnabled, InfoMapper {
                     preloads.add(i, libs[i] + "#" + libs[i]);
                 }
                 lib = "mkl_rt";
-                resources.add("/org/bytedeco/mkl/");
+                resources.add("/com/oracle/svm/shadowed/org/bytedeco/mkl/");
             }
         }
 

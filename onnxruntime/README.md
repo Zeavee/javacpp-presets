@@ -34,7 +34,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.onnxruntime</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.onnxruntime</groupId>
     <artifactId>capisample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -42,7 +42,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>onnxruntime-platform</artifactId>
             <version>0.5.0-1.5.2</version>
         </dependency>
@@ -60,10 +60,10 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 //
 
 import java.nio.file.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
-import org.bytedeco.onnxruntime.*;
-import static org.bytedeco.onnxruntime.global.onnxruntime.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.onnxruntime.*;
+import static com.oracle.svm.shadowed.org.bytedeco.onnxruntime.global.onnxruntime.*;
 
 public class CApiSample {
 

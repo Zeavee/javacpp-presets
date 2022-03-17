@@ -2,9 +2,9 @@
 // Copyright(c) 2017 Intel Corporation. All Rights Reserved.
 
 /* Include the librealsense C header files */
-import org.bytedeco.javacpp.*;
-import org.bytedeco.librealsense2.*;
-import static org.bytedeco.librealsense2.global.realsense2.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.librealsense2.*;
+import static com.oracle.svm.shadowed.org.bytedeco.librealsense2.global.realsense2.*;
 
 public class RsDistance {
 

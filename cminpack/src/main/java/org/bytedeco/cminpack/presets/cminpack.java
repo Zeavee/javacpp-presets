@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cminpack.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cminpack.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.openblas.presets.openblas;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.openblas;
 
 /**
  *
@@ -42,10 +42,10 @@ import org.bytedeco.openblas.presets.openblas;
         define = "__cminpack_double__",
         include = "cminpack.h",
         link = "cminpack"),
-    global = "org.bytedeco.cminpack.global.cminpack")
+    global = "com.oracle.svm.shadowed.org.bytedeco.cminpack.global.cminpack")
 @NoException
 public class cminpack implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "cminpack"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "cminpack"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("__cminpack_double__").define(true));

@@ -20,10 +20,10 @@
 *   performance are omitted to improve readability.
 ********************************************************************************/
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
-import static org.bytedeco.mkl.global.mkl_rt.*;
+import static com.oracle.svm.shadowed.org.bytedeco.mkl.global.mkl_rt.*;
 
 public class DGEMMExample {
     public static void main(String[] args) throws Exception {

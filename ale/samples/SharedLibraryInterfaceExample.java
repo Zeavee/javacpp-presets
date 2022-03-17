@@ -16,9 +16,9 @@
 
 import java.lang.System;
 import java.util.Random;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.ale.*;
-import static org.bytedeco.ale.global.ale.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.ale.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ale.global.ale.*;
 
 public class SharedLibraryInterfaceExample {
     public static void main(String[] args) {

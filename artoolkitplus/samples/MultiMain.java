@@ -24,9 +24,9 @@
 // loads test images and shows use to use the ARToolKitPlus API.
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.artoolkitplus.*;
-import static org.bytedeco.artoolkitplus.global.ARToolKitPlus.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.*;
+import static com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.global.ARToolKitPlus.*;
 
 public class MultiMain {
     public static void main(String[] args) throws IOException {

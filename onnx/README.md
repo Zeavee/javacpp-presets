@@ -33,7 +33,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.onnx</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.onnx</groupId>
     <artifactId>loadmodel</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -41,7 +41,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>onnx-platform</artifactId>
             <version>1.6.0-1.5.2</version>
         </dependency>
@@ -55,9 +55,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ### The `LoadModel.java` source file
 ```java
 import java.nio.file.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.onnx.*;
-import static org.bytedeco.onnx.global.onnx.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.onnx.*;
+import static com.oracle.svm.shadowed.org.bytedeco.onnx.global.onnx.*;
 
 public class LoadModel {
     public static void main(String[] args) throws Exception {

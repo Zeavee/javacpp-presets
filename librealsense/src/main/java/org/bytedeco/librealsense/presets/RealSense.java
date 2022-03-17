@@ -19,27 +19,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.librealsense.presets;
+package com.oracle.svm.shadowed.org.bytedeco.librealsense.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.ByVal;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByVal;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Jérémy Laviole
  */
-@Properties(target = "org.bytedeco.librealsense", global = "org.bytedeco.librealsense.global.RealSense", value = {
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.librealsense", global = "com.oracle.svm.shadowed.org.bytedeco.librealsense.global.RealSense", value = {
     @Platform(value = {"linux-x86", "macosx-x86", "windows-x86"}, compiler = "cpp11",
          include = {"<librealsense/rs.h>", "<librealsense/rs.hpp>", "<librealsense/rscore.hpp>", "<librealsense/rsutil.h>"},
          link = "realsense@.1"),
@@ -61,7 +61,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value = "windows-x86_64", preloadpath = {"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/redist/x64/Microsoft.VC140.CRT/",
                                                        "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64/"}) })
 public class RealSense implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "librealsense"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "librealsense"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");

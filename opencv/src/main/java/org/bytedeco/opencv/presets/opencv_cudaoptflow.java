@@ -20,12 +20,12 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
     inherit = {
@@ -51,8 +51,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             extension = "-gpu"
         )
     },
-    target = "org.bytedeco.opencv.opencv_cudaoptflow",
-    global = "org.bytedeco.opencv.global.opencv_cudaoptflow"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_cudaoptflow",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_cudaoptflow"
 )
 public class opencv_cudaoptflow implements InfoMapper {
 

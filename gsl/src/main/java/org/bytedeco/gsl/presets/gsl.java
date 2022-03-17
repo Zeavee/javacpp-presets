@@ -20,27 +20,27 @@
  * limitations under the License.
  */
 
-package org.bytedeco.gsl.presets;
+package com.oracle.svm.shadowed.org.bytedeco.gsl.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.Const;
-import org.bytedeco.javacpp.annotation.MemberGetter;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.annotation.Opaque;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Const;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.MemberGetter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Opaque;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.openblas.presets.openblas;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.openblas;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit = openblas.class, target = "org.bytedeco.gsl", global = "org.bytedeco.gsl.global.gsl", value = {
+@Properties(inherit = openblas.class, target = "com.oracle.svm.shadowed.org.bytedeco.gsl", global = "com.oracle.svm.shadowed.org.bytedeco.gsl.global.gsl", value = {
     @Platform(include = {"gsl/gsl_types.h", "gsl/gsl_errno.h", "gsl/gsl_ieee_utils.h", "gsl/gsl_inline.h", "gsl/gsl_message.h", "gsl/gsl_complex.h",
         "gsl/gsl_complex_math.h", "gsl/gsl_check_range.h", "gsl/gsl_sys.h", "gsl/gsl_machine.h", "gsl/gsl_precision.h", "gsl/gsl_nan.h", "gsl/gsl_pow_int.h",
         "gsl/gsl_math.h", "gsl/gsl_min.h", "gsl/gsl_minmax.h", "gsl/gsl_mode.h", "gsl/gsl_test.h", "gsl/gsl_version.h",
@@ -113,7 +113,7 @@ import org.bytedeco.openblas.presets.openblas;
     @Platform(value = "windows", preload = "libgsl-25") })
 @NoException
 public class gsl implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "gsl"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "gsl"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("__cplusplus").define())

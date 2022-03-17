@@ -1,13 +1,13 @@
-package org.bytedeco.opencv.opencv_imgproc;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.opencv.opencv_core.IplConvKernel;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.IplConvKernel;
 
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_imgproc.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc.*;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_imgproc.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_imgproc.class)
 public abstract class AbstractIplConvKernel extends Pointer {
     public AbstractIplConvKernel(Pointer p) { super(p); }
 

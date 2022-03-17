@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cuda.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cuda.presets;
 
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -36,7 +36,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 @Properties(inherit = nppc.class, value = {
     @Platform(include = "<nppi_compression_functions.h>", link = "nppicom@.10"),
     @Platform(value = "windows-x86_64", preload = "nppicom64_10")},
-        target = "org.bytedeco.cuda.nppicom", global = "org.bytedeco.cuda.global.nppicom")
+        target = "com.oracle.svm.shadowed.org.bytedeco.cuda.nppicom", global = "com.oracle.svm.shadowed.org.bytedeco.cuda.global.nppicom")
 @NoException
 public class nppicom implements InfoMapper {
     public void map(InfoMap infoMap) {

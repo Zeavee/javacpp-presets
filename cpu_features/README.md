@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.cpu_features</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.cpu_features</groupId>
     <artifactId>simpleexample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cpu_features-platform</artifactId>
             <version>0.4.1-1.5.2</version>
         </dependency>
@@ -53,9 +53,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `SimpleExample.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpu_features.*;
-import static org.bytedeco.cpu_features.global.cpu_features.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpu_features.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpu_features.global.cpu_features.*;
 
 public class SimpleExample {
 

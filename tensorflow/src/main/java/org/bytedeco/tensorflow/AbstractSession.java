@@ -20,22 +20,22 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorflow;
+package com.oracle.svm.shadowed.org.bytedeco.tensorflow;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Namespace;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Namespace;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
-@Properties(inherit = org.bytedeco.tensorflow.presets.tensorflow.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.tensorflow.presets.tensorflow.class)
 public abstract class AbstractSession extends Pointer {
     static { Loader.load(); }
 
     SessionOptions options; // a reference to prevent deallocation
 
     public AbstractSession(Pointer p) { super(p); }
-    /** Calls {@link org.bytedeco.javacpp.tensorflow#NewSession(SessionOptions)} and registers a deallocator. */
+    /** Calls {@link com.oracle.svm.shadowed.org.bytedeco.javacpp.tensorflow#NewSession(SessionOptions)} and registers a deallocator. */
     public AbstractSession(SessionOptions options) {
         this.options = options;
         if (NewSession(options, (Session)this).ok() && !isNull()) {

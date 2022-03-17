@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -41,8 +41,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             "native_camera_r4.1.1", "native_camera_r4.2.0", "native_camera_r4.3.0", "native_camera_r4.4.0"}),
         @Platform(value = "ios", preload = "libopencv_videoio"),
         @Platform(value = "windows", link = "opencv_videoio412", preload = {"opencv_ffmpeg412", "opencv_ffmpeg412_64"})},
-    target = "org.bytedeco.opencv.opencv_videoio",
-    global = "org.bytedeco.opencv.global.opencv_videoio"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_videoio",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_videoio"
 )
 public class opencv_videoio implements InfoMapper {
     public void map(InfoMap infoMap) {

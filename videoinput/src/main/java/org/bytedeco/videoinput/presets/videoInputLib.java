@@ -20,23 +20,23 @@
  * limitations under the License.
  */
 
-package org.bytedeco.videoinput.presets;
+package com.oracle.svm.shadowed.org.bytedeco.videoinput.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(target="org.bytedeco.videoinput", global="org.bytedeco.videoinput.global.videoInputLib", value={
+@Properties(target="com.oracle.svm.shadowed.org.bytedeco.videoinput", global="com.oracle.svm.shadowed.org.bytedeco.videoinput.global.videoInputLib", value={
     @Platform(value="windows", include={"<videoInput.h>", "<videoInput.cpp>"}, link={"ole32", "oleaut32", "amstrmid", "strmiids", "uuid"}) })
 public class videoInputLib implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "videoinput"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "videoinput"); }
 
     public void map(InfoMap infoMap) {
           infoMap.put(new Info("videoInput.cpp").skip())

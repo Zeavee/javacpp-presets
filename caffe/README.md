@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.caffe</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.caffe</groupId>
     <artifactId>caffe</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,21 +40,21 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>caffe-platform</artifactId>
             <version>1.0-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies required to use CUDA and cuDNN -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>caffe-platform-gpu</artifactId>
             <version>1.0-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA and cuDNN -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>10.1-7.6-1.5.2</version>
         </dependency>
@@ -72,9 +72,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.caffe.*;
-import static org.bytedeco.caffe.global.caffe.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.caffe.*;
+import static com.oracle.svm.shadowed.org.bytedeco.caffe.global.caffe.*;
 
 public class caffe {
     static final Logger logger = Logger.getLogger(caffe.class.getSimpleName());

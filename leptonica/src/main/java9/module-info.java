@@ -1,6 +1,6 @@
-module org.bytedeco.leptonica {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.leptonica.global;
-  exports org.bytedeco.leptonica.presets;
-  exports org.bytedeco.leptonica;
+module com.oracle.svm.shadowed.org.bytedeco.leptonica {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.leptonica.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.leptonica.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.leptonica;
 }

@@ -1,5 +1,5 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.systems.global.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.systems.global.*;
 
 public class TestAVX {
     public static void main(String[] args) {

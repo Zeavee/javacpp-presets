@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.ngraph</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.ngraph</groupId>
     <artifactId>abc</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>ngraph-platform</artifactId>
             <version>0.26.0-1.5.2</version>
         </dependency>

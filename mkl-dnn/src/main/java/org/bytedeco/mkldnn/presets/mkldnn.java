@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.mkldnn.presets;
+package com.oracle.svm.shadowed.org.bytedeco.mkldnn.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -42,7 +42,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                       "GENERIC_EXCEPTION_TOSTRING message.append(\": status = \").append(std::to_string(e.status)).c_str()"},
             include = {"mkldnn_types.h", /*"mkldnn_debug.h",*/ "mkldnn.h", "mkldnn.hpp"},
             link = "mkldnn@.0", preload = "libmkldnn")},
-    target = "org.bytedeco.mkldnn", global = "org.bytedeco.mkldnn.global.mkldnn")
+    target = "com.oracle.svm.shadowed.org.bytedeco.mkldnn", global = "com.oracle.svm.shadowed.org.bytedeco.mkldnn.global.mkldnn")
 public class mkldnn implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap//.put(new Info().enumerate())
@@ -68,7 +68,7 @@ public class mkldnn implements InfoMapper {
                .put(new Info("mkldnn_stream_t").valueTypes("mkldnn_stream").pointerTypes("@ByPtrPtr mkldnn_stream", "@Cast(\"mkldnn_stream_t*\") PointerPointer"))
                .put(new Info("const_mkldnn_stream_t").valueTypes("@Const mkldnn_stream").pointerTypes("@Const @ByPtrPtr mkldnn_stream", "@Cast(\"const_mkldnn_stream_t*\") PointerPointer"))
 
-               .put(new Info("mkldnn::primitive_desc").pointerTypes("org.bytedeco.mkldnn.primitive_desc"))
+               .put(new Info("mkldnn::primitive_desc").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.mkldnn.primitive_desc"))
                .put(new Info("mkldnn::memory::dims").annotations("@StdVector(\"std::remove_extent<mkldnn_dims_t>::type\")").pointerTypes("IntPointer", "IntBuffer", "int[]"))
 //               .put(new Info("std::vector<const_mkldnn_primitive_desc_t>").annotations("@StdVector @Cast(\"const_mkldnn_primitive_desc_t*\")").pointerTypes("PointerPointer"))
                .put(new Info("mkldnn::primitive::at").pointerTypes("primitive.at").define())

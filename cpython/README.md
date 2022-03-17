@@ -39,7 +39,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.cpython</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.cpython</groupId>
     <artifactId>simple</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -47,7 +47,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cpython-platform</artifactId>
             <version>3.7.5-1.5.2</version>
         </dependency>
@@ -60,9 +60,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `Simple.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpython.*;
-import static org.bytedeco.cpython.global.python.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
 
 public class Simple {
     public static void main(String[] args) throws Exception {

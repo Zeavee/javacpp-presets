@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.libdc1394</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.libdc1394</groupId>
     <artifactId>grabcolorimage</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libdc1394-platform</artifactId>
             <version>2.2.6-1.5.2</version>
         </dependency>
@@ -75,9 +75,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
  */
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libdc1394.*;
-import static org.bytedeco.libdc1394.global.dc1394.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libdc1394.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libdc1394.global.dc1394.*;
 
 public class GrabColorImage {
     static final String IMAGE_FILE_NAME = "image.ppm";

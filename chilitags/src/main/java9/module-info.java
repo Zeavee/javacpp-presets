@@ -1,7 +1,7 @@
-module org.bytedeco.chilitags {
-  requires transitive org.bytedeco.javacpp;
-  requires transitive org.bytedeco.opencv;
-  exports org.bytedeco.chilitags.global;
-  exports org.bytedeco.chilitags.presets;
-  exports org.bytedeco.chilitags;
+module com.oracle.svm.shadowed.org.bytedeco.chilitags {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.opencv;
+  exports com.oracle.svm.shadowed.org.bytedeco.chilitags.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.chilitags.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.chilitags;
 }

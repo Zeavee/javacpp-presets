@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
     <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>arpack-ng-platform</artifactId>
   <version>3.7.0-${project.parent.version}</version>
   <name>JavaCPP Presets Platform for ARPACK-NG</name>
@@ -22,7 +22,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>openblas-platform</artifactId>
       <version>0.3.7-${project.parent.version}</version>
     </dependency>
@@ -135,15 +135,15 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.packageName}.platform {
-                      requires org.bytedeco.${javacpp.packageName}.linux.x86;
-                      requires org.bytedeco.${javacpp.packageName}.linux.x86_64;
-                      requires org.bytedeco.${javacpp.packageName}.linux.armhf;
-                      requires org.bytedeco.${javacpp.packageName}.linux.arm64;
-                      requires org.bytedeco.${javacpp.packageName}.linux.ppc64le;
-                      requires org.bytedeco.${javacpp.packageName}.macosx.x86_64;
-                      requires org.bytedeco.${javacpp.packageName}.windows.x86;
-                      requires org.bytedeco.${javacpp.packageName}.windows.x86_64;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.platform {
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.linux.x86;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.linux.x86_64;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.linux.armhf;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.linux.arm64;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.linux.ppc64le;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.macosx.x86_64;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.windows.x86;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.windows.x86_64;
                     }
                   </moduleInfoSource>
                 </module>

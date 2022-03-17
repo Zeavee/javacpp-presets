@@ -33,7 +33,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.flandmark</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.flandmark</groupId>
     <artifactId>simpleexample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -41,7 +41,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>flandmark-platform</artifactId>
             <version>1.07-1.5.2</version>
         </dependency>
@@ -64,16 +64,16 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
  * Copyright (C) 2012 Michal Uricar
  */
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.flandmark.*;
-import org.bytedeco.opencv.opencv_core.*;
-import org.bytedeco.opencv.opencv_highgui.*;
-import org.bytedeco.opencv.opencv_imgproc.*;
-import static org.bytedeco.flandmark.global.flandmark.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_highgui.*;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
-import static org.bytedeco.opencv.global.opencv_imgproc.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.flandmark.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_highgui.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc.*;
+import static com.oracle.svm.shadowed.org.bytedeco.flandmark.global.flandmark.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_highgui.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc.*;
 
 public class SimpleExample {
     public static void main(String[] args) {

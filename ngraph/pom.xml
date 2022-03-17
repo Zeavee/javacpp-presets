@@ -4,24 +4,24 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>ngraph</artifactId>
   <version>0.26.0-${project.parent.version}</version>
   <name>JavaCPP Presets for nGraph</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>mkl-dnn</artifactId>
       <version>0.21.2-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -35,7 +35,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <configuration>
           <compilerOptions>
@@ -52,11 +52,11 @@
             <phase>package</phase>
             <configuration>
               <excludes>
-                <exclude>org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*.exp</exclude>
-                <exclude>org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*.lib</exclude>
-                <exclude>org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*.obj</exclude>
-                <exclude>org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*mklml*</exclude>
-                <exclude>org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*omp*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*mklml*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/ngraph/${javacpp.platform}${javacpp.platform.extension}/*omp*</exclude>
               </excludes>
             </configuration>
           </execution>

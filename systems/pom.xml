@@ -4,19 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>systems</artifactId>
   <version>${project.parent.version}</version>
   <name>JavaCPP Presets for Systems</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -30,7 +30,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <configuration>
           <includePaths>
@@ -41,7 +41,7 @@
             <includePath>${basedir}/cppbuild/${javacpp.platform}/powerpc64le-linux-gnu/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}/i386-linux-gnu/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}/x86_64-linux-gnu/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/systems/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/systems/include/</includePath>
           </includePaths>
         </configuration>
         <executions>
@@ -85,7 +85,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}</properties>

@@ -20,17 +20,17 @@
  * limitations under the License.
  */
 
-package org.bytedeco.systems.presets;
+package com.oracle.svm.shadowed.org.bytedeco.systems.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.BuildEnabled;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
-import org.bytedeco.javacpp.tools.Logger;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.BuildEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Logger;
 
 /**
  *
@@ -46,10 +46,10 @@ import org.bytedeco.javacpp.tools.Logger;
     includepath = {"C:/Program Files (x86)/Windows Kits/8.1/Include/shared/",
                    "C:/Program Files (x86)/Windows Kits/8.1/Include/um/"},
     link = {"ntdll", "AdvAPI32", "mincore", "synchronization", "User32", "Psapi"})},
-        target = "org.bytedeco.systems.windows", global = "org.bytedeco.systems.global.windows")
+        target = "com.oracle.svm.shadowed.org.bytedeco.systems.windows", global = "com.oracle.svm.shadowed.org.bytedeco.systems.global.windows")
 @NoException
 public class windows implements BuildEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "systems"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "systems"); }
 
     private Logger logger;
     private java.util.Properties properties;

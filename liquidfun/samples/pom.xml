@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.liquidfun</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.liquidfun</groupId>
     <artifactId>example</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>liquidfun-platform</artifactId>
             <version>master-1.5.2</version>
         </dependency>

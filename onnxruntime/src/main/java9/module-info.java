@@ -1,6 +1,6 @@
-module org.bytedeco.onnxruntime {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.onnxruntime.global;
-  exports org.bytedeco.onnxruntime.presets;
-  exports org.bytedeco.onnxruntime;
+module com.oracle.svm.shadowed.org.bytedeco.onnxruntime {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.onnxruntime.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.onnxruntime.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.onnxruntime;
 }

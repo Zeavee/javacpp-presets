@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.spinnaker</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.spinnaker</groupId>
     <artifactId>acquisition_c</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>spinnaker-platform</artifactId>
             <version>1.19.0.22-1.5.2</version>
         </dependency>
@@ -72,9 +72,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 import java.io.File;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.spinnaker.Spinnaker_C.*;
-import static org.bytedeco.spinnaker.global.Spinnaker_C.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.spinnaker.Spinnaker_C.*;
+import static com.oracle.svm.shadowed.org.bytedeco.spinnaker.global.Spinnaker_C.*;
 
 /**
  * Example how to enumerate cameras, start acquisition, and grab images.

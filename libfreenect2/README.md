@@ -30,7 +30,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.libfreenect</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.libfreenect</groupId>
     <artifactId>freenect2Example</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -38,7 +38,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libfreenect2-platform</artifactId>
             <version>0.2.0-1.5.2</version>
         </dependency>
@@ -51,9 +51,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `freenect2Example.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libfreenect2.*;
-import static org.bytedeco.libfreenect2.global.freenect2.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libfreenect2.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global.freenect2.*;
 
 /**
  *
@@ -63,7 +63,7 @@ public class freenect2Example {
     public static void main(String[] args) {
         Freenect2 freenect2Context;
         try {
-            Loader.load(org.bytedeco.libfreenect2.global.freenect2.class);
+            Loader.load(com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global.freenect2.class);
             // Context is shared accross cameras.
             freenect2Context = new Freenect2();
         } catch (Exception e) {

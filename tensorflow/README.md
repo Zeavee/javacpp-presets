@@ -16,7 +16,7 @@ Java API documentation is available here:
 
  * http://bytedeco.org/javacpp-presets/tensorflow/apidocs/
 
-&lowast; Call `Loader.load(org.bytedeco.tensorflow.presets.tensorflow.class)` before using the API in the `org.tensorflow` package.  
+&lowast; Call `Loader.load(com.oracle.svm.shadowed.org.bytedeco.tensorflow.presets.tensorflow.class)` before using the API in the `org.tensorflow` package.  
 &lowast; Call `Py_SetPath(cachePackages())` before calling `Py_Initialize()`.
 
 
@@ -35,7 +35,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.tensorflow</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.tensorflow</groupId>
     <artifactId>exampletrainer</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -43,33 +43,33 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform</artifactId>
             <version>1.15.0-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies required to use CUDA, cuDNN, NCCL, and TensorRT -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform-gpu</artifactId>
             <version>1.15.0-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA, cuDNN, NCCL, and TensorRT -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>10.1-7.6-1.5.2</version>
         </dependency>
 
         <!-- Optional dependencies to load Python-enabled builds -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform-python</artifactId>
             <version>1.15.0-1.5.2</version>
         </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorflow-platform-python-gpu</artifactId>
             <version>1.15.0-1.5.2</version>
         </dependency>
@@ -103,8 +103,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import org.bytedeco.tensorflow.*;
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
 public class ExampleTrainer {
 

@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.dnnl</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.dnnl</groupId>
     <artifactId>samples</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>dnnl-platform</artifactId>
             <version>1.1.1-1.5.2</version>
         </dependency>
@@ -79,10 +79,10 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ///
 /// > Example code: @ref cpu_cnn_inference_int8.cpp
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.dnnl.*;
-import static org.bytedeco.dnnl.global.dnnl.*;
+import com.oracle.svm.shadowed.org.bytedeco.dnnl.*;
+import static com.oracle.svm.shadowed.org.bytedeco.dnnl.global.dnnl.*;
 
 public class CpuCnnInferenceInt8 {
 

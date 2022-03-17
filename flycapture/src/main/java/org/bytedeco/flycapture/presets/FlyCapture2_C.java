@@ -27,13 +27,13 @@
  *
  */
 
-package org.bytedeco.flycapture.presets;
+package com.oracle.svm.shadowed.org.bytedeco.flycapture.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * Wrapper for Point Grey FlyCapture2_C library (the C API v.2).
@@ -41,8 +41,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  * @author Jarek Sacha
  */
 @Properties(inherit = FlyCapture2.class,
-            target = "org.bytedeco.flycapture.FlyCapture2_C",
-            global = "org.bytedeco.flycapture.global.FlyCapture2_C", value = {
+            target = "com.oracle.svm.shadowed.org.bytedeco.flycapture.FlyCapture2_C",
+            global = "com.oracle.svm.shadowed.org.bytedeco.flycapture.global.FlyCapture2_C", value = {
         @Platform(value = {"linux-x86", "linux-arm", "windows"},
                 include = {"<FlyCapture2Defs_C.h>", "<FlyCapture2_C.h>",
                         "MultiSyncLibraryDefs_C.h", "MultiSyncLibrary_C.h"},

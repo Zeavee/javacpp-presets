@@ -34,7 +34,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.mkl</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.mkl</groupId>
     <artifactId>mkl</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -42,14 +42,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform</artifactId>
             <version>2019.5-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled full version of MKL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mkl-platform-redist</artifactId>
             <version>2019.5-1.5.2</version>
         </dependency>
@@ -85,10 +85,10 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 *   performance are omitted to improve readability.
 ********************************************************************************/
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
-import static org.bytedeco.mkl.global.mkl_rt.*;
+import static com.oracle.svm.shadowed.org.bytedeco.mkl.global.mkl_rt.*;
 
 public class DGEMMExample {
     public static void main(String[] args) throws Exception {

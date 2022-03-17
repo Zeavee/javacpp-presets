@@ -34,10 +34,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.nio.*;
 import javax.swing.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libfreenect.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libfreenect.*;
 import static java.lang.Math.*;
-import static org.bytedeco.libfreenect.global.freenect.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libfreenect.global.freenect.*;
 
 public class GLPCLView {
     static GLU glu = new GLU();
@@ -208,7 +208,7 @@ public class GLPCLView {
     }
 
     public static void main(String[] args) {
-        Loader.load(org.bytedeco.libfreenect.global.freenect.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.libfreenect.global.freenect.class);
 
         canvas = new GLCanvas();
         canvas.addGLEventListener(new GLEventListener() {

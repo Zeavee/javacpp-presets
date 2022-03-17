@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libpostal.*;
-import static org.bytedeco.libpostal.global.postal.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libpostal.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libpostal.global.postal.*;
 
 public class Example {
     public static void main(String[] args) throws Exception {

@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.arpack</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.arpack</groupId>
     <artifactId>icbarpackc</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>arpack-ng-platform</artifactId>
             <version>3.7.0-1.5.2</version>
         </dependency>
@@ -60,8 +60,8 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
  * The main advantage is that compiler checks (arguments) are performed at build time.
  */
 
-import org.bytedeco.javacpp.*;
-import static org.bytedeco.arpackng.global.arpack.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import static com.oracle.svm.shadowed.org.bytedeco.arpackng.global.arpack.*;
 
 /* test program to solve for the 9 largest eigenvalues of
  * A*x = lambda*x where A is the diagonal matrix

@@ -1,6 +1,6 @@
-module org.bytedeco.spinnaker {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.spinnaker.global;
-  exports org.bytedeco.spinnaker.presets;
-  exports org.bytedeco.spinnaker.Spinnaker_C;
+module com.oracle.svm.shadowed.org.bytedeco.spinnaker {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.spinnaker.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.spinnaker.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.spinnaker.Spinnaker_C;
 }

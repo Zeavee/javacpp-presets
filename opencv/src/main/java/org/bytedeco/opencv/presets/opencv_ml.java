@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * @author Samuel Audet
@@ -37,8 +37,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(include = "<opencv2/ml.hpp>", link = "opencv_ml@.4.1"),
         @Platform(value = "ios", preload = "libopencv_ml"),
         @Platform(value = "windows", link = "opencv_ml412")},
-    target = "org.bytedeco.opencv.opencv_ml",
-    global = "org.bytedeco.opencv.global.opencv_ml"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_ml",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_ml"
 )
 public class opencv_ml implements InfoMapper {
     public void map(InfoMap infoMap) {

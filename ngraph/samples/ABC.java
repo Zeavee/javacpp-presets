@@ -14,10 +14,10 @@
 // limitations under the License.
 //*****************************************************************************
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.ngraph.*;
-import static org.bytedeco.ngraph.global.ngraph.*;
+import com.oracle.svm.shadowed.org.bytedeco.ngraph.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ngraph.global.ngraph.*;
 
 public class ABC {
     public static void main(String[] args) {

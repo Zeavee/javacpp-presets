@@ -4,19 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>mkl</artifactId>
   <version>2019.5-${project.parent.version}</version>
   <name>JavaCPP Presets for MKL</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -30,7 +30,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
       </plugin>
       <plugin>
@@ -45,7 +45,7 @@
             <configuration>
               <classifier>${javacpp.platform}</classifier>
               <includes>
-                <include>org/bytedeco/mkl/${javacpp.platform}/*jni*</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/mkl/${javacpp.platform}/*jni*</include>
               </includes>
             </configuration>
           </execution>
@@ -59,10 +59,10 @@
               <classifier>${javacpp.platform}-redist</classifier>
               <classesDirectory>${project.build.directory}/native</classesDirectory>
               <includes>
-                <include>org/bytedeco/mkl/${javacpp.platform}/</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/mkl/${javacpp.platform}/</include>
               </includes>
               <excludes>
-                <exclude>org/bytedeco/mkl/${javacpp.platform}/*jni*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkl/${javacpp.platform}/*jni*</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -83,8 +83,8 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}-${javacpp.platform}-redist.jar</file>
                   <moduleInfoSource>
-                    open module org.bytedeco.${javacpp.packageName}.${javacpp.platform.module}.redist {
-                      requires transitive org.bytedeco.${javacpp.packageName};
+                    open module com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.${javacpp.platform.module}.redist {
+                      requires transitive com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName};
                     }
                   </moduleInfoSource>
                 </module>
@@ -114,7 +114,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}</properties>

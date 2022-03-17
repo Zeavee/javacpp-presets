@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.liquidfun.*;
-import static org.bytedeco.liquidfun.global.liquidfun.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.liquidfun.*;
+import static com.oracle.svm.shadowed.org.bytedeco.liquidfun.global.liquidfun.*;
 
 public class Example {
   public static void main(String[] args) {

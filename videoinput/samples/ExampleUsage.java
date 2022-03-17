@@ -1,6 +1,6 @@
-import org.bytedeco.javacpp.*;
-import org.bytedeco.videoinput.*;
-import static org.bytedeco.videoinput.global.videoInputLib.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.videoinput.*;
+import static com.oracle.svm.shadowed.org.bytedeco.videoinput.global.videoInputLib.*;
 
 public class ExampleUsage {
     public static void main(String[] args) {

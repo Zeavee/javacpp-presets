@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.ffmpeg</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.ffmpeg</groupId>
     <artifactId>readfewframe</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>ffmpeg-platform</artifactId>
             <version>4.2.1-1.5.2</version>
         </dependency>

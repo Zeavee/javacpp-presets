@@ -4,24 +4,24 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>opencv</artifactId>
   <version>4.1.2-${project.parent.version}</version>
   <name>JavaCPP Presets for OpenCV</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>openblas</artifactId>
       <version>0.3.7-${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
     <dependency>
@@ -50,16 +50,16 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>openblas</artifactId>
             <version>0.3.7-${project.parent.version}</version>
           </dependency>
           <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>openblas</artifactId>
             <version>0.3.7-${project.parent.version}</version>
             <classifier>${javacpp.platform}</classifier>
@@ -71,11 +71,11 @@
             <classPath>${project.build.outputDirectory}</classPath>
           </classPaths>
           <includePaths>
-            <includePath>${basedir}/../openblas/target/classes/org/bytedeco/openblas/include/</includePath>
-            <includePath>${basedir}/../openblas/src/main/resources/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/target/classes/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
+            <includePath>${basedir}/../openblas/src/main/resources/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includePath>
             <includePath>${basedir}/../openblas/cppbuild/${javacpp.platform}/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
           <linkPaths>
             <linkPath>${basedir}/../openblas/cppbuild/${javacpp.platform}/lib/</linkPath>
@@ -87,18 +87,18 @@
           </preloadPaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/include/</includeResource>
-            <includeResource>/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/openblas/${javacpp.platform}/lib/</linkResource>
           </linkResources>
         </configuration>
       </plugin>
@@ -110,7 +110,7 @@
             <configuration>
               <includes>
                 <include>org/opencv/**</include>
-                <include>org/bytedeco/opencv/**</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/opencv/**</include>
               </includes>
             </configuration>
           </execution>
@@ -122,25 +122,25 @@
                 <exclude>${javacpp.platform.library.path}/lib/*.so*</exclude>
                 <exclude>${javacpp.platform.library.path}/sdk/**/*.so*</exclude>
                 <exclude>${javacpp.platform.library.path}/sdk/native/jni/include/**</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/*.exp</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/*.lib</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/*.obj</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/bin/*</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/lib/*.a</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/lib/*.dylib</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/lib/*.so*</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/sdk/**/*.a</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/sdk/**/*.dylib</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/sdk/**/*.so*</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/share/**/*.a</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/share/**/*.dylib</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/share/**/*.so*</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x86/**/*.lib</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x86/**/*.dll</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x86/**/*.exe</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x64/**/*.lib</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x64/**/*.dll</exclude>
-                <exclude>org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x64/**/*.exe</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/bin/*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/lib/*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/lib/*.dylib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/lib/*.so*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/sdk/**/*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/sdk/**/*.dylib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/sdk/**/*.so*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/share/**/*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/share/**/*.dylib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/share/**/*.so*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x86/**/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x86/**/*.dll</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x86/**/*.exe</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x64/**/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x64/**/*.dll</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/opencv/${javacpp.platform}${javacpp.platform.extension}/x64/**/*.exe</exclude>
               </excludes>
             </configuration>
           </execution>

@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpython.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cpython.presets;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -160,17 +160,17 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                            "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64/"}
         ),
     },
-    target = "org.bytedeco.cpython",
-    global = "org.bytedeco.cpython.global.python",
-    helper = "org.bytedeco.cpython.helper.python"
+    target = "com.oracle.svm.shadowed.org.bytedeco.cpython",
+    global = "com.oracle.svm.shadowed.org.bytedeco.cpython.global.python",
+    helper = "com.oracle.svm.shadowed.org.bytedeco.cpython.helper.python"
 )
 @NoException
 public class python implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "cpython"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "cpython"); }
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/cpython/" + Loader.getPlatform() + "/lib/")}. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/cpython/" + Loader.getPlatform() + "/lib/")}. */
     public static File cachePackage() throws IOException {
-        return Loader.cacheResource("/org/bytedeco/cpython/" + Loader.getPlatform() + "/lib/");
+        return Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/cpython/" + Loader.getPlatform() + "/lib/");
     }
 
     /** Returns {@code {f, new File(f, "python3.7"), new File(f, "python3.7/lib-dynload"), new File(f, "python3.7/site-packages")}} where {@code File f = cachePackage()}. */

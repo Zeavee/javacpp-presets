@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cuda.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cuda.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -47,10 +47,10 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                                         includepath = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/include/",
                                         preloadpath = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/",
                                            linkpath = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/lib/x64/") },
-        target = "org.bytedeco.cuda.cudart", global = "org.bytedeco.cuda.global.cudart")
+        target = "com.oracle.svm.shadowed.org.bytedeco.cuda.cudart", global = "com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart")
 @NoException
 public class cudart implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "cuda"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "cuda"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("__volatile__", "__no_return__", "__noinline__", "__forceinline__", "__thread__", "__restrict__",

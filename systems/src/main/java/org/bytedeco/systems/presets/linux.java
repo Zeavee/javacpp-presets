@@ -20,21 +20,21 @@
  * limitations under the License.
  */
 
-package org.bytedeco.systems.presets;
+package com.oracle.svm.shadowed.org.bytedeco.systems.presets;
 
 import java.io.File;
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.BuildEnabled;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
-import org.bytedeco.javacpp.tools.Logger;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.BuildEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Logger;
 
 /**
  *
@@ -50,10 +50,10 @@ import org.bytedeco.javacpp.tools.Logger;
                "bits/siginfo.h", "bits/sigset.h", "bits/signum.h", "bits/sigaction.h", "bits/sigcontext.h", "bits/sigstack.h", "signal.h",
                "sys/ucontext.h", "ucontext.h", "bits/sched.h", "sched.h", "spawn.h", "bits/posix_opt.h", "bits/confname.h", "unistd.h",
                "sys/poll.h", "sys/reboot.h", "bits/resource.h", "sys/resource.h", "sys/sysctl.h", "bits/waitflags.h", "sys/wait.h"},
-    link = "dl")}, target = "org.bytedeco.systems.linux", global = "org.bytedeco.systems.global.linux")
+    link = "dl")}, target = "com.oracle.svm.shadowed.org.bytedeco.systems.linux", global = "com.oracle.svm.shadowed.org.bytedeco.systems.global.linux")
 @NoException
 public class linux implements BuildEnabled, LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "systems"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "systems"); }
 
     private Logger logger;
     private java.util.Properties properties;

@@ -1,12 +1,12 @@
 JavaCPP Presets
 ===============
 
-[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/javacpp-presets/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.bytedeco/javacpp-presets) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.bytedeco/javacpp-presets.svg)](http://bytedeco.org/builds/) <sup>Android, iOS, Linux, Mac OS X:</sup> [![Travis CI](https://travis-ci.org/bytedeco/javacpp-presets.svg?branch=master)](https://travis-ci.org/bytedeco/javacpp-presets) <sup>Windows:</sup> [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/bytedeco/javacpp-presets?branch=master&svg=true)](https://ci.appveyor.com/project/bytedeco/javacpp-presets)
+[![Gitter](https://badges.gitter.im/bytedeco/javacpp.svg)](https://gitter.im/bytedeco/javacpp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/javacpp-presets/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.oracle.svm.shadowed.org.bytedeco/javacpp-presets) [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.oracle.svm.shadowed.org.bytedeco/javacpp-presets.svg)](http://bytedeco.org/builds/) <sup>Android, iOS, Linux, Mac OS X:</sup> [![Travis CI](https://travis-ci.com/oracle/svm/shadowed/org/bytedeco/javacpp-presets.svg?branch=master)](https://travis-ci.com/oracle/svm/shadowed/org/bytedeco/javacpp-presets) <sup>Windows:</sup> [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/bytedeco/javacpp-presets?branch=master&svg=true)](https://ci.appveyor.com/project/bytedeco/javacpp-presets)
 
 
 Introduction
 ------------
-The JavaCPP Presets modules contain Java configuration and interface classes for widely used C/C++ libraries. The configuration files in the `org.bytedeco.<moduleName>.presets` packages are used by the `Parser` to create from C/C++ header files the Java interface files targeting the `org.bytedeco.<moduleName>` packages, which is turn are used by the `Generator` and the native C++ compiler to produce the required JNI libraries. Moreover, helper classes make their functionality easier to use on the Java platform, including Android.
+The JavaCPP Presets modules contain Java configuration and interface classes for widely used C/C++ libraries. The configuration files in the `com.oracle.svm.shadowed.org.bytedeco.<moduleName>.presets` packages are used by the `Parser` to create from C/C++ header files the Java interface files targeting the `com.oracle.svm.shadowed.org.bytedeco.<moduleName>` packages, which is turn are used by the `Generator` and the native C++ compiler to produce the required JNI libraries. Moreover, helper classes make their functionality easier to use on the Java platform, including Android.
 
 Please refer to the wiki page for more information about how to [create new presets](https://github.com/bytedeco/javacpp-presets/wiki/Create-New-Presets). Since additional documentation is currently lacking, please also feel free to ask questions on [the mailing list](http://groups.google.com/group/javacpp-project).
 
@@ -22,7 +22,7 @@ We can also have everything downloaded and installed automatically with:
  * Maven (inside the `pom.xml` file)
 ```xml
   <dependency>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>${moduleName}-platform</artifactId>
     <version>${moduleVersion}-1.5.2</version>
   </dependency>
@@ -31,20 +31,20 @@ We can also have everything downloaded and installed automatically with:
  * Gradle (inside the `build.gradle` file)
 ```groovy
   dependencies {
-    compile group: 'org.bytedeco', name: moduleName + '-platform', version: moduleVersion + '-1.5.2'
+    compile group: 'com.oracle.svm.shadowed.org.bytedeco', name: moduleName + '-platform', version: moduleVersion + '-1.5.2'
   }
 ```
 
  * Leiningen (inside the `project.clj` file)
 ```clojure
   :dependencies [
-    [~(symbol (str "org.bytedeco/" moduleName "-platform")) ~(str moduleVersion "-1.5.2")]
+    [~(symbol (str "com.oracle.svm.shadowed.org.bytedeco/" moduleName "-platform")) ~(str moduleVersion "-1.5.2")]
   ]
 ```
 
  * sbt (inside the `build.sbt` file)
 ```scala
-  libraryDependencies += "org.bytedeco" % moduleName + "-platform" % moduleVersion + "-1.5.2"
+  libraryDependencies += "com.oracle.svm.shadowed.org.bytedeco" % moduleName + "-platform" % moduleVersion + "-1.5.2"
 ```
 
 where the `moduleName` and `moduleVersion` variables correspond to the desired module. This downloads binaries for all platforms, but to get binaries for only one platform we can set the `javacpp.platform` system property (via the `-D` command line option) to something like `android-arm`, `linux-x86_64`, `macosx-x86_64`, `windows-x86_64`, etc. Another option available for Scala users is [sbt-javacpp](https://github.com/bytedeco/sbt-javacpp).
@@ -85,7 +85,7 @@ IntelliJ IDEA (Android 5.0 or newer):
  3. Navigate to File > Project Structure > app > Dependencies, click `+`, and select "2 File dependency".
  4. Select all the JAR files from the `libs` subdirectory.
 
-After that, we can access almost transparently the corresponding C/C++ APIs through the interface classes found in the `org.bytedeco.<moduleName>` packages. Indeed, the `Parser` translates the code comments from the C/C++ header files into the Java interface files, (almost) ready to be consumed by Javadoc. However, since their translation still leaves to be desired, one may wish to refer to the original documentation pages. For instance, the ones for OpenCV and FFmpeg can be found online at:
+After that, we can access almost transparently the corresponding C/C++ APIs through the interface classes found in the `com.oracle.svm.shadowed.org.bytedeco.<moduleName>` packages. Indeed, the `Parser` translates the code comments from the C/C++ header files into the Java interface files, (almost) ready to be consumed by Javadoc. However, since their translation still leaves to be desired, one may wish to refer to the original documentation pages. For instance, the ones for OpenCV and FFmpeg can be found online at:
 
  * [OpenCV documentation](http://docs.opencv.org/master/)
  * [FFmpeg documentation](http://ffmpeg.org/doxygen/trunk/)
@@ -200,7 +200,7 @@ How Can I Help?
 Contributions of any kind are highly welcome! At the moment, the `Parser` has limited capabilities, so I plan to improve it gradually to the point where it can successfully parse large C++ header files that are even more convoluted than the ones from OpenCV, Caffe, or TensorFlow, but the build system could also be improved. Consequently, I am looking for help especially with the five following tasks, in no particular order:
 
  * Setting up continuous integration, preferably free on the cloud ([Travis CI](https://travis-ci.org/)?)
- * Improving the `Parser` (by using the [presets for Clang](llvm/src/main/java/org/bytedeco/javacpp/clang.java)?)
+ * Improving the `Parser` (by using the [presets for Clang](llvm/src/main/java/com/oracle/svm/shadowed/org/bytedeco/javacpp/clang.java)?)
  * Providing builds for more platforms, as with `linux-armhf` for [Raspberry Pi](https://www.raspberrypi.org/), etc.
  * Replacing the Bash/Maven build combo by something easier to use ([Gradle](http://gradle.org/)?)
  * Adding new presets as child modules for other C/C++ libraries (Caffe2, OpenNI, OpenMesh, PCL, etc.)

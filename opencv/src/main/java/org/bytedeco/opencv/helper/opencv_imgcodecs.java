@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.helper;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.helper;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.opencv.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_imgproc.*;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.*;
 
-public class opencv_imgcodecs extends org.bytedeco.opencv.presets.opencv_imgcodecs {
+public class opencv_imgcodecs extends com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_imgcodecs {
 
     public static IplImage cvLoadImage(String filename) {
         return cvLoadImage(filename, IMREAD_COLOR);

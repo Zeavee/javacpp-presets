@@ -20,15 +20,15 @@
  * limitations under the License.
  */
 
-package org.bytedeco.onnx.presets;
+package com.oracle.svm.shadowed.org.bytedeco.onnx.presets;
 
-import org.bytedeco.javacpp.annotation.*;
-import org.bytedeco.javacpp.tools.*;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
 
-@Properties(target = "org.bytedeco.onnx", global = "org.bytedeco.onnx.global.onnx", value = {@Platform(
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.onnx", global = "com.oracle.svm.shadowed.org.bytedeco.onnx.global.onnx", value = {@Platform(
     value = {"linux", "macosx"},
     define = {"ONNX_NAMESPACE onnx", "ONNX_USE_LITE_PROTO", "ONNX_ML 1", "SHARED_PTR_NAMESPACE std", "UNIQUE_PTR_NAMESPACE std"},
     compiler = "cpp11",
@@ -68,7 +68,7 @@ import org.bytedeco.javacpp.Pointer;
     link = {"onnx_proto", "onnx", "onnxifi"}),
 @Platform(value = "macosx", link = {"onnx_proto", "onnx"})}) // "onnxifi" not available on Mac
 public class onnx implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "onnx"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "onnx"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("ONNX_NAMESPACE").cppText("#define ONNX_NAMESPACE onnx"))

@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.tensorrt</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.tensorrt</groupId>
     <artifactId>samplegooglenet</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -48,20 +48,20 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorrt-platform</artifactId>
             <version>6.0-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA, cuDNN, NCCL, and TensorRT -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda</artifactId>
             <version>10.1-7.6-1.5.2</version>
             <classifier>linux-x86_64-redist</classifier>
         </dependency>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>tensorrt</artifactId>
             <version>6.0-1.5.2</version>
             <classifier>linux-x86_64-redist</classifier>
@@ -78,14 +78,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```java
 import java.io.*;
 import java.util.*;
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.cuda.cudart.*;
-import org.bytedeco.tensorrt.nvinfer.*;
-import org.bytedeco.tensorrt.nvparsers.*;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.tensorrt.global.nvinfer.*;
-import static org.bytedeco.tensorrt.global.nvparsers.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvinfer.*;
+import com.oracle.svm.shadowed.org.bytedeco.tensorrt.nvparsers.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvinfer.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorrt.global.nvparsers.*;
 
 public class SampleGoogleNet {
     static void CHECK(int status)

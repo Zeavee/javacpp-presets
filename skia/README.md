@@ -34,7 +34,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.skia</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.skia</groupId>
     <artifactId>skiacexample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -42,7 +42,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>skia-platform</artifactId>
             <version>1.68.0-1.5.2</version>
         </dependency>
@@ -58,10 +58,10 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.skia.*;
-import static org.bytedeco.skia.global.Skia.*;
+import com.oracle.svm.shadowed.org.bytedeco.skia.*;
+import static com.oracle.svm.shadowed.org.bytedeco.skia.global.Skia.*;
 
 public class SkiaCExample {
     private static sk_surface_t makeSurface(int w, int h) {

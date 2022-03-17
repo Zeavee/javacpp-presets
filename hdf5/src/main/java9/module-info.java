@@ -1,6 +1,6 @@
-module org.bytedeco.hdf5 {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.hdf5.global;
-  exports org.bytedeco.hdf5.presets;
-  exports org.bytedeco.hdf5;
+module com.oracle.svm.shadowed.org.bytedeco.hdf5 {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.hdf5.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.hdf5.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.hdf5;
 }

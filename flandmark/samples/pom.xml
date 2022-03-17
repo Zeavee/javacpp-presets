@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.flandmark</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.flandmark</groupId>
     <artifactId>simpleexample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>flandmark-platform</artifactId>
             <version>1.07-1.5.2</version>
         </dependency>

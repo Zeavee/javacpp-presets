@@ -22,7 +22,7 @@ Scala API documentation is available here:
 
  * http://bytedeco.org/javacpp-presets/mxnet/scaladocs/
 
-&lowast; Call `Loader.load(org.bytedeco.mxnet.presets.mxnet.class)` before using the API in the `org.apache.mxnet` package.
+&lowast; Call `Loader.load(com.oracle.svm.shadowed.org.bytedeco.mxnet.presets.mxnet.class)` before using the API in the `org.apache.mxnet` package.
 
 
 Sample Usage
@@ -41,7 +41,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.mxnet</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.mxnet</groupId>
     <artifactId>ImageClassificationPredict</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -49,21 +49,21 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mxnet-platform</artifactId>
             <version>1.5.1-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies required to use CUDA, cuDNN, and NCCL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>mxnet-platform-gpu</artifactId>
             <version>1.5.1-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA, cuDNN, and NCCL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>10.1-7.6-1.5.2</version>
         </dependency>
@@ -121,17 +121,17 @@ import java.util.List;
 import java.util.ListIterator;
 
 import org.apache.mxnet.javaapi.*;
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
 // Path for c_predict_api
-import org.bytedeco.mxnet.*;
-import static org.bytedeco.mxnet.global.mxnet.*;
+import com.oracle.svm.shadowed.org.bytedeco.mxnet.*;
+import static com.oracle.svm.shadowed.org.bytedeco.mxnet.global.mxnet.*;
 
-import org.bytedeco.opencv.opencv_core.*;
-import org.bytedeco.opencv.opencv_imgproc.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
-import static org.bytedeco.opencv.global.opencv_imgproc.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_imgproc.*;
 
 public class ImageClassificationPredict {
 
@@ -304,7 +304,7 @@ public class ImageClassificationPredict {
 
     public static void main(String[] args) throws Exception {
         // Preload required by JavaCPP
-        Loader.load(org.bytedeco.mxnet.global.mxnet.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.mxnet.global.mxnet.class);
 
         if (args.length < 1) {
             System.out.println("No test image here.");

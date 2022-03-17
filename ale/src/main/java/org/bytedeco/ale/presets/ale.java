@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ale.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ale.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -46,9 +46,9 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "macosx-x86_64", preload = "SDL-1.2@.0", preloadpath = "/usr/local/lib/"),
         @Platform(value = "windows-x86",    preload = {"SDL", "libale"}, preloadpath = "/mingw32/bin/"),
         @Platform(value = "windows-x86_64", preload = {"SDL", "libale"}, preloadpath = "/mingw64/bin")},
-    target = "org.bytedeco.ale", global = "org.bytedeco.ale.global.ale")
+    target = "com.oracle.svm.shadowed.org.bytedeco.ale", global = "com.oracle.svm.shadowed.org.bytedeco.ale.global.ale")
 public class ale implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "ale"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "ale"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("DEBUGGER_SUPPORT", "CHEATCODE_SUPPORT").define(false))

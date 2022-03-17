@@ -20,27 +20,27 @@
  * limitations under the License.
  */
 
-package org.bytedeco.fftw.presets;
+package com.oracle.svm.shadowed.org.bytedeco.fftw.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(global = "org.bytedeco.fftw.global.fftw3", value = {
+@Properties(global = "com.oracle.svm.shadowed.org.bytedeco.fftw.global.fftw3", value = {
     @Platform(include = "<fftw3.h>", link = {"fftw3@.3", "fftw3f@.3"}),
     @Platform(value = "android", link = {"fftw3", "fftw3f"}),
     @Platform(value = "windows", preload = {"libfftw3-3", "libfftw3f-3"}) })
 @NoException
 public class fftw3 implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "fftw"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "fftw"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("!defined(FFTW_NO_Complex) && defined(_Complex_I) && defined(complex) && defined(I)").define(false))

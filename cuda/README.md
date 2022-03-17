@@ -50,7 +50,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.cuda</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.cuda</groupId>
     <artifactId>mnistcudnn</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -58,14 +58,14 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform</artifactId>
             <version>10.1-7.6-1.5.2</version>
         </dependency>
 
         <!-- Additional dependencies to use bundled CUDA, cuDNN, and NCCL -->
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cuda-platform-redist</artifactId>
             <version>10.1-7.6-1.5.2</version>
         </dependency>
@@ -101,13 +101,13 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
  */
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cuda.cublas.*;
-import org.bytedeco.cuda.cudart.*;
-import org.bytedeco.cuda.cudnn.*;
-import static org.bytedeco.cuda.global.cublas.*;
-import static org.bytedeco.cuda.global.cudart.*;
-import static org.bytedeco.cuda.global.cudnn.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cublas.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudart.*;
+import com.oracle.svm.shadowed.org.bytedeco.cuda.cudnn.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cublas.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudart.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudnn.*;
 
 public class MNISTCUDNN {
     static final int IMAGE_H = 28;

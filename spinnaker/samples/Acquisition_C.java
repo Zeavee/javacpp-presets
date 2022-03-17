@@ -17,9 +17,9 @@
 
 import java.io.File;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.spinnaker.Spinnaker_C.*;
-import static org.bytedeco.spinnaker.global.Spinnaker_C.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.spinnaker.Spinnaker_C.*;
+import static com.oracle.svm.shadowed.org.bytedeco.spinnaker.global.Spinnaker_C.*;
 
 /**
  * Example how to enumerate cameras, start acquisition, and grab images.

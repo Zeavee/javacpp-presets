@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.ale</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.ale</groupId>
     <artifactId>sharedlibraryinterfaceexample</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>ale-platform</artifactId>
             <version>0.6.0-1.5.2</version>
         </dependency>
@@ -71,9 +71,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 import java.lang.System;
 import java.util.Random;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.ale.*;
-import static org.bytedeco.ale.global.ale.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.ale.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ale.global.ale.*;
 
 public class SharedLibraryInterfaceExample {
     public static void main(String[] args) {

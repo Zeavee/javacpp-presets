@@ -20,16 +20,16 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorflow;
+package com.oracle.svm.shadowed.org.bytedeco.tensorflow;
 
 import java.nio.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
-import static org.bytedeco.tensorflow.global.tensorflow.*;
+import static com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow.*;
 
-@Properties(inherit = org.bytedeco.tensorflow.presets.tensorflow.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.tensorflow.presets.tensorflow.class)
 public abstract class AbstractTensor extends Pointer implements Indexable {
     static { Loader.load(); }
     public AbstractTensor(Pointer p) { super(p); }

@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cuda.presets;
+package com.oracle.svm.shadowed.org.bytedeco.cuda.presets;
 
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -36,7 +36,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 @Properties(inherit = cudart.class, value = {
     @Platform(include = "<cudnn.h>", link = "cudnn@.7"),
     @Platform(value = "windows-x86_64", preload = "cudnn64_7")},
-        target = "org.bytedeco.cuda.cudnn", global = "org.bytedeco.cuda.global.cudnn")
+        target = "com.oracle.svm.shadowed.org.bytedeco.cuda.cudnn", global = "com.oracle.svm.shadowed.org.bytedeco.cuda.global.cudnn")
 @NoException
 public class cudnn implements InfoMapper {
     public void map(InfoMap infoMap) {

@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.qt.presets;
+package com.oracle.svm.shadowed.org.bytedeco.qt.presets;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
 
 @Properties(
-    target = "org.bytedeco.qt.Qt5Core",
-    global = "org.bytedeco.qt.global.Qt5Core",
-    helper = "org.bytedeco.qt.helper.Qt5Core",
+    target = "com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Core",
+    global = "com.oracle.svm.shadowed.org.bytedeco.qt.global.Qt5Core",
+    helper = "com.oracle.svm.shadowed.org.bytedeco.qt.helper.Qt5Core",
     value = {
         @Platform(
             include = {
@@ -58,7 +58,7 @@ import org.bytedeco.javacpp.tools.InfoMap;
     }
 )
 public class Qt5Core extends QtInfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "qt"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "qt"); }
 
   @Override
   public void map(InfoMap infoMap) {

@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.helper;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.helper;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.opencv.opencv_core.*;
-import static org.bytedeco.opencv.global.opencv_core.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
 
-public class opencv_core extends org.bytedeco.opencv.presets.opencv_core {
+public class opencv_core extends com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core {
 
     public static CvScalar CV_RGB(double r, double g, double b) {
         return cvScalar(b, g, r, 0);
@@ -68,22 +68,22 @@ public class opencv_core extends org.bytedeco.opencv.presets.opencv_core {
 
     public static int cvInitNArrayIterator(int count, CvArr[] arrs,
             CvArr mask, CvMatND stubs, CvNArrayIterator array_iterator, int flags/*=0*/) {
-        return org.bytedeco.opencv.global.opencv_core.cvInitNArrayIterator(count, new CvArrArray(arrs),
+        return com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvInitNArrayIterator(count, new CvArrArray(arrs),
                 mask, stubs, array_iterator, flags);
     }
 
     public static void cvMixChannels(CvArr[] src, int src_count,
             CvArr[] dst, int dst_count, int[] from_to, int pair_count) {
-        org.bytedeco.opencv.global.opencv_core.cvMixChannels(new CvArrArray(src), src_count,
+        com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvMixChannels(new CvArrArray(src), src_count,
                 new CvArrArray(dst), dst_count, new IntPointer(from_to), pair_count);
     }
 
     public static void cvCalcCovarMatrix(CvArr[] vects, int count, CvArr cov_mat, CvArr avg, int flags) {
-        org.bytedeco.opencv.global.opencv_core.cvCalcCovarMatrix(new CvArrArray(vects), count, cov_mat, avg, flags);
+        com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvCalcCovarMatrix(new CvArrArray(vects), count, cov_mat, avg, flags);
     }
 
     public static double cvNorm(CvArr arr1, CvArr arr2) {
-        return org.bytedeco.opencv.global.opencv_core.cvNorm(arr1, arr2, CV_L2, null);
+        return com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.cvNorm(arr1, arr2, CV_L2, null);
     }
 
     public static Scalar RGB(double r, double g, double b) {

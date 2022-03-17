@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.libfreenect</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.libfreenect</groupId>
     <artifactId>glpclview</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libfreenect-platform</artifactId>
             <version>0.5.7-1.5.2</version>
         </dependency>
@@ -101,10 +101,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.nio.*;
 import javax.swing.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libfreenect.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libfreenect.*;
 import static java.lang.Math.*;
-import static org.bytedeco.libfreenect.global.freenect.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libfreenect.global.freenect.*;
 
 public class GLPCLView {
     static GLU glu = new GLU();
@@ -275,7 +275,7 @@ public class GLPCLView {
     }
 
     public static void main(String[] args) {
-        Loader.load(org.bytedeco.libfreenect.global.freenect.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.libfreenect.global.freenect.class);
 
         canvas = new GLCanvas();
         canvas.addGLEventListener(new GLEventListener() {

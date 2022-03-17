@@ -34,7 +34,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.librealsense2</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.librealsense2</groupId>
     <artifactId>rsdistance</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -42,7 +42,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>librealsense2-platform</artifactId>
             <version>2.29.0-1.5.2</version>
         </dependency>
@@ -59,9 +59,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 // Copyright(c) 2017 Intel Corporation. All Rights Reserved.
 
 /* Include the librealsense C header files */
-import org.bytedeco.javacpp.*;
-import org.bytedeco.librealsense2.*;
-import static org.bytedeco.librealsense2.global.realsense2.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.librealsense2.*;
+import static com.oracle.svm.shadowed.org.bytedeco.librealsense2.global.realsense2.*;
 
 public class RsDistance {
 

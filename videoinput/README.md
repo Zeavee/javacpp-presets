@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.videoinput</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.videoinput</groupId>
     <artifactId>exampleusage</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>videoinput-platform</artifactId>
             <version>0.200-1.5.2</version>
         </dependency>
@@ -53,9 +53,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `ExampleUsage.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.videoinput.*;
-import static org.bytedeco.videoinput.global.videoInputLib.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.videoinput.*;
+import static com.oracle.svm.shadowed.org.bytedeco.videoinput.global.videoInputLib.*;
 
 public class ExampleUsage {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.bytedeco.opencv.opencv_core;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core;
 
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
@@ -6,12 +6,12 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
-import static org.bytedeco.opencv.global.opencv_core.*;
+import static com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core.*;
 
-@Properties(inherit = org.bytedeco.opencv.presets.opencv_core.class)
+@Properties(inherit = com.oracle.svm.shadowed.org.bytedeco.opencv.presets.opencv_core.class)
 public abstract class AbstractCvMat extends CvArr {
     protected BytePointer pointer; // a reference to prevent deallocation
 

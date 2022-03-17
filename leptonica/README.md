@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.leptonica</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.leptonica</groupId>
     <artifactId>sudokutest</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>leptonica-platform</artifactId>
             <version>1.78.0-1.5.2</version>
         </dependency>
@@ -85,9 +85,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
  *   Tests sudoku solver and generator.
  */
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.leptonica.*;
-import static org.bytedeco.leptonica.global.lept.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.leptonica.*;
+import static com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.*;
 
 public class SudokuTest {
     static final String startsol = "3 8 7 2 6 4 1 9 5 "
@@ -101,7 +101,7 @@ public class SudokuTest {
                                  + "6 5 8 4 2 3 9 7 1";
 
     public static void main(String[] args) {
-        Loader.load(org.bytedeco.leptonica.global.lept.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept.class);
 
         IntPointer   unique = new IntPointer(1);
         IntPointer   array;

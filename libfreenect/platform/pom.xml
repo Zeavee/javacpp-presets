@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
     <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>libfreenect-platform</artifactId>
   <version>0.5.7-${project.parent.version}</version>
   <name>JavaCPP Presets Platform for libfreenect</name>
@@ -129,15 +129,15 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.moduleId}.platform {
-                      requires org.bytedeco.${javacpp.moduleId}.linux.x86;
-                      requires org.bytedeco.${javacpp.moduleId}.linux.x86_64;
-                      requires org.bytedeco.${javacpp.moduleId}.linux.armhf;
-                      requires org.bytedeco.${javacpp.moduleId}.linux.arm64;
-                      requires org.bytedeco.${javacpp.moduleId}.linux.ppc64le;
-                      requires org.bytedeco.${javacpp.moduleId}.macosx.x86_64;
-                      requires org.bytedeco.${javacpp.moduleId}.windows.x86;
-                      requires org.bytedeco.${javacpp.moduleId}.windows.x86_64;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.platform {
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.x86;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.x86_64;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.armhf;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.arm64;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.ppc64le;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.macosx.x86_64;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86;
+                      requires com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86_64;
                     }
                   </moduleInfoSource>
                 </module>

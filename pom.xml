@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>javacpp-presets</artifactId>
   <version>1.5.2</version>
   <packaging>pom</packaging>
@@ -62,7 +62,7 @@
     <javacpp.compiler.skip>false</javacpp.compiler.skip> <!-- To skip native compilation phase: -Djavacpp.compiler.skip=true -->
     <javacpp.moduleId>${project.artifactId}</javacpp.moduleId>
     <javacpp.packageName>${project.artifactId}</javacpp.packageName>
-    <javacpp.platform.nativeOutputPath>org/bytedeco/${javacpp.packageName}/${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.nativeOutputPath>
+    <javacpp.platform.nativeOutputPath>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.nativeOutputPath>
     <javacpp.platform.root></javacpp.platform.root>
     <javacpp.platform.compiler></javacpp.platform.compiler>
     <javacpp.platform.extension></javacpp.platform.extension>
@@ -88,7 +88,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <version>${project.parent.version}</version>
       </dependency>
@@ -158,14 +158,14 @@
             </goals>
             <configuration>
               <includes>
-                <include>org/bytedeco/${javacpp.packageName}/presets/*.java</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/presets/*.java</include>
               </includes>
             </configuration>
           </execution>
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <version>${project.parent.version}</version>
         <configuration>
@@ -187,7 +187,7 @@
           <classPath>${project.build.outputDirectory}</classPath>
           <includePaths>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
           <linkPaths>
             <linkPath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/lib/</linkPath>
@@ -195,29 +195,29 @@
           <preloadPath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/bin/</preloadPath>
           <resourcePaths>
             <resourcePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/</resourcePath>
-            <resourcePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/</resourcePath>
+            <resourcePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/</resourcePath>
           </resourcePaths>
           <executablePaths>
             <executablePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/bin/</executablePath>
           </executablePaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</buildResource>
-            <buildResource>/org/bytedeco/javacpp/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/javacpp/include/</includeResource>
-            <includeResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/include/</includeResource>
-            <includeResource>/org/bytedeco/javacpp/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/lib/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/lib/</linkResource>
           </linkResources>
         </configuration>
         <executions>
@@ -282,7 +282,7 @@
             <configuration>
               <skip>${javacpp.parser.skip}</skip>
               <outputDirectory>${project.basedir}/src/gen/java</outputDirectory>
-              <classOrPackageName>org.bytedeco.${javacpp.packageName}.presets.*</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.presets.*</classOrPackageName>
             </configuration>
           </execution>
           <execution>
@@ -294,7 +294,7 @@
             <configuration>
               <outputDirectory>${project.build.directory}/native/${javacpp.platform.nativeOutputPath}</outputDirectory>
               <skip>${javacpp.compiler.skip}</skip>
-              <classOrPackageName>org.bytedeco.${javacpp.packageName}.**</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.**</classOrPackageName>
               <copyLibs>true</copyLibs>
               <copyResources>true</copyResources>
             </configuration>
@@ -329,10 +329,10 @@
                 </manifestEntries>
               </archive>
               <includes>
-                <include>org/bytedeco/${javacpp.packageName}/**</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/**</include>
               </includes>
               <excludes>
-                <exclude>org/bytedeco/${javacpp.packageName}/include/</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -358,9 +358,9 @@
               </archive>
               <classesDirectory>${project.build.directory}/native</classesDirectory>
               <excludes>
-                <exclude>org/bytedeco/${javacpp.packageName}/windows-*/*.exp</exclude>
-                <exclude>org/bytedeco/${javacpp.packageName}/windows-*/*.lib</exclude>
-                <exclude>org/bytedeco/${javacpp.packageName}/windows-*/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/windows-*/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/windows-*/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/windows-*/*.obj</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -391,8 +391,8 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}-${javacpp.platform}${javacpp.platform.extension}.jar</file>
                   <moduleInfoSource>
-                    open module org.bytedeco.${javacpp.packageName}.${javacpp.platform.module} {
-                      requires transitive org.bytedeco.${javacpp.packageName};
+                    open module com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.${javacpp.platform.module} {
+                      requires transitive com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName};
                     }
                   </moduleInfoSource>
                 </module>

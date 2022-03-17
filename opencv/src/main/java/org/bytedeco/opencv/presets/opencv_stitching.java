@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -45,8 +45,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "ios", preload = "libopencv_stitching"),
         @Platform(value = "windows", link = "opencv_stitching412", preload = {"opencv_cuda412", "opencv_cudaarithm412", "opencv_cudafilters412",
             "opencv_cudaimgproc412", "opencv_cudafeatures2d412", "opencv_cudalegacy412", "opencv_cudawarping412"})},
-    target = "org.bytedeco.opencv.opencv_stitching",
-    global = "org.bytedeco.opencv.global.opencv_stitching"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_stitching",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_stitching"
 )
 public class opencv_stitching implements InfoMapper {
     public void map(InfoMap infoMap) {

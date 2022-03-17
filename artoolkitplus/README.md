@@ -33,7 +33,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.artoolkitplus</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.artoolkitplus</groupId>
     <artifactId>multimain</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -41,7 +41,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>artoolkitplus-platform</artifactId>
             <version>2.3.1-1.5.2</version>
         </dependency>
@@ -80,9 +80,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 // loads test images and shows use to use the ARToolKitPlus API.
 
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.artoolkitplus.*;
-import static org.bytedeco.artoolkitplus.global.ARToolKitPlus.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.*;
+import static com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.global.ARToolKitPlus.*;
 
 public class MultiMain {
     public static void main(String[] args) throws IOException {

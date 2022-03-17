@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.qt.helper;
+package com.oracle.svm.shadowed.org.bytedeco.qt.helper;
 
 import java.io.File;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.qt.Qt5Core.QString;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Core.QString;
 
-public class Qt5Core extends org.bytedeco.qt.presets.Qt5Core {
+public class Qt5Core extends com.oracle.svm.shadowed.org.bytedeco.qt.presets.Qt5Core {
 
   static {
 //    // Load macOS framework
@@ -37,7 +37,7 @@ public class Qt5Core extends org.bytedeco.qt.presets.Qt5Core {
 //    }
 
     // Load preset
-    Loader.load(org.bytedeco.qt.presets.Qt5Core.class);
+    Loader.load(com.oracle.svm.shadowed.org.bytedeco.qt.presets.Qt5Core.class);
 
     // Set main thread
     QtCore_verifyMainThread();

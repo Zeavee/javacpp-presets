@@ -21,22 +21,22 @@
  *
  */
 
-package org.bytedeco.spinnaker.presets;
+package com.oracle.svm.shadowed.org.bytedeco.spinnaker.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * Wrapper for Point Grey Spinnaker_C library (the C API v.1).
  *
  * @author Jarek Sacha
  */
-@Properties(target = "org.bytedeco.spinnaker.Spinnaker_C",
-            global = "org.bytedeco.spinnaker.global.Spinnaker_C", value = {
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.spinnaker.Spinnaker_C",
+            global = "com.oracle.svm.shadowed.org.bytedeco.spinnaker.global.Spinnaker_C", value = {
         @Platform(value = {"linux-x86_64", "linux-arm64", "windows"},
                 include = {"<SpinnakerPlatformC.h>",
                         "<SpinnakerDefsC.h>",
@@ -68,7 +68,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                 linkpath    = {"C:/Program Files/Spinnaker/lib64/vs2015/", "C:/Program Files/Point Grey Research/Spinnaker/lib64/vs2015/"},
                 preloadpath = {"C:/Program Files/Spinnaker/bin64/vs2015/", "C:/Program Files/Point Grey Research/Spinnaker/bin64/vs2015/"})})
 public class Spinnaker_C implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "spinnaker"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "spinnaker"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info().enumerate())

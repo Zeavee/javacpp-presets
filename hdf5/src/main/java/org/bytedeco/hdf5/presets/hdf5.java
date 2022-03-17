@@ -20,23 +20,23 @@
  * limitations under the License.
  */
 
-package org.bytedeco.hdf5.presets;
+package com.oracle.svm.shadowed.org.bytedeco.hdf5.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(target = "org.bytedeco.hdf5", global = "org.bytedeco.hdf5.global.hdf5", value = {
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.hdf5", global = "com.oracle.svm.shadowed.org.bytedeco.hdf5.global.hdf5", value = {
     @Platform(value = {"linux", "macosx", "windows"},
             define = {"GENERIC_EXCEPTION_CLASS H5::Exception", "GENERIC_EXCEPTION_TOSTRING getCDetailMsg()"},
             include = {"H5pubconf.h", /* "H5version.h", */ "H5public.h", "H5Cpublic.h", "H5Ipublic.h",
@@ -67,7 +67,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value = "windows-x86_64", preloadpath = {"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/redist/x64/Microsoft.VC140.CRT/",
                                                        "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64/"}) })
 public class hdf5 implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "hdf5"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "hdf5"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");

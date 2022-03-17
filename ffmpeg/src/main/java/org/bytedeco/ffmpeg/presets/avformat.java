@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ffmpeg.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ffmpeg.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -34,8 +34,8 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  */
 @Properties(
     inherit = avcodec.class,
-    target = "org.bytedeco.ffmpeg.avformat",
-    global = "org.bytedeco.ffmpeg.global.avformat",
+    target = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avformat",
+    global = "com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avformat",
     value = {
         @Platform(cinclude = {"<libavformat/avio.h>", "<libavformat/avformat.h>"}, link = "avformat@.58"),
         @Platform(value = "windows", preload = "avformat-58")

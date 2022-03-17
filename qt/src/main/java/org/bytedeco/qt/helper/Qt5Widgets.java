@@ -20,24 +20,24 @@
  * limitations under the License.
  */
 
-package org.bytedeco.qt.helper;
+package com.oracle.svm.shadowed.org.bytedeco.qt.helper;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Const;
-import org.bytedeco.javacpp.annotation.Name;
-import org.bytedeco.javacpp.annotation.Opaque;
-import org.bytedeco.qt.Qt5Core.*;
-import org.bytedeco.qt.Qt5Widgets.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Const;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Name;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Opaque;
+import com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Core.*;
+import com.oracle.svm.shadowed.org.bytedeco.qt.Qt5Widgets.*;
 
-public class Qt5Widgets extends org.bytedeco.qt.presets.Qt5Widgets {
+public class Qt5Widgets extends com.oracle.svm.shadowed.org.bytedeco.qt.presets.Qt5Widgets {
 
 //  static {
 //    File framework = new File("/usr/local/Cellar/qt/5.13.0/lib/QtWidgets.framework/QtWidgets");

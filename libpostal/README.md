@@ -43,7 +43,7 @@ To run this sample code, after creating the `pom.xml` and `Example.java` source 
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.libpostal</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.libpostal</groupId>
     <artifactId>example</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -51,7 +51,7 @@ To run this sample code, after creating the `pom.xml` and `Example.java` source 
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>libpostal-platform</artifactId>
             <version>1.1-alpha-1.5.2</version>
         </dependency>
@@ -64,9 +64,9 @@ To run this sample code, after creating the `pom.xml` and `Example.java` source 
 
 ### The `Example.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.libpostal.*;
-import static org.bytedeco.libpostal.global.postal.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.libpostal.*;
+import static com.oracle.svm.shadowed.org.bytedeco.libpostal.global.postal.*;
 
 public class Example {
     public static void main(String[] args) throws Exception {

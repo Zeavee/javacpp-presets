@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.ffmpeg</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.ffmpeg</groupId>
     <artifactId>readfewframe</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>ffmpeg-platform</artifactId>
             <version>4.2.1-1.5.2</version>
         </dependency>
@@ -54,15 +54,15 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ### The `ReadFewFrame.java` source file
 ```java
 import java.io.*;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.ffmpeg.avcodec.*;
-import org.bytedeco.ffmpeg.avformat.*;
-import org.bytedeco.ffmpeg.avutil.*;
-import org.bytedeco.ffmpeg.swscale.*;
-import static org.bytedeco.ffmpeg.global.avcodec.*;
-import static org.bytedeco.ffmpeg.global.avformat.*;
-import static org.bytedeco.ffmpeg.global.avutil.*;
-import static org.bytedeco.ffmpeg.global.swscale.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avcodec.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avformat.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.avutil.*;
+import com.oracle.svm.shadowed.org.bytedeco.ffmpeg.swscale.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avcodec.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avformat.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.avutil.*;
+import static com.oracle.svm.shadowed.org.bytedeco.ffmpeg.global.swscale.*;
 
 public class ReadFewFrame {
     /**

@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.librealsense</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.librealsense</groupId>
     <artifactId>TestConnection</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>librealsense-platform</artifactId>
             <version>1.12.4-1.5.2</version>
         </dependency>

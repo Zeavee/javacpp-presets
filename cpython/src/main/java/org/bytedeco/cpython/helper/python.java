@@ -20,21 +20,21 @@
  * limitations under the License.
  */
 
-package org.bytedeco.cpython.helper;
+package com.oracle.svm.shadowed.org.bytedeco.cpython.helper;
 
 import java.io.File;
 import java.io.IOException;
-import org.bytedeco.javacpp.*;
-import org.bytedeco.cpython.*;
-import static org.bytedeco.cpython.global.python.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.cpython.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.*;
 
-public class python extends org.bytedeco.cpython.presets.python {
+public class python extends com.oracle.svm.shadowed.org.bytedeco.cpython.presets.python {
 
     public static String Py_GetPathString() {
-        Loader.load(org.bytedeco.cpython.global.python.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.class);
         String platform = Loader.getPlatform();
         Py_FrozenFlag(1); // prevent Python from printing useless warnings
-        BytePointer p = Py_EncodeLocale(org.bytedeco.cpython.global.python.Py_GetPath(), null);
+        BytePointer p = Py_EncodeLocale(com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.Py_GetPath(), null);
         String string = p.getString();
         PyMem_Free(p);
         return string;
@@ -49,7 +49,7 @@ public class python extends org.bytedeco.cpython.presets.python {
     }
 
     public static void Py_SetPath(String... path) throws IOException {
-        Loader.load(org.bytedeco.cpython.global.python.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.class);
         String platform = Loader.getPlatform();
         String separator = "";
         String string = "";
@@ -59,7 +59,7 @@ public class python extends org.bytedeco.cpython.presets.python {
         }
         Py_FrozenFlag(1); // prevent Python from printing useless warnings
         Pointer p = Py_DecodeLocale(string, null);
-        org.bytedeco.cpython.global.python.Py_SetPath(p);
+        com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.Py_SetPath(p);
         PyMem_RawFree(p);
     }
 }

@@ -1,9 +1,9 @@
-module org.bytedeco.tensorflow {
-  requires transitive org.bytedeco.javacpp;
-  requires transitive org.bytedeco.mkldnn;
-  exports org.bytedeco.tensorflow.global;
-  exports org.bytedeco.tensorflow.presets;
-  exports org.bytedeco.tensorflow;
+module com.oracle.svm.shadowed.org.bytedeco.tensorflow {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.mkldnn;
+  exports com.oracle.svm.shadowed.org.bytedeco.tensorflow.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.tensorflow.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.tensorflow;
 
   exports org.tensorflow;
   exports org.tensorflow.contrib.android;

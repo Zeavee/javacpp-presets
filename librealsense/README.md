@@ -30,7 +30,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.librealsense</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.librealsense</groupId>
     <artifactId>TestConnection</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -38,7 +38,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>librealsense-platform</artifactId>
             <version>1.12.4-1.5.2</version>
         </dependency>
@@ -51,9 +51,9 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 
 ### The `TestConnection.java` source file
 ```java
-import org.bytedeco.javacpp.*;
-import org.bytedeco.librealsense.*;
-import static org.bytedeco.librealsense.global.RealSense.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.librealsense.*;
+import static com.oracle.svm.shadowed.org.bytedeco.librealsense.global.RealSense.*;
 
 public class TestConnection {
 

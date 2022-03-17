@@ -1,6 +1,6 @@
-module org.bytedeco.artoolkitplus {
-  requires transitive org.bytedeco.javacpp;
-  exports org.bytedeco.artoolkitplus.global;
-  exports org.bytedeco.artoolkitplus.presets;
-  exports org.bytedeco.artoolkitplus;
+module com.oracle.svm.shadowed.org.bytedeco.artoolkitplus {
+  requires transitive com.oracle.svm.shadowed.org.bytedeco.javacpp;
+  exports com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.global;
+  exports com.oracle.svm.shadowed.org.bytedeco.artoolkitplus.presets;
+  exports com.oracle.svm.shadowed.org.bytedeco.artoolkitplus;
 }

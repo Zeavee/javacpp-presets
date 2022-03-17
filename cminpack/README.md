@@ -32,7 +32,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```xml
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.cminpack</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.cminpack</groupId>
     <artifactId>tlmdif1c</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -40,7 +40,7 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>cminpack-platform</artifactId>
             <version>1.3.6-1.5.2</version>
         </dependency>
@@ -55,16 +55,16 @@ We can use [Maven 3](http://maven.apache.org/) to download and install automatic
 ```java
 /*     driver for lmdif1 example. */
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.javacpp.indexer.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.indexer.*;
 
 import static java.lang.Math.*;
-import static org.bytedeco.cminpack.global.cminpack.*;
+import static com.oracle.svm.shadowed.org.bytedeco.cminpack.global.cminpack.*;
 
 public class Tlmdif1c {
   public static void main(String[] args)
   {
-    Loader.load(org.bytedeco.cminpack.global.cminpack.class);
+    Loader.load(com.oracle.svm.shadowed.org.bytedeco.cminpack.global.cminpack.class);
 
     int info, lwa, iwa[] = new int[3];
     double tol, fnorm, x[] = new double[3], fvec[] = new double[15], wa[] = new double[75];

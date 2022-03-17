@@ -20,14 +20,14 @@
  * limitations under the License.
  */
 
-package org.bytedeco.ngraph.presets;
+package com.oracle.svm.shadowed.org.bytedeco.ngraph.presets;
 
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.*;
-import org.bytedeco.javacpp.tools.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.*;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -35,7 +35,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Properties(target = "org.bytedeco.ngraph", global = "org.bytedeco.ngraph.global.ngraph", value = {@Platform(
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.ngraph", global = "com.oracle.svm.shadowed.org.bytedeco.ngraph.global.ngraph", value = {@Platform(
     value = {"linux", "macosx"},
     define = {"SHARED_PTR_NAMESPACE std", "UNIQUE_PTR_NAMESPACE std"},
     compiler = "cpp11",
@@ -91,15 +91,15 @@ import java.lang.annotation.Target;
 //        "core/tensor.hpp",
         "ngraph/frontend/onnx_import/onnx.hpp"
     },
-    preload = {"iomp5", "mklml", "mklml_intel", "mkldnn", "ncurses@.6", "onnxifi"}, preloadresource = "/org/bytedeco/mkldnn/",
+    preload = {"iomp5", "mklml", "mklml_intel", "mkldnn", "ncurses@.6", "onnxifi"}, preloadresource = "/com/oracle/svm/shadowed/org/bytedeco/mkldnn/",
     link = {"ngraph", "onnxifi-ngraph", "codegen", "tbb@.2", "cpu_backend"}
 )})
 public class ngraph implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "ngraph"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "ngraph"); }
 
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info().javaText("import org.bytedeco.ngraph.Allocator;\n"
-                                      + "import org.bytedeco.ngraph.Function;"))
+        infoMap.put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.ngraph.Allocator;\n"
+                                      + "import com.oracle.svm.shadowed.org.bytedeco.ngraph.Function;"))
 //               .put(new Info("string", "std::string").annotations("@StdString").valueTypes("BytePointer", "String").pointerTypes("@Cast({\"char*\", \"std::string*\"}) BytePointer"))
                .put(new Info("onnxBackendID").valueTypes("onnxBackendID").pointerTypes("@ByPtrPtr onnxBackendID", "@Cast(\"onnxBackendID*\") onnxBackendID"))
                .put(new Info("ngraph::runtime::cpu::CPU_Backend::Property").cast().valueTypes("int"))

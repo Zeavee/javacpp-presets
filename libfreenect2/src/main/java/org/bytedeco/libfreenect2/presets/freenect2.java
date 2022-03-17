@@ -19,23 +19,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bytedeco.libfreenect2.presets;
+package com.oracle.svm.shadowed.org.bytedeco.libfreenect2.presets;
 
 import java.util.List;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Jeremy Laviole
  */
-@Properties(target = "org.bytedeco.libfreenect2", global = "org.bytedeco.libfreenect2.global.freenect2", value = {
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.libfreenect2", global = "com.oracle.svm.shadowed.org.bytedeco.libfreenect2.global.freenect2", value = {
     @Platform(value = {"linux-x86", "macosx-x86_64", "windows-x86_64"}, include = {"<libfreenect2/libfreenect2.hpp>",
                 "<libfreenect2/frame_listener.hpp>", "<libfreenect2/frame_listener_impl.h>", "<libfreenect2/logger.h>",
                 "<libfreenect2/packet_pipeline.h>", "<libfreenect2/registration.h>", "<libfreenect2/config.h>"},
@@ -56,7 +56,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
             preloadpath = {"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/redist/x64/Microsoft.VC140.CRT/",
                            "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64/"}) })
 public class freenect2 implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "libfreenect2"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "libfreenect2"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");

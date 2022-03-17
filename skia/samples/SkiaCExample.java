@@ -1,10 +1,10 @@
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 
-import org.bytedeco.skia.*;
-import static org.bytedeco.skia.global.Skia.*;
+import com.oracle.svm.shadowed.org.bytedeco.skia.*;
+import static com.oracle.svm.shadowed.org.bytedeco.skia.global.Skia.*;
 
 public class SkiaCExample {
     private static sk_surface_t makeSurface(int w, int h) {

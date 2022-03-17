@@ -20,21 +20,21 @@
  * limitations under the License.
  */
 
-package org.bytedeco.leptonica.presets;
+package com.oracle.svm.shadowed.org.bytedeco.leptonica.presets;
 
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(target = "org.bytedeco.leptonica", global = "org.bytedeco.leptonica.global.lept", value = {
+@Properties(target = "com.oracle.svm.shadowed.org.bytedeco.leptonica", global = "com.oracle.svm.shadowed.org.bytedeco.leptonica.global.lept", value = {
     @Platform(include = {"leptonica/alltypes.h", "leptonica/environ.h", "leptonica/array.h", "leptonica/bbuffer.h", "leptonica/heap.h", "leptonica/list.h",
         "leptonica/ptra.h", "leptonica/queue.h", "leptonica/rbtree.h", "leptonica/stack.h", "leptonica/arrayaccess.h", "leptonica/bmf.h", "leptonica/ccbord.h",
         "leptonica/dewarp.h", "leptonica/gplot.h", "leptonica/imageio.h", "leptonica/jbclass.h", "leptonica/morph.h", "leptonica/pix.h",
@@ -52,7 +52,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
     @Platform(value = "windows-x86_64", preloadpath = "C:/msys64/mingw64/bin/") })
 @NoException
 public class lept implements InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "leptonica"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "leptonica"); }
 
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("LEPT_DLL", "LIBJP2K_HEADER", "L_END_LIST").cppTypes().annotations())

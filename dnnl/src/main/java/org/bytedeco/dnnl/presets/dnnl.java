@@ -20,13 +20,13 @@
  * limitations under the License.
  */
 
-package org.bytedeco.dnnl.presets;
+package com.oracle.svm.shadowed.org.bytedeco.dnnl.presets;
 
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  *
@@ -47,7 +47,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(
             value = "windows-x86_64",
             preload = {"libwinpthread-1", "libgcc_s_seh-1", "libgomp-1", "libstdc++-6", "libiomp5md", "libdnnl"})},
-    target = "org.bytedeco.dnnl", global = "org.bytedeco.dnnl.global.dnnl")
+    target = "com.oracle.svm.shadowed.org.bytedeco.dnnl", global = "com.oracle.svm.shadowed.org.bytedeco.dnnl.global.dnnl")
 public class dnnl implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info().enumerate())
@@ -77,7 +77,7 @@ public class dnnl implements InfoMapper {
                .put(new Info("dnnl_stream_t").valueTypes("dnnl_stream").pointerTypes("@ByPtrPtr dnnl_stream", "@Cast(\"dnnl_stream_t*\") PointerPointer"))
                .put(new Info("const_dnnl_stream_t").valueTypes("@Const dnnl_stream").pointerTypes("@Const @ByPtrPtr dnnl_stream", "@Cast(\"const_dnnl_stream_t*\") PointerPointer"))
 
-               .put(new Info("dnnl::primitive_desc").pointerTypes("org.bytedeco.dnnl.primitive_desc"))
+               .put(new Info("dnnl::primitive_desc").pointerTypes("com.oracle.svm.shadowed.org.bytedeco.dnnl.primitive_desc"))
                .put(new Info("dnnl::memory::dims").annotations("@Cast({\"dnnl_dim_t*\", \"std::vector<dnnl_dim_t>&\"}) @StdVector(\"dnnl_dim_t\")").pointerTypes("LongPointer", "LongBuffer", "long[]"))
 //               .put(new Info("std::vector<const_dnnl_primitive_desc_t>").annotations("@StdVector @Cast(\"const_dnnl_primitive_desc_t*\")").pointerTypes("PointerPointer"))
 //               .put(new Info("dnnl::primitive::at").pointerTypes("primitive.at").define())

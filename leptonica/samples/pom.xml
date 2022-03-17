@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bytedeco.leptonica</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco.leptonica</groupId>
     <artifactId>sudokutest</artifactId>
     <version>1.5.2</version>
     <properties>
@@ -8,7 +8,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>leptonica-platform</artifactId>
             <version>1.78.0-1.5.2</version>
         </dependency>

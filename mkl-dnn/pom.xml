@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bytedeco</groupId>
+    <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
     <version>1.5.2</version>
   </parent>
 
-  <groupId>org.bytedeco</groupId>
+  <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
   <artifactId>mkl-dnn</artifactId>
   <version>0.21.2-${project.parent.version}</version>
   <name>JavaCPP Presets for MKL-DNN</name>
@@ -20,7 +20,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.bytedeco</groupId>
+      <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
@@ -34,7 +34,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.bytedeco</groupId>
+        <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
         <executions>
           <execution>
@@ -62,13 +62,13 @@
             <phase>package</phase>
             <configuration>
               <excludes>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/*.exp</exclude>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/*.lib</exclude>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/*.obj</exclude>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/bin/*</exclude>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/lib/*.dll</exclude>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/lib/*.dylib</exclude>
-                <exclude>org/bytedeco/mkldnn/${javacpp.platform}/lib/*.so*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/bin/*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/lib/*.dll</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/lib/*.dylib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/mkldnn/${javacpp.platform}/lib/*.so*</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -143,7 +143,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.bytedeco</groupId>
+            <groupId>com.oracle.svm.shadowed.org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
             <configuration>
               <properties>${javacpp.platform}-mingw</properties>

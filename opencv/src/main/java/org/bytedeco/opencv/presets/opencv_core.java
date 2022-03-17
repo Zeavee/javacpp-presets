@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-package org.bytedeco.opencv.presets;
+package com.oracle.svm.shadowed.org.bytedeco.opencv.presets;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -29,21 +29,21 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.annotation.Adapter;
-import org.bytedeco.javacpp.annotation.ByRef;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Adapter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByRef;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
 
-import org.bytedeco.openblas.presets.*;
+import com.oracle.svm.shadowed.org.bytedeco.openblas.presets.*;
 
 /**
  *
@@ -86,12 +86,12 @@ import org.bytedeco.openblas.presets.*;
             "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/redist/x64/Microsoft.VC140.OpenMP/",
             "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64/"}),
         @Platform(value = {"linux-arm64", "linux-ppc64le", "linux-x86_64", "macosx-x86_64", "windows-x86_64"}, extension = "-gpu")},
-    target = "org.bytedeco.opencv.opencv_core",
-    global = "org.bytedeco.opencv.global.opencv_core",
-    helper = "org.bytedeco.opencv.helper.opencv_core"
+    target = "com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_core",
+    global = "com.oracle.svm.shadowed.org.bytedeco.opencv.global.opencv_core",
+    helper = "com.oracle.svm.shadowed.org.bytedeco.opencv.helper.opencv_core"
 )
 public class opencv_core implements LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "opencv"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "opencv"); }
 
     @Override public void init(ClassProperties properties) {
         String platform = properties.getProperty("platform");
@@ -126,7 +126,7 @@ public class opencv_core implements LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
         }
 
         String vcredistdir = System.getenv("VCToolsRedistDir");
@@ -209,11 +209,11 @@ public class opencv_core implements LoadEnabled, InfoMapper {
                .put(new Info("_IplImage").pointerTypes("IplImage"))
                .put(new Info("_IplTileInfo").pointerTypes("IplTileInfo"))
                .put(new Info("IplImage").base("AbstractIplImage"))
-               .put(new Info("IplConvKernel").base("org.bytedeco.opencv.opencv_imgproc.AbstractIplConvKernel"))
+               .put(new Info("IplConvKernel").base("com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc.AbstractIplConvKernel"))
                .put(new Info("CvMat").base("AbstractCvMat"))
                .put(new Info("CvMatND").base("AbstractCvMatND"))
                .put(new Info("CvSparseMat").base("AbstractCvSparseMat"))
-               .put(new Info("CvHistogram").base("org.bytedeco.opencv.opencv_imgproc.AbstractCvHistogram"))
+               .put(new Info("CvHistogram").base("com.oracle.svm.shadowed.org.bytedeco.opencv.opencv_imgproc.AbstractCvHistogram"))
                .put(new Info("CvRect").base("AbstractCvRect"))
                .put(new Info("CvPoint").cast().pointerTypes("CvPoint", "IntBuffer", "int[]").base("AbstractCvPoint"))
                .put(new Info("CvPoint2D32f").cast().pointerTypes("CvPoint2D32f", "FloatBuffer", "float[]").base("AbstractCvPoint2D32f"))

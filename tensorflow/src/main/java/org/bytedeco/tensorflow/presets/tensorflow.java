@@ -20,27 +20,27 @@
  * limitations under the License.
  */
 
-package org.bytedeco.tensorflow.presets;
+package com.oracle.svm.shadowed.org.bytedeco.tensorflow.presets;
 
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.FunctionPointer;
-import org.bytedeco.javacpp.LoadEnabled;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.PointerPointer;
-import org.bytedeco.javacpp.annotation.Adapter;
-import org.bytedeco.javacpp.annotation.ByRef;
-import org.bytedeco.javacpp.annotation.ByVal;
-import org.bytedeco.javacpp.annotation.Cast;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
-import org.bytedeco.javacpp.annotation.StdString;
-import org.bytedeco.javacpp.tools.BuildEnabled;
-import org.bytedeco.javacpp.tools.Info;
-import org.bytedeco.javacpp.tools.InfoMap;
-import org.bytedeco.javacpp.tools.InfoMapper;
-import org.bytedeco.javacpp.tools.Logger;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.FunctionPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.LoadEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Loader;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Adapter;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByRef;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.ByVal;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Cast;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.StdString;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.BuildEnabled;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Info;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMap;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.InfoMapper;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.tools.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -252,14 +252,14 @@ import java.util.List;
                         "tensorflow/cc/ops/string_ops.h",
                         "tensorflow/cc/ops/training_ops.h",
                         "tensorflow/cc/ops/user_ops.h"},
-                link = "tensorflow_cc@.1", preload = {"iomp5", "mklml", "mklml_intel", "tensorflow_framework"}, preloadresource = "/org/bytedeco/mkldnn/"),
+                link = "tensorflow_cc@.1", preload = {"iomp5", "mklml", "mklml_intel", "tensorflow_framework"}, preloadresource = "/com/oracle/svm/shadowed/org/bytedeco/mkldnn/"),
         @Platform(
                 value = {"linux-arm64", "linux-ppc64le", "linux-x86_64", "macosx-x86_64"},
                 extension = {"-gpu", "-python", "-python-gpu"},
                 link = "tensorflow_cc#",
                 preload = {"iomp5", "mklml", "mklml_intel", "python3.7m@.1.0!", "python3.7!", "tensorflow_framework", "tensorflow_cc:python/tensorflow/python/_pywrap_tensorflow_internal.so", "tensorflow_cc:libtensorflow_cc.so.1"},
                 resource = "python",
-                preloadresource = {"/org/bytedeco/cpython/", "/org/bytedeco/mkldnn/"}),
+                preloadresource = {"/com/oracle/svm/shadowed/org/bytedeco/cpython/", "/com/oracle/svm/shadowed/org/bytedeco/mkldnn/"}),
         @Platform(
                 value = "windows",
                 link = {"Advapi32#", "mklml"},
@@ -294,7 +294,7 @@ import java.util.List;
                 extension = {"-gpu", "-python", "-python-gpu"},
                 link = {"Advapi32#", "mklml", "cudart", "cudart_static", "cuda", "cublasLt", "cublas", "cudnn", "cufft", "cufftw", "curand", "cusolver", "cusparse", "cupti"},
                 resource = "python",
-                preloadresource = {"/org/bytedeco/cpython/", "/org/bytedeco/mkldnn/"},
+                preloadresource = {"/com/oracle/svm/shadowed/org/bytedeco/cpython/", "/com/oracle/svm/shadowed/org/bytedeco/mkldnn/"},
 // old hacks for the now obsolete CMake build
 //                link = {"absl_base", "absl_throw_delegate", "absl_bad_optional_access", "absl_int128", "absl_str_format", "str_format_internal", "absl_strings",
 //                        "Advapi32#", "double-conversion", "zlibstatic", "gpr", "grpc_unsecure", "grpc++_unsecure", "farmhash", "fft2d",
@@ -440,18 +440,18 @@ import java.util.List;
                         "tensorflow_adapters.h"},
                 link = "tensorflow_cc", preload = "tensorflow_framework"),
         },
-        target = "org.bytedeco.tensorflow",
-        global = "org.bytedeco.tensorflow.global.tensorflow")
+        target = "com.oracle.svm.shadowed.org.bytedeco.tensorflow",
+        global = "com.oracle.svm.shadowed.org.bytedeco.tensorflow.global.tensorflow")
 public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
-    static { Loader.checkVersion("org.bytedeco", "tensorflow"); }
+    static { Loader.checkVersion("com.oracle.svm.shadowed.org.bytedeco", "tensorflow"); }
 
-    /** Returns {@code Loader.cacheResource("/org/bytedeco/tensorflow/" + Loader.getPlatform() + extension + "/python/")}. */
+    /** Returns {@code Loader.cacheResource("/com/oracle/svm/shadowed/org/bytedeco/tensorflow/" + Loader.getPlatform() + extension + "/python/")}. */
     public static File cachePackage() throws IOException {
-        Loader.load(org.bytedeco.cpython.global.python.class);
+        Loader.load(com.oracle.svm.shadowed.org.bytedeco.cpython.global.python.class);
         String path = Loader.load(tensorflow.class);
         if (path != null) {
             path = path.replace(File.separatorChar, '/');
-            int i = path.indexOf("/org/bytedeco/tensorflow/" + Loader.getPlatform());
+            int i = path.indexOf("/com/oracle/svm/shadowed/org/bytedeco/tensorflow/" + Loader.getPlatform());
             int j = path.lastIndexOf("/");
             return Loader.cacheResource(path.substring(i, j) + "/python/");
         }
@@ -460,7 +460,7 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
 
     /** Returns {@code {numpy.cachePackages(), tensorflow.cachePackage()}}. */
     public static File[] cachePackages() throws IOException {
-        File[] path = org.bytedeco.numpy.global.numpy.cachePackages();
+        File[] path = com.oracle.svm.shadowed.org.bytedeco.numpy.global.numpy.cachePackages();
         path = Arrays.copyOf(path, path.length + 1);
         path[path.length - 1] = cachePackage();
         return path;
@@ -492,8 +492,8 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
         }
 
         // Let users enable loading of the full version of MKL
-        String load = System.getProperty("org.bytedeco.openblas.load",
-                      System.getProperty("org.bytedeco.mklml.load", "")).toLowerCase();
+        String load = System.getProperty("com.oracle.svm.shadowed.org.bytedeco.openblas.load",
+                      System.getProperty("com.oracle.svm.shadowed.org.bytedeco.mklml.load", "")).toLowerCase();
 
         int i = 0;
         if (load.equals("mkl") || load.equals("mkl_rt")) {
@@ -503,7 +503,7 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
                 preloads.add(i, libs[i] + "#" + libs[i]);
             }
             load = "mkl_rt";
-            resources.add("/org/bytedeco/mkl/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/mkl/");
         }
 
         if (load.length() > 0) {
@@ -540,8 +540,8 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
             }
         }
         if (i > 0) {
-            resources.add("/org/bytedeco/cuda/");
-            resources.add("/org/bytedeco/tensorrt/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/cuda/");
+            resources.add("/com/oracle/svm/shadowed/org/bytedeco/tensorrt/");
         }
 
         String vcredistdir = System.getenv("VCToolsRedistDir");
@@ -562,7 +562,7 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
     }
 
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info().javaText("import org.bytedeco.tensorflow.Allocator;"))
+        infoMap.put(new Info().javaText("import com.oracle.svm.shadowed.org.bytedeco.tensorflow.Allocator;"))
                .put(new Info("bfloat16.h").linePatterns("struct half;").skip())
                .put(new Info("tensorflow_adapters.h").skip())
                .put(new Info("B16_DEVICE_FUNC", "EIGEN_ALWAYS_INLINE", "EIGEN_DEVICE_FUNC", "EIGEN_STRONG_INLINE", "PROTOBUF_CONSTEXPR", "PROTOBUF_FINAL",
@@ -1031,14 +1031,14 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
                              "@ByRef Tensor", "byte", "short", "int", "long", "float", "double", "boolean", "@StdString String", "@StdString BytePointer"));
 
         infoMap.put(new Info("TF_Buffer::data").javaText("public native @Const Pointer data(); public native TF_Buffer data(Pointer data);"))
-               .put(new Info("TF_Status").pointerTypes("TF_Status").base("org.bytedeco.tensorflow.AbstractTF_Status"))
-               .put(new Info("TF_Buffer").pointerTypes("TF_Buffer").base("org.bytedeco.tensorflow.AbstractTF_Buffer"))
-               .put(new Info("TF_Tensor").pointerTypes("TF_Tensor").base("org.bytedeco.tensorflow.AbstractTF_Tensor"))
-               .put(new Info("TF_SessionOptions").pointerTypes("TF_SessionOptions").base("org.bytedeco.tensorflow.AbstractTF_SessionOptions"))
-               .put(new Info("TF_Graph").pointerTypes("TF_Graph").base("org.bytedeco.tensorflow.AbstractTF_Graph"))
+               .put(new Info("TF_Status").pointerTypes("TF_Status").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_Status"))
+               .put(new Info("TF_Buffer").pointerTypes("TF_Buffer").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_Buffer"))
+               .put(new Info("TF_Tensor").pointerTypes("TF_Tensor").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_Tensor"))
+               .put(new Info("TF_SessionOptions").pointerTypes("TF_SessionOptions").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_SessionOptions"))
+               .put(new Info("TF_Graph").pointerTypes("TF_Graph").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_Graph"))
                .put(new Info("TF_Graph::graph").javaText("public native @MemberGetter @ByRef Graph graph();"))
                .put(new Info("TF_Graph::refiner").javaText("public native @MemberGetter @ByRef ShapeRefiner refiner();"))
-               .put(new Info("TF_ImportGraphDefOptions").pointerTypes("TF_ImportGraphDefOptions").base("org.bytedeco.tensorflow.AbstractTF_ImportGraphDefOptions"))
+               .put(new Info("TF_ImportGraphDefOptions").pointerTypes("TF_ImportGraphDefOptions").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_ImportGraphDefOptions"))
                .put(new Info("TF_Operation", "TFE_MonitoringCounterCell", "TFE_MonitoringSamplerCell",
                              "TFE_MonitoringCounter0", "TFE_MonitoringCounter1", "TFE_MonitoringCounter2",
                              "TFE_MonitoringIntGaugeCell", "TFE_MonitoringStringGaugeCell", "TFE_MonitoringBoolGaugeCell",
@@ -1055,7 +1055,7 @@ public class tensorflow implements BuildEnabled, LoadEnabled, InfoMapper {
                .put(new Info("TFE_CancellationManager::cancellation_manager").javaText("public native @MemberGetter @ByRef CancellationManager cancellation_manager();"))
                .put(new Info("TFE_ContextMirroringPolicy").cast().pointerTypes("Pointer"))
                .put(new Info("TF_ShapeInferenceContextDimValueKnown").skip())
-               .put(new Info("TF_Session").pointerTypes("TF_Session").base("org.bytedeco.tensorflow.AbstractTF_Session"))
+               .put(new Info("TF_Session").pointerTypes("TF_Session").base("com.oracle.svm.shadowed.org.bytedeco.tensorflow.AbstractTF_Session"))
                .put(new Info("TF_Session::extend_before_run").javaText("public native @MemberGetter @ByRef @Cast(\"std::atomic<bool>*\") Pointer extend_before_run();"));
 
         infoMap.put(new Info("tensorflow::Scope::WithOpName<std::string>").javaNames("WithOpName").javaText(

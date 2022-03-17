@@ -20,20 +20,20 @@
  * limitations under the License.
  */
 
-package org.bytedeco.openblas.presets;
+package com.oracle.svm.shadowed.org.bytedeco.openblas.presets;
 
 import java.util.List;
 import java.util.ListIterator;
-import org.bytedeco.javacpp.ClassProperties;
-import org.bytedeco.javacpp.annotation.NoException;
-import org.bytedeco.javacpp.annotation.Platform;
-import org.bytedeco.javacpp.annotation.Properties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.ClassProperties;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.NoException;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Platform;
+import com.oracle.svm.shadowed.org.bytedeco.javacpp.annotation.Properties;
 
 /**
  *
  * @author Samuel Audet
  */
-@Properties(inherit = openblas_nolapack.class, global = "org.bytedeco.openblas.global.openblas", value = {
+@Properties(inherit = openblas_nolapack.class, global = "com.oracle.svm.shadowed.org.bytedeco.openblas.global.openblas", value = {
     @Platform(
         include = {"openblas_config.h", "cblas.h"}),
     @Platform(
